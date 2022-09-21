@@ -1,0 +1,153 @@
+.#{$css-prefix}-container{
+    table{
+        width: 100%;
+        display:block;
+        tbody{
+            display: block;
+            width: 100%;
+        }
+    }
+    .#{$css-prefix}-folded{
+        display: none!important;
+    }
+    .#{$css-prefix}-fluid-width-folded{
+        display: none!important;  
+    }
+    .#{$css-prefix}-ui-section{
+        display: block;
+        width: 100%;
+        color: #777;        
+        border-bottom:1px solid #e0e5e7;
+        .#{$css-prefix}-ui-head{
+            width:260px;
+            padding: 30px 0 30px 0;
+            vertical-align: middle;
+            .#{$css-prefix}-ui-head-title{
+                line-height: 25px;
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+            .#{$css-prefix}-ui-head-desc{
+                margin-bottom: 0px;
+                line-height: 22px;
+            }
+        }
+
+        .#{$css-prefix}-ui-block{
+            padding:40px 0 40px 40px;
+            vertical-align: middle;
+        }
+
+        &.#{$css-prefix}-last,&.#{$css-prefix}-fold-last{
+            border-bottom:0;
+            > .#{$css-prefix}-ui-block{
+                padding-bottom: 0px!important;
+            }
+        } 
+        &.#{$css-prefix}-ui-big-section{
+            > .#{$css-prefix}-ui-block >.#{$css-prefix}-ui-head{
+                padding: 0 0 19px 0;
+                width: 100%;                
+                &.#{$css-prefix}-center{
+                    text-align: center;
+                }
+            }
+            > .#{$css-prefix}-ui-block{
+                padding:25px 0 36px 0px;
+                display: inline-block;
+                width:100%;                
+            }
+        } 
+    }
+
+    .#{$css-prefix}-ui-heading-section{
+        display: block;
+        width: 100%;
+        td{
+            width:100%;
+            display: block;
+            background-color: #0ab4e9;
+            padding: 5px 14px;
+            h5{
+                color: #fff;
+                margin-bottom: 1px;
+            }
+        }
+    }
+    .#{$css-prefix}-ui-title-section{
+        .#{$css-prefix}-ui-block{
+            padding-bottom: 6px!important;
+        }
+    }
+
+
+
+    &.#{$css-prefix}-metabox{
+        .#{$css-prefix}-metabox-inner{
+            .#{$css-prefix}-ui-section{
+                .#{$css-prefix}-ui-head{
+                    padding: 20px 0 20px 0;
+                }
+
+                .#{$css-prefix}-ui-block{
+                    padding:30px 0 30px 30px;
+                }
+
+                &.#{$css-prefix}-last,&.#{$css-prefix}-fold-last{
+                    border-bottom:0;
+                } 
+                &.#{$css-prefix}-ui-big-section{
+                    > .#{$css-prefix}-ui-block{
+                        > .#{$css-prefix}-ui-head{
+                            padding: 0px 0 20px 0;                            
+                        }
+                        padding:20px 0 30px 0px;
+                    }
+                } 
+            }
+        }  
+    }
+
+    &.#{$css-prefix}-metabox-wc{
+        .#{$css-prefix}-metabox-wc-inner{
+            display:block;
+            label{
+                width: auto;
+                margin-left:0;
+                /*float: none;*/
+            }
+            .#{$css-prefix}-ui-section{
+                .#{$css-prefix}-ui-head{
+                    padding: 20px 0 20px 0;
+                    p{
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                }
+
+                .#{$css-prefix}-ui-block{
+                    padding:30px 0 30px 30px;
+                }
+
+                &.#{$css-prefix}-last,&.#{$css-prefix}-fold-last{
+                    border-bottom:0;
+                } 
+
+                &.#{$css-prefix}-ui-big-section{
+                    > .#{$css-prefix}-ui-block{
+                        > .#{$css-prefix}-ui-head{
+                            padding: 0px 0 20px 0;                            
+                        }
+                        padding:20px 0 30px 0px;
+
+                    }
+                } 
+            }
+            .#{$css-prefix}-columns{
+                .#{$css-prefix}-field{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

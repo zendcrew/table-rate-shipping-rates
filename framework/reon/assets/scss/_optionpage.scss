@@ -1,0 +1,350 @@
+.#{$css-prefix}-option-page{
+    display:block;
+    background-color:#fff;
+    border:1px solid #e2e5e7;
+    margin:20px 20px 0 0;
+    .#{$css-prefix}-option-page-aside{
+        display: block;
+        float: left;       
+        width: 250px;
+        min-height: 600px;
+        background-color:#23282d;
+        background-size: 100%;
+        margin: -1px 0 -1px -1px;
+        color:#fff;
+        padding-bottom:50px;
+        &.#{$css-prefix}-no-display{
+            padding-top:40px;
+        }
+        .#{$css-prefix}-option-page-aside-details{
+            display: block;
+            height: 224px;
+            width:100%;
+            text-align: center;
+            background-color: $option-page-color;
+            .#{$css-prefix}-option-page-aside-details-version{
+                display: block;
+                text-align: right;
+                padding: 6px 15px 9px 0;
+                font-size: 12px;
+                @include opacity(0.7);
+            }
+            .#{$css-prefix}-option-page-aside-details-logo{
+                display: block;
+                margin-bottom: 12px;
+            }
+            .#{$css-prefix}-option-page-aside-details-title{
+                display: block;
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 13px;
+            }
+            hr{
+                display: inline-block;
+                width: 36px;
+                height: 2px;
+                background-color: #fff;
+                border: 0;
+            }
+            .#{$css-prefix}-option-page-aside-details-subversion{
+                display: block;
+                text-align: center;
+                font-size: 12px;
+                @include opacity(0.7);
+            }
+        }
+        .#{$css-prefix}-option-page-aside-details-after{
+            color: $option-page-color;
+            text-align:center;
+            height: 32px;
+            i{
+                display: inline-block;
+                font-size: 55px;
+                top: -15px;
+            }
+        }
+
+        .#{$css-prefix}-option-page-tabs{
+            display: block;
+            .#{$css-prefix}-option-page-tabs-list{
+                display: block;
+                a{
+                    @include transition(all, 0.3s, ease);
+                }
+                > .#{$css-prefix}-option-li{
+                    display: block;
+                    > a{
+                        display: block;
+                        padding: 5px 5px 5px 39px;
+                        color:#fff;
+                        width: 100%;
+                        font-size:14px;
+                        &:before{
+                            content: '\f0da';
+                            font-family: 'FontAwesome';
+                            font-size: 14px;
+                            margin-right: 7px;
+                        }
+                    }
+
+                    &.active,&.activeparent{
+                        > a{
+                            background-color: $option-page-color;
+                        }  
+                    }
+
+                    &.active{
+                        &:after{
+                            content: '\f0d9';
+                            font-family: 'FontAwesome';
+                            position: absolute;
+                            font-size: 33px;
+                            right: -8px;
+                            top: 6px;
+                        }  
+                    }
+
+                    &:hover{
+                        > a{
+                            background-color: $option-page-color;
+                        }  
+                    }
+
+                    &.haschild{
+                        > a{
+                            &:after{
+                                content: '\f105';
+                                font-family: 'FontAwesome';
+                                position: absolute;
+                                font-size: 16px;
+                                right: 13px;
+                                top: 5px;
+                                @include transition(all, 0.3s, ease);
+                            }      
+                        }
+                        &.activeparent{
+                            > a{
+                                &:after{
+                                    transform: rotate(90deg);
+                                }   
+                            }
+                        }
+                    }
+                    .#{$css-prefix}-option-page-tabs-sublist{
+                        display: none;
+                        background-color:#32373c;
+                        padding: 25px 0 25px 54px;
+                        .#{$css-prefix}-option-subli{
+                            display: block;
+                            a{
+                                display: block;
+                                padding: 5px 5px 5px 0px;
+                                color:#fff;
+                                width: 100%;
+                                border-left:2px solid #3f4449;
+                                font-size:14px;
+                                &:before{
+                                    content: ' ';
+                                    display: inline-block;
+                                    font-family: 'FontAwesome';
+                                    width:8px;
+                                    height: 8px;
+                                    margin-left:-5px;
+                                    margin-top: -2px;
+                                    margin-right: 8px;
+                                    @include border-radius(4px);
+                                    background-color: #3f4449;
+                                }
+                            }
+                            &.active{
+                                a{
+                                    border-left-color:#474d52;
+                                    background-color: #292e33;
+                                    color:$option-page-color;
+                                    &:before{
+                                        background-color: #474d52;
+                                    }
+                                }  
+                                &:after{
+                                    content: '\f0d9';
+                                    font-family: 'FontAwesome';
+                                    position: absolute;
+                                    font-size: 33px;
+                                    right: -3px;
+                                    top: 6px;
+                                }  
+                            }
+                            &:hover:not(.active){
+                                a{
+                                    color:$option-page-color;
+                                    background-color: #2d333a;
+                                }   
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+    .#{$css-prefix}-option-page-body{
+        display: block;
+        clear: right;
+        margin-left: 250px;
+
+        .#{$css-prefix}-option-page-tool{
+            display: block;
+            height:72px;
+            width: 100%;
+            border-bottom:1px solid #e0e5e7;
+            .#{$css-prefix}-option-page-section-title{
+                display: inline-block;
+                float: left;
+                padding: 21px 24px 21px 24px;
+                border-right: 1px solid #e0e5e7;
+                margin-bottom: 0px;
+            }
+            .#{$css-prefix}-option-page-links{
+                float: left;
+                padding:23px 0 0 30px;
+                li{
+                    display: inline;
+                    a{
+                        display: inline-block;
+                        padding-right: 23px;
+                        font-size: 14px;
+                        color:#667377;
+                        float: left;
+                        i{margin-right: 8px; font-weight:normal;}
+                        &:hover{
+                            color:$option-page-color;
+                        }                        
+                    }
+                }
+                &.#{$css-prefix}-social-links{
+                    a{
+                        padding-right: 0px;
+                        font-size: 14px;
+                        color:#667377;
+                        height: 27px;
+                        width: 27px;
+                        border:1px solid;
+                        text-align:center; 
+                        margin-right: 9px;
+                        @include border-radius(50%);
+                        i{
+                            vertical-align: top;
+                            margin-right: 0px;
+                        }
+
+                    }
+                }
+            }
+            .#{$css-prefix}-option-page-buttons{
+                float: right;
+                padding: 20px 20px 0px 0px;
+                .#{$css-prefix}-reset-btn{
+                    display: inline-block;
+                    padding: 3px 19px;
+                    color: #697578;
+                    background-color: #cad4d7;
+                    float: left;
+                    margin-right:1px;
+                    &:hover{
+                        background-color: #bec9cc;
+                    }
+                    &:active{
+                        @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));                     
+                    }
+                }
+                .#{$css-prefix}-save-btn{
+                    display: inline-block;
+                    padding: 3px 19px;
+                    color: #fff;
+                    background-color: #00a0d2;
+                    float: left;
+                    margin-right:1px;
+                    &:hover{
+                        background-color: #0090bd;
+                    }
+                    &:active{
+                        @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));
+                    }
+                }
+                .#{$css-prefix}-btn-sep{
+                    margin-right:5px;
+                }
+
+                .#{$css-prefix}-ajax-icon{
+                    display: none;                    
+                    height: 20px;
+                    width: 20px;
+                    background-image: url(images/spinner.gif);
+                    background-repeat: no-repeat;
+                    float: left;
+                    @include opacity(0.6);
+                    margin: 7px 10px 0 0;
+                }
+            }
+
+            &.#{$css-prefix}-option-page-footer{
+                border-top:1px solid #e0e5e7;
+                border-bottom:0;
+            }
+        }
+
+        .#{$css-prefix}-option-page-groups{
+            display: block;
+            width: 100%;
+            .#{$css-prefix}-option-page-group{
+                display: none;
+                width: 100%;
+                padding:0 30px 27px 30px;
+                &.active-group{
+                    display: block;
+                }
+
+                .#{$css-prefix}-option-page-group-inner{
+                    display: block;
+                }
+            }
+        }
+        &.#{$css-prefix}-no-aside{
+            margin-left: 0px;
+            .#{$css-prefix}-option-page-groups{
+                .#{$css-prefix}-option-page-group{
+                    display: block;
+                }
+            }
+        }
+        .#{$css-prefix}-ajax-overlay{
+            display: none;
+            background-color: rgba(0,0,0,0.1);
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            z-index: 99999999;
+        }
+        .#{$css-prefix}-import-export-wrapper{
+            margin-bottom: 15px;
+        }
+        .#{$css-prefix}-import-export-warn{
+            margin-top: 5px;
+            margin-left: 6px;
+            color: #c45250;
+            font-size: 14px;
+            float: left;
+            display: inline-block;
+        }
+    }
+
+}
+
+.woocommerce{
+    .#{$css-prefix}-option-page{
+        margin-top: 15px;
+        margin-right: 0;
+    }
+}

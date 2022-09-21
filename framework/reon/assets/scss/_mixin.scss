@@ -1,0 +1,36 @@
+@mixin box-shadow($left:0, $top:2px, $blur:2px, $color:#000) {
+    -moz-box-shadow: $left $top $blur $color;
+    -webkit-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+}
+@mixin box-shadow-inset($left:0, $top:2px, $blur:2px, $color:#000) {
+    -moz-box-shadow: inset $left $top $blur $color;
+    -webkit-box-shadow: inset $left $top $blur $color;
+    box-shadow: inset $left $top $blur $color;
+}
+@mixin box-shadow-none() {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+@mixin border-radius($radius:4px) {
+    -moz-border-radius:$radius;
+    -webkit-border-radius:$radius;    
+    border-radius:$radius;
+}
+
+@mixin box-sizing($sizing:content-box) {
+    -moz-box-sizing:$sizing;
+    -webkit-box-sizing:$sizing;
+    box-sizing:$sizing;
+}
+@mixin transition($attr:all, $duration:0.2s, $animation:ease) {
+    -moz-transition:$attr $duration $animation;
+    -webkit-transition:$attr $duration $animation;
+    transition:$attr $duration $animation;
+}
+@mixin opacity($level:1){
+    opacity: $level;
+}

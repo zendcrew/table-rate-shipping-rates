@@ -1,0 +1,40 @@
+.#{$css-prefix}-button-set{
+    display:inline-block;
+    min-height:32px;
+    border: 0;
+    @include border-radius(2px);
+    overflow:hidden;
+    .#{$css-prefix}-opt-set{
+        display:inline-block;
+        padding: 2px 14px 0 14px;
+        border: 0;
+        background-color: #e4eaec;
+        min-height:32px;       
+        float:left;
+        margin:0px;
+        color: #555;
+        @include transition(all, 0.3s);
+        &:hover{
+            background-color: #cad4d7;
+        }
+        &:active{
+            @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));
+        }
+        &.opt-on.active{
+            background-color: $reon-theme-color;
+            z-index: 15;
+            color:#fff;
+            &:hover{
+                background-color: #00a8dd;
+            }
+        }
+        &.opt-off.active{
+            background-color: #777;
+            z-index: 15;
+            color:#fff;            
+        }
+    }
+    input{
+        display: none;
+    }
+}

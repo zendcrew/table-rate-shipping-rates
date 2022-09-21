@@ -1,0 +1,253 @@
+#wtars_shipped_page .rn-field.rn-textbox {
+    overflow: hidden;
+}
+
+.forminp-wtars_shipped_page {
+    padding: 0!important;
+}
+
+#wtars_shipped_page {
+    margin-top: 0;
+}
+
+#wtars_shipped_page .form-table td {
+    margin-bottom: 0px;
+    padding: 0 0;
+}
+
+#wtars_shipped_page.rn-option-page .rn-option-page-body .rn-option-page-groups .rn-option-page-group {
+    padding: 0 27px 27px 28px;
+}
+
+#wtars_shipped_page.rn-option-page .rn-option-page-tool:not(.rn-option-page-footer) {
+    position: sticky;
+    top: 86px;
+    z-index: 410;
+    background-color: #fff;
+}
+
+.wtars_shipped_rules>.rn-ui-block {
+    padding-top: 5px!important;
+}
+
+.wtars_shipped_rules_title {
+    border-bottom: 0!important;
+}
+
+.wtars_shipped_rules_title .rn-ui-block {
+    padding-top: 20px!important;
+}
+
+.rn-container .rn-ui-section.rn-ui-big-section.wtars_shipped_rules_title>.rn-ui-block>.rn-ui-head {
+    padding-bottom: 18px!important;
+}
+
+.wtars_shipped_rules_apply_mode .rn-repeater-section {
+    margin-bottom: 4px!important;
+}
+
+.rn-container .rn-repeater.wtars_shipped_extension_rules>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-body {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.rn-container .rn-repeater.wtars_shipped_extension_rules>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-body>.rn-repeater-section-inner>.rn-ui-subapp>.rn-ui-section>.rn-ui-block {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.shipped_calcs_title .rn-repeater-section {
+    margin-bottom: 0px!important;
+}
+
+.shipped_calcs_title .rn-repeater-section-body {
+    padding-bottom: 0px!important;
+}
+
+.shipped_calcs_field>.rn-ui-block {
+    padding-top: 10px!important;
+}
+
+.rn-ui-section.shipped_panel_calcs_field>.rn-ui-block {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.shipped_panel_calcs>.rn-repeater-sections>.rn-repeater-section {
+    border-left: 0!important;
+    border-right: 0!important;
+}
+
+.shipped_panel_calcs>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-body>.rn-repeater-section-inner>.rn-ui-subapp>.rn-ui-section:not(.shipped_calcs_field)>.rn-ui-block {
+    padding-top: 22px!important;
+}
+
+.shipped_mid_panel_calcs .shipped_panel_calcs>.rn-repeater-sections>.rn-repeater-section {
+    border-bottom: 0!important;
+    margin-bottom: 0!important;
+}
+
+.shipped_mid_panel_calcs .shipped_panel_calcs>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-body {
+    padding-bottom: 0!important;
+}
+
+.rn-container .rn-repeater.shipped_calcs .rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-body {
+    border-top: 0;
+}
+
+.rn-container .rn-repeater.shipped_calcs>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-head {
+    background-color: transparent!important;
+}
+
+.rn-container .rn-repeater.shipped_calcs>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-head .rn-repeater-head-buttons .rn-repeater-head-delete {
+    font-size: 21px;
+}
+
+.rn-container .rn-repeater.shipped_calcs>.rn-repeater-sections>.rn-repeater-section>.rn-repeater-section-head .rn-repeater-head-buttons .rn-repeater-head-sort {
+    width: 32px;
+    padding: 4px 23px 0 11px;
+    font-size: 18px;
+}
+
+.rn-container .rn-repeater.shipped_calcs .rn-repeater-sections .rn-repeater-section {
+    margin-bottom: 10px!important;
+}
+
+.rn-container .rn-repeater.shipped_calcs .rn-repeater-sections .rn-repeater-section .rn-ui-section.rn-first .rn-ui-block {
+    padding-top: 3px!important;
+}
+
+.shipped_logic_title .rn-ui-head {
+    padding-bottom: 0px!important;
+}
+
+.rn-container .rn-repeater.shipped_calcs .shipped_conditions .rn-repeater-sections .rn-repeater-section {
+    margin-bottom: 5px!important;
+}
+
+.rn-container .shipped-title-message .rn-ui-block {
+    margin-bottom: 15px!important;
+}
+
+.rn-container .rn-ui-section.shipped_setting_panel>.rn-ui-block {
+    padding-top: 15px!important;
+}
+
+#wtars_shipped_page .rn-option-page-aside-details {
+    height: 195px;
+}
+
+#wtars_shipped_page .rn-option-page-aside-details-logo {
+    margin-bottom: 8px;
+}
+
+#wtars_shipped_page .rn-option-page-aside-details-title {
+    margin-bottom: 5px;
+}
+
+#wtars_shipped_page hr {
+    display: none;
+}
+
+#wtars_shipped_page .rn-option-page-aside-details-after {
+    height: 22px;
+}
+
+#wtars_shipped_page .rn-option-page-tabs-list a {
+    padding: 5px 5px 5px 27px;
+}
+
+#wtars_shipped_page .rn-option-page-tabs-list a::before {
+    top: 0px;
+    position: relative;
+    font-size: 14px;
+    margin-right: 9px;
+}
+
+#wtars_shipped_page #rn_link_settings::before {
+    content: '\f013';
+}
+
+#wtars_shipped_page #rn_link_shipping_rates::before {
+    content: '\f48b';
+}
+
+#wtars_shipped_page #rn_link_cart_fees::before {
+    content: '\f4de';
+}
+
+#wtars_shipped_page #rn_link_checkout_messages::before {
+    content: '\f658';
+}
+
+#wtars_shipped_page #rn_link_rn_import_export::before {
+    content: '\f0a0';
+    font: var(--fa-font-solid);
+}
+
+.notice.wtars-shipped-notice {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.notice.wtars-shipped-notice p.notice-message {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.wtars-shipped-btn {
+    display: inline-block;
+    padding: 5px 9px 4px 7px;
+    ;
+    font-size: 12px;
+    color: #fff;
+    background-color: #00a0d2;
+    border: 1px solid #00a0d2;
+    margin-right: 2px;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    transition: all .3s ease;
+}
+
+.wtars-shipped-btn:hover {
+    color: #fff;
+    border-color: #0090bd;
+    background-color: #0090bd;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-shadow: inset 0px 1px 1px rgb(0 0 0 / 30%);
+    box-shadow: inset 0px 1px 1px rgb(0 0 0 / 30%);
+}
+
+.wtars-shipped-btn:active,
+.wtars-shipped-btn:visited {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.wtars-shipped-btn .dashicons {
+    position: relative;
+    top: 0px;
+    padding-right: 3px;
+    font-size: 18px;
+}
+
+.wtars-shipped-btn.wtars-shipped-btn-secondary {
+    color: #697578;
+    background-color: #f1f1f1;
+    border-color: #ccc;
+}
+
+.wtars-shipped-btn.wtars-shipped-btn-secondary:hover {
+    color: #697578;
+    background-color: #eaeaea;
+}
+
+#zcws_get_premium span {
+    font-weight: 600;
+    color: red;
+}

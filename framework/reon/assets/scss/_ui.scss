@@ -1,0 +1,555 @@
+.#{$css-prefix}-container{
+
+
+    /*
+    Imput Styles
+    ================
+    */
+
+    input[type=text], 
+    input[type=password], 
+    input[type=color], 
+    input[type=date], 
+    input[type=datetime], 
+    input[type=datetime-local], 
+    input[type=email], 
+    input[type=number], 
+    input[type=tel], 
+    input[type=time], 
+    input[type=url], 
+    input[type=week], 
+    input[type=search], 
+    select, 
+    textarea{
+        @include box-shadow-none();
+        background-color: #f1f6f8;
+        color: #33393b;  
+        padding: 4px 9px;
+        max-height: 32px;
+        height: auto;
+        width: auto;
+        vertical-align: baseline;
+        line-height: 22px;
+        font-size: 13px;
+        border-radius: 0px;
+    }
+    select{
+        padding: 7px 11px;
+    }
+
+
+    textarea{
+        max-width: 100%; 
+        max-height:none;
+        float:left;
+        border: 1px solid #ced4d6;
+        resize: vertical;
+    }
+
+
+    label.#{$css-prefix}-field{
+        float: none;
+    }
+
+    .#{$css-prefix}-field{
+        border: 1px solid #ced4d6;
+        display: inline-block;
+        padding: 0;
+        background-color: #fff;        
+        input[type=text], 
+        input[type=password], 
+        input[type=color], 
+        input[type=date], 
+        input[type=datetime], 
+        input[type=datetime-local], 
+        input[type=email], 
+        input[type=number], 
+        input[type=tel], 
+        input[type=time], 
+        input[type=url], 
+        input[type=week], 
+        input[type=search], 
+        select, 
+        textarea{
+            border: none;
+            color:#33393b;
+            float: left;
+
+        }
+
+        .#{$css-prefix}-label{
+            border-right: 1px solid #ced4d6;
+            padding: 2px 10px;
+            display: inline-block;
+            background-color: #f4f8f9;
+            color: #6e7b7f;
+            font-weight: 400;
+            line-height: 24px;
+            float:left;
+            min-height: 30px;
+            .fa, .dashicons{
+                margin-right: 4px;
+                vertical-align: 0px;
+                font-size: 13px;
+            }
+            .dashicons{
+                vertical-align: -1px;
+            }
+            &.#{$css-prefix}-icon-label{
+                .fa, .dashicons{
+                    margin-right: 0px;
+                } 
+            }
+
+
+        }
+
+
+    }
+
+
+    .#{$css-prefix}-field-wrapper{
+        float: left;
+        line-height: 0px;
+        display:inline-block;
+        &.#{$css-prefix}-center{
+            text-align: center;
+            width:100%;
+            .#{$css-prefix}-field,
+            .#{$css-prefix}-spectrum,
+            .ui-spinner,
+            .#{$css-prefix}-group{
+                text-align: left;
+            }
+            .#{$css-prefix}-group{                
+                float: none;
+            }
+        }
+        .#{$css-prefix}-field-desc{
+            display: block;
+            margin-bottom:2px;
+        }
+    }
+
+    .#{$css-prefix}-field,
+    .#{$css-prefix}-spectrum,
+    .#{$css-prefix}-colorpicker,
+    .ui-spinner,
+    .#{$css-prefix}-group
+    {    margin-bottom:0px;
+         margin-right: 8px;
+         &.last{margin-right: 0px;}
+         &.#{$css-prefix}-no-space{
+             margin-right: -1px; 
+             z-index: 1;
+         }
+
+    }
+    .#{$css-prefix}-spectrum,
+    .#{$css-prefix}-select2,
+    .#{$css-prefix}-spinner,
+    .#{$css-prefix}-colorpicker{
+        .#{$css-prefix}-field{
+            float: left;
+        }
+    }
+
+    .#{$css-prefix}-group{
+        .#{$css-prefix}-spectrum,
+        .#{$css-prefix}-select2,
+        .#{$css-prefix}-spinner,
+        .#{$css-prefix}-colorpicker,
+        .#{$css-prefix}-field{
+            float: left;
+            margin-bottom: 5px;
+        } 
+    }
+    .#{$css-prefix}-group{
+        display: inline-block;
+        float: left;
+        margin-bottom: -5px;
+        .#{$css-prefix}-tips {
+            top: 17px;
+            left: 2px;
+            margin-right: 12px;
+        }
+        .#{$css-prefix}-field{
+            margin-right: 5px;
+        }
+    }
+
+
+    .#{$css-prefix}-columns{
+        display: block;
+        float: none;
+        margin-right:-13px;
+        table{
+            display: block;
+            width: 100%;
+            tbody{    
+                display: table;
+                tr{
+                    td{
+                        padding-right: 13px;
+                    }
+                }
+            }
+        }
+
+        .#{$css-prefix}-field-wrapper{
+            display: block;
+            width: 100%;
+        }
+
+        .#{$css-prefix}-field{
+            margin-right: 0px;
+            min-height: 32px;
+            width: 100%;
+            display: block;
+        }
+
+        .#{$css-prefix}-columns-title{
+            font-size: 13px; 
+            margin-bottom: 3px;
+            .#{$css-prefix}-tips{
+                top: 0px;
+                left: -2px;
+            }
+            .#{$css-prefix}-columns-no-title{
+                display: inline-block;
+                height: 13px;
+            }
+        }
+
+        .#{$css-prefix}-ui-title-section{
+            margin: 0 6px;
+            width:auto;
+            .#{$css-prefix}-ui-block{
+                padding: 0;
+            }
+        }
+
+
+
+        &.#{$css-prefix}-colums-panel{
+            margin-right:0px;
+            border:1px solid #e0e5e7;
+            background-color: #fbfbf6;
+            padding:22px 20px 28px 20px;
+
+            table{           
+                tbody{
+                    tr{
+                        td{
+                            padding-right: 0;
+                            padding: 0px 6px;
+                        }
+                    }
+                }
+            }
+            .#{$css-prefix}-columns-title-gap{
+                display: block;
+                height: 22px;
+
+            }
+        }
+        &.#{$css-prefix}-colums-panel-small{
+            padding:14px 14px 20px 14px;
+            .#{$css-prefix}-columns-title-gap{
+                height: 14px;
+            }
+        }
+        &.#{$css-prefix}-colums-panel-smaller{
+            padding:8px 6px 12px 6px;
+            .#{$css-prefix}-columns-title-gap{
+                height: 8px;
+            }
+        }
+        &.#{$css-prefix}-colums-panel-white{
+            background-color: #fff;
+        }
+
+        .#{$css-prefix}-colorpicker{
+            margin-right: 0px;
+            .sp-replacer{
+                width: 100%;
+                min-width: 135px;
+                .sp-preview{
+                    width: 100%;
+                    float: left;
+                }
+                .sp-dd{
+                    float: right;
+                    margin-top: -32px;
+                    border-right: 1px solid #ced4d6;
+                    background-color: #f4f8f9;
+                }
+            }
+
+        }
+
+    }
+
+
+    .#{$css-prefix}-fluid-group{
+        width: 100%;
+        margin-right:0;
+
+    }
+
+    .#{$css-prefix}-fluid-width{
+        .#{$css-prefix}-select2{
+            .#{$css-prefix}-field{
+                width: 100%;
+                margin-right:0!important;
+                .select2{
+                    width: 100%!important; 
+                }
+            }
+        }
+        .#{$css-prefix}-spinner{
+            .ui-spinner{
+                margin-right:0!important;
+            }
+        }
+        .#{$css-prefix}-textbox{
+            margin-right:0!important;
+            input{
+                width: 100%!important;
+                min-width: 100%!important;
+            }
+        }
+        .#{$css-prefix}-textblock{
+            margin-right:0!important; 
+        }
+
+        .#{$css-prefix}-colorpicker{
+            margin-right: 0px;
+            .sp-replacer{
+                width: 100%;
+                min-width: 135px;
+                .sp-preview{
+                    width: 100%;
+                    float: left;
+                }
+                .sp-dd{
+                    float: right;
+                    margin-top: -32px;
+                    border-right: 1px solid #ced4d6;
+                    background-color: #f4f8f9;
+
+                } 
+            }
+
+        }
+    }
+
+
+
+
+
+    .#{$css-prefix}-field.#{$css-prefix}-single{
+        margin-right: 2px;
+        &.#{$css-prefix}-no-space{
+            margin-right: -1px;
+            z-index: 1;
+        }
+        .#{$css-prefix}-label{
+            border-right: 0;
+        }
+    }
+
+    .#{$css-prefix}-field.#{$css-prefix}-no-border{
+        border: 0;
+    }
+
+    .#{$css-prefix}-btn{
+        display: inline-block;
+        padding: 3px 18px;
+        color: #697578;
+        background-color: #cad4d7;
+        float: left;
+        margin-right:5px;
+        cursor:pointer;
+        &.#{$css-prefix}-icon-btn{
+            padding-left: 15px;
+        }
+        .fa, .dashicons{
+            margin-right: 5px;
+            vertical-align: -1px;
+            font-size: 13px;
+        }
+        .dashicons{
+            vertical-align: -2px;
+        }
+        &:hover{
+            background-color: #bec9cc;
+        }
+        &:active{
+            @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));                     
+        }
+        &.#{$css-prefix}-btn-primary{
+            color: #fff;
+            background-color: #00a0d2;
+            &:hover{
+                background-color: #0090bd;
+            }
+            &:active{
+                @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));
+            }
+        }
+    }
+
+    .#{$css-prefix}-textblock{
+        display: inline-block;
+        padding: 2px 10px;
+        border-color: #e2e5e6;
+    }
+
+    /*
+   Hidden Fields
+   =============
+    */
+    .#{$css-prefix}-ui-hidden{
+        display: none!important;
+        visibility: hidden!important;
+    }
+
+
+    .#{$css-prefix}-grey-parent{
+        input[type=text],
+        input[type=password], 
+        input[type=color], 
+        input[type=date], 
+        input[type=datetime], 
+        input[type=datetime-local], 
+        input[type=email], 
+        input[type=number], 
+        input[type=tel], 
+        input[type=time], 
+        input[type=url], 
+        input[type=week], 
+        input[type=search], 
+        select, 
+        textarea,
+        .select2-container .selection .select2-selection--single,
+        .select2-container .selection .select2-selection--single .select2-selection__rendered .select2-selection__clear{
+            background-color: #fff;
+        }
+        .rn-field .rn-label{
+            background-color: #fff;
+        }
+
+        .select2-container.select2-container--open .select2-selection--single{
+            background-color: #fff;
+        }
+
+
+    }
+
+
+
+    /*
+    Select2 Styles
+    ================
+    */
+    @import "ui-repeater.scss";
+
+    /*
+    Select2 Styles
+    ================
+    */
+    @import "ui-select2.scss";
+
+    /*
+    ButtonSet Styles
+    ================
+    */
+    @import "ui-buttonset.scss";
+
+    /*
+    Spinner Styles
+    ================
+    */
+    @import "ui-spinner.scss";
+
+    /*
+   NouiSlider Styles
+   ================
+    */
+    @import "ui-nouislider.scss";
+
+
+}
+
+/*
+   Spectrum Color Picker Styles
+   ================
+*/
+@import "_ui-spectrum.scss";
+
+/*
+  DateTime Styles
+  ================
+*/
+@import "ui-datetime.scss";
+
+/*
+TipTip Styles
+  ================
+*/
+@import "ui-tiptip.scss";
+
+
+.woocommerce table.form-table
+{
+    .#{$css-prefix}-container{
+        .select2-container{
+            min-width:0px!important;
+            margin-bottom: 0px;
+        }
+        input[type=text], 
+        input[type=password], 
+        input[type=color], 
+        input[type=date], 
+        input[type=datetime], 
+        input[type=datetime-local], 
+        input[type=email], 
+        input[type=number], 
+        input[type=tel], 
+        input[type=time], 
+        input[type=url], 
+        input[type=week], 
+        input[type=search], 
+        select, 
+        textarea{
+            padding: 4px 11px;  
+        }
+    }
+
+    p.rn_wc_desc{
+        font-weight: 400;
+    }
+
+}
+
+.#{$css-prefix}-no-wc-save{
+    p.submit{
+        display: none!important;
+        visibility: hidden!important;
+    }
+}
+
+.#{$css-prefix}-form-table{
+    width: 100%;
+}
+
+
+.wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container .select2-selection--single .select2-selection__arrow{
+    background: #fff;
+    background-size: inherit;
+}
+
+.wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container .select2-selection--single .select2-selection__arrow b{
+    display: inline;
+}

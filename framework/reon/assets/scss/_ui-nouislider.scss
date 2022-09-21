@@ -1,0 +1,95 @@
+.#{$css-prefix}-slider{
+    display: inline-block;
+    float: left;
+    input{
+        text-align: center;
+        float: left;
+    }
+
+    .#{$css-prefix}-slider-input{
+        margin-right: 0px;  
+    }
+    .#{$css-prefix}-slider-track{
+        border:0;
+        background: transparent;
+    }
+
+    .#{$css-prefix}-noui{
+        float: left;
+        display: inline-block;
+        border-radius: 0;
+        border:0;
+        vertical-align: top;
+        box-shadow:none;
+        min-height: 32px;
+        background-color: transparent;
+        margin: -1px;         
+        *{
+            display: inline-block; 
+        } 
+        .noUi-base {
+            @include box-sizing(border-box);
+            display:block;
+            width: auto;
+            height: 4px;
+            margin:13px 13px 0px 13px;
+            @include border-radius(3px);
+            background: #e4eaec;
+            .noUi-background{
+                background: #e4eaec;
+                position: absolute;
+                @include border-radius(3px);
+                box-shadow: none; 
+                margin-right: -1px;
+            }
+            &.noUi-connect,.noUi-connect{
+                background: #0ab4e9;
+                box-shadow: none;
+
+                @include border-radius(3px);
+            }
+            .noUi-connect{
+                position: absolute;
+            }
+
+            .noUi-horizontal .noUi-handle ,.noUi-handle {
+                width: 12px;
+                height: 12px;
+                left: -5px;
+                top: -10px;
+                border: 0;
+                cursor: pointer;
+                border-radius: 50%;
+                background: #0ab4e9;
+                @include transition();
+                box-shadow: none;
+                &:before, &:after{
+                    display: none;
+                }
+                &:hover,&.noUi-active{
+                    background: #079ece;
+                }
+
+            }
+        }
+
+
+    }
+    &.#{$css-prefix}-range-slider{
+        .#{$css-prefix}-noui{
+            .noUi-connect{
+                position: absolute;
+            }
+        }
+        .#{$css-prefix}-noui-right{
+            &.no-right-label{
+                border-left: 1px solid #ced4d6;   
+            }
+        }
+    }
+
+    .#{$css-prefix}-tips{
+        left: 4px;
+        margin-right: 0px;
+    }
+}

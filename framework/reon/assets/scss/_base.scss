@@ -1,0 +1,81 @@
+.#{$css-prefix}-container {
+    display: block;
+    &,* {
+        border: 0;
+        font-size: 13px;
+        font: inherit;
+        vertical-align: baseline;
+        margin: 0;
+        padding: 0;       
+        line-height:26px;
+        position: relative;        
+        -webkit-font-smoothing: antialiased;
+        @include box-sizing($sizing:border-box);
+    }
+
+    .#{$css-prefix}-clear{
+        display: block;
+        clear: both;
+    }
+
+    form{
+        display: block;   
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        color: #444c4e;
+        margin-bottom: 12px;
+        display: block;
+        font-weight: 600;
+
+    }
+
+    h1{font-size: 24px; line-height: 36px}
+    h2{font-size: 22px; line-height: 36px} 
+    h3{font-size: 20px; line-height: 32px}
+    h4{font-size: 18px; line-height: 29px}
+    h5{font-size: 16px; line-height: 27px}
+    h6{font-size: 14px;}
+    .dashicons{
+        font-family: 'dashicons';
+    }
+    .fa{
+        font-family: 'FontAwesome';
+    }
+    a{
+        @include transition(all, 0.3s, ease);
+    }
+    a,a:hover,a:visited
+        {
+        text-decoration: none;
+    }
+    a:focus, a:active{
+        outline: none;
+        box-shadow: none;
+    } 
+    p{
+        display: block;
+        margin-bottom: 16px;
+    }
+    ol, ul
+    {
+        list-style: none;
+    }
+    q
+    {
+        quotes: none;
+        &:before,&:after{
+            content: none;
+        }
+    }
+    blockquote{
+        &:before,&:after{
+            content: none;
+        }
+    }
+    table
+    {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}

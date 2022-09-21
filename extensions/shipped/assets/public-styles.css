@@ -1,0 +1,12 @@
+.wtars_shipped_tooltip{
+    vertical-align: middle;
+    font-size: 16px;
+    margin-left: 2px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.wtars_shipped_tooltip_mv{
+    display: none;
+    visibility: hidden;
+}

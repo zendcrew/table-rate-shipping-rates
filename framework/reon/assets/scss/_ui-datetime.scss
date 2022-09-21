@@ -1,0 +1,136 @@
+.#{$css-prefix}-datetimepicker{
+    border: solid 1px #e0e5e7;
+    z-index:400!important;
+    @include border-radius(0);
+    @include box-shadow(0px, 0px, 25px, rgba(0,0,0,0.15));
+    padding:0px 10px 0px 10px;
+    min-width: 250px;
+    &.#{$css-prefix}-dateonly{
+        padding-bottom: 10px;
+    }
+    .ui-datepicker-header{
+        margin:0px -10px;
+        margin-bottom: 7px;
+        border: 0;
+        background: #fff;
+        border-bottom: 1px solid #e0e5e7;
+        padding: 7px 5px;
+        @include border-radius(0);
+        .ui-datepicker-prev, .ui-datepicker-next{
+            top:7px;
+        }
+        .ui-datepicker-prev{
+            left:6px;
+        }
+        .ui-datepicker-next{
+            right:6px;
+        }
+    }
+
+
+    &.#{$css-prefix}-change-date{
+        .ui-datepicker-header{
+            min-height: 32px;
+            select{
+                &.ui-datepicker-month,&.ui-datepicker-year{
+                    padding: 5px 8px;
+                    height: 30px;
+                    background: #f1f6f8;
+                    border: 1px solid #ced4d6;
+                    @include border-radius(0);
+                    @include box-shadow-none();
+                }
+
+            }
+
+            span.ui-datepicker-month,span.ui-datepicker-year{
+                display: inline-block;
+                padding-top: 7px;
+            } 
+            .ui-datepicker-prev, .ui-datepicker-next{
+                top:13px;
+            }
+        }
+
+
+    }
+    table{
+        margin: 0 0 15px 0;
+    }
+    .ui-timepicker-div{
+        display:block;
+
+        .ui-timepicker-select,select,.ui_tpicker_time_input{
+            padding: 5px 8px;
+            height: 30px;
+            background: #f1f6f8;
+            border: 1px solid #ced4d6;
+            @include border-radius(0);
+            @include box-shadow-none();
+
+        }
+        &:not(.ui-timepicker-oneLine){
+            .ui-timepicker-select,select,.ui_tpicker_time_input{
+                width:143px;
+            }
+        }
+        .ui_tpicker_time_input{
+            background: #fff;
+        }
+        .ui-widget-header{
+            background: #fff;
+            border:0;
+            border-bottom: 1px solid #e0e5e7;
+            padding: 7px;
+            margin: 0px -10px;
+            @include border-radius(0);
+        }
+
+        &.ui-timepicker-oneLine{
+            .ui-widget-header{
+                margin: 0px -12px 0px -10px;
+            }
+            .ui_tpicker_time_label {
+                margin-top: 5px;
+                font-weight: 600;
+            }
+        }
+
+    }
+
+    .ui-datepicker-buttonpane{
+        border:0;
+        border-top: 1px solid #e0e5e7;
+        height: 49px;
+        margin: 0 -10px;
+        button {
+            margin: 10px;
+            padding: 6px 11px;
+            @include border-radius(0);
+        }
+    }
+
+    &.ui-datepicker-multi{
+        table{
+            margin: 0 auto 15px auto;
+        }
+        .ui-timepicker-div{
+            &:not(.ui-timepicker-oneLine){
+                .ui-timepicker-select,select,.ui_tpicker_time_input{
+                    width:390px;
+                }
+            }
+        }
+    }
+    &.ui-datepicker-multi-2{
+        .ui-timepicker-div{
+            &:not(.ui-timepicker-oneLine){
+                .ui-timepicker-select,select,.ui_tpicker_time_input{
+                    width:260px;
+                }
+            }
+
+        }
+    }
+
+}
