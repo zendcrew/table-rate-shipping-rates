@@ -30,6 +30,9 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Customer' ) ) {
 
                 $in_list[ 'users' ] = esc_html__( 'Customers', 'table-rate-shipping-rates' );
                 $in_list[ 'logged_in_user' ] = esc_html__( 'Customer Is Logged In', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_1' ] = esc_html__( 'User Roles (Premium)', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_2' ] = esc_html__( 'User Capabilities (Premium)', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_3' ] = esc_html__( 'User Meta Field (Premium)', 'table-rate-shipping-rates' );
             }
 
             return $in_list;

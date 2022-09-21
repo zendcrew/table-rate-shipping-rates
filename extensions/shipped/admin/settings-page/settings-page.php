@@ -195,11 +195,11 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             switch ( $message_id ) {
                 case 'short_message':
                     $message = esc_html__( 'Available on premium version', 'table-rate-shipping-rates' );
-                    return '<a href="' . $premium_url . '" target="_blank">' . $link_text . '</a> - ' . $message;
+                    return '<a href="' . $premium_url . '" target="_blank">' . $link_text . '</a>';
 
                 default:
 
-                    return '<a href="' . $premium_url . '" target="_blank">' . $link_text . '</a> | ' . $message;
+                    return '<a href="' . $premium_url . '" target="_blank">' . $link_text . '</a> - ' . $message;
             }
         }
 
@@ -309,10 +309,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
             $page_links = array(
                 array(
-                    'id' => 'zcws_documentation',
+                    'id' => 'wtars_documentation',
                     'title' => esc_html__( 'Documentation', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-file-text',
-                    'href' => 'https://zencrew.freshdesk.com/support/solutions/51000121629',
+                    'href' => esc_url('https://zencrew.freshdesk.com/support/solutions/51000121629'),
                     'target' => '_blank',
                     'show_in' => 'both'
                 ),
@@ -321,10 +321,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
                 $page_links[] = array(
-                    'id' => 'zcws_help',
+                    'id' => 'wtars_help',
                     'title' => esc_html__( 'Help', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-question-circle',
-                    'href' => 'https://zencrew.freshdesk.com/support/tickets',
+                    'href' => esc_url('https://zencrew.freshdesk.com/support/tickets'),
                     'target' => '_blank',
                     'show_in' => 'both'
                 );
@@ -332,15 +332,14 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
                 $prm_link_text = esc_html__( 'Premium Version', 'table-rate-shipping-rates' );
                 $page_links[] = array(
-                    'id' => 'zcws_get_premium',
+                    'id' => 'wtars_get_premium',
                     'title' => '<span>' . $prm_link_text . '</span>',
-                    'icon' => '',
-                    'href' => '#',
+                    'icon' => 'fa fa-file-text-o',
+                    'href' => esc_url( 'https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew'),
                     'target' => '_blank',
                     'show_in' => 'both'
                 );
             }
-
 
             return $page_links;
         }
@@ -349,31 +348,31 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
             return array(
                 array(
-                    'id' => 'zcws_facebook',
+                    'id' => 'wtars_facebook',
                     'title' => esc_html__( 'Facebook', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-facebook',
-                    'href' => 'http://www.facebook.com/zendcrew',
+                    'href' => esc_url('http://www.facebook.com/zendcrew'),
                     'target' => '_blank',
                 ),
                 array(
-                    'id' => 'zcws_linkedin',
+                    'id' => 'wtars_linkedin',
                     'title' => esc_html__( 'LinkedIn', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-linkedin',
-                    'href' => 'https://www.linkedin.com/company/zendcrew',
+                    'href' => esc_url('https://www.linkedin.com/company/zendcrew'),
                     'target' => '_blank',
                 ),
                 array(
-                    'id' => 'zcws_stack_overflow',
+                    'id' => 'wtars_stack_overflow',
                     'title' => esc_html__( 'Stack Overflow', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-stack-overflow',
-                    'href' => 'https://stackoverflow.com/users/8692713/zendcrew',
+                    'href' => esc_url('https://stackoverflow.com/users/8692713/zendcrew'),
                     'target' => '_blank',
                 ),
                 array(
-                    'id' => 'zcws_instagram',
+                    'id' => 'wtars_instagram',
                     'title' => esc_html__( 'Instagram', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-instagram',
-                    'href' => 'https://www.instagram.com/zendcrew/',
+                    'href' => esc_url('https://www.instagram.com/zendcrew/'),
                     'target' => '_blank',
                 ),
             );

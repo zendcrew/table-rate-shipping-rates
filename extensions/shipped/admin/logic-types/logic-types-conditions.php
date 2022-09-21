@@ -15,6 +15,9 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
                 add_filter( 'wtars_shipped_admin/shipping-rates/get-panel-conditions-fields', array( $this, 'get_rate_conditions_title' ), 70, 2 );
                 add_filter( 'wtars_shipped_admin/cart-fees/get-panel-conditions-fields', array( $this, 'get_rate_conditions_title' ), 70, 2 );
                 add_filter( 'wtars_shipped_admin/checkout-messages/get-panel-conditions-fields', array( $this, 'get_rate_conditions_title' ), 70, 2 );
+                
+                add_filter( 'wtars_shipped_admin/get-method-conditions-fields', array( $this, 'get_method_conditions_fields' ), 70, 2 );
+                
             }
 
             add_filter( 'wtars_shipped_admin/get-cost-type-fields', array( $this, 'get_cost_conditions_title' ), 70, 2 );
@@ -41,7 +44,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
 
                 $module_tool_text = esc_html__( 'handling fee', 'table-rate-shipping-rates' );
             }
-
+            
             if ( 'checkout-messages' == $args[ 'module' ] ) {
 
                 $module_text = esc_html__( 'Message', 'table-rate-shipping-rates' );
@@ -60,6 +63,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
                 'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                 'options' => array(
                     'match_all' => esc_html__( 'All conditions should match', 'table-rate-shipping-rates' ),
+                    'prem_1' => esc_html__( 'At least one condition should match (Premium)', 'table-rate-shipping-rates' ),
                 ),
                 'width' => '320px',
             );
@@ -87,6 +91,31 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
                 ),
             );
 
+
+            return $in_fields;
+        }
+
+        public function get_method_conditions_fields( $in_fields, $args ) {
+
+            $in_fields[] = array(
+                'id' => 'any_id',
+                'type' => 'paneltitle',
+                'full_width' => true,
+                'center_head' => true,
+                'title' => esc_html__( 'Method Conditions', 'table-rate-shipping-rates' ),
+                'desc' => esc_html__( 'List of conditions in which this shipping method should apply, empty conditions will apply this shipping method in any scenario', 'table-rate-shipping-rates' ),
+            );
+
+            $in_fields[] = array(
+                'id' => 'is_any',
+                'type' => 'textblock',
+                'show_box' => false,
+                'full_width' => true,
+                'center_head' => true,
+                'text' => WTARS_Shipped_Admin_Page::get_premium_messages(),
+                'width' => '100%',
+                'box_width' => '100%',
+            );
 
             return $in_fields;
         }

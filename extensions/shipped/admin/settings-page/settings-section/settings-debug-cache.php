@@ -34,7 +34,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Debug_Cache_Settings' ) ) {
             $dec_allowed_html = array(
                 'br' => array(),
             );
-            
+
             $in_fields[] = array(
                 'id' => 'any_id_shipping_rates',
                 'type' => 'paneltitle',
@@ -101,6 +101,17 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Debug_Cache_Settings' ) ) {
             return array(
                 'package_items' => esc_html__( 'Package items', 'table-rate-shipping-rates' ),
                 'cart_items' => esc_html__( 'Cart items', 'table-rate-shipping-rates' ),
+                'prem_1' => esc_html__( 'Applied coupons (Premium)', 'table-rate-shipping-rates' ),
+                'prem_2' => esc_html__( 'Billing address (Premium)', 'table-rate-shipping-rates' ),
+                'prem_3' => esc_html__( 'Shipping address (Premium)', 'table-rate-shipping-rates' ),
+                'prem_4' => esc_html__( 'Payment methods (Premium)', 'table-rate-shipping-rates' ),
+                'prem_5' => esc_html__( 'Year (Premium)', 'table-rate-shipping-rates' ),
+                'prem_6' => esc_html__( 'Month (Premium)', 'table-rate-shipping-rates' ),
+                'prem_7' => esc_html__( 'Day (Premium)', 'table-rate-shipping-rates' ),
+                'prem_8' => esc_html__( 'Hour (Premium)', 'table-rate-shipping-rates' ),
+                'prem_9' => esc_html__( '30 minutes (Premium)', 'table-rate-shipping-rates' ),
+                'prem_10' => esc_html__( '10 minutes (Premium)', 'table-rate-shipping-rates' ),
+                'prem_11' => esc_html__( 'Minute (Premium)', 'table-rate-shipping-rates' ),
             );
         }
 

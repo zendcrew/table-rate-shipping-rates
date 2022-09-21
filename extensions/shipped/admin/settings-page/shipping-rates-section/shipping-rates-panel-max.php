@@ -60,7 +60,9 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Panel_Max' ) && !defined
         }
 
         private function get_fields( $in_fields, $args ) {
-          
+           
+            $currency = get_woocommerce_currency_symbol( get_woocommerce_currency() );
+            
             $in_fields[] = array(
                 'id' => 'limit_type',
                 'type' => 'select2',
@@ -71,7 +73,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Panel_Max' ) && !defined
                 'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                 'options' => array(
                     'no' => esc_html__( 'No limit', 'table-rate-shipping-rates' ),
-                    
+                    'prem_1' => str_replace( '[0]', $currency, esc_html__( 'Fixed ([0]) (Premium)', 'table-rate-shipping-rates' ) ),
+                    'prem_2' => esc_html__( 'Percentage (%) (Premium)', 'table-rate-shipping-rates' ),
                 ),
                 'width' => '100%',
             );

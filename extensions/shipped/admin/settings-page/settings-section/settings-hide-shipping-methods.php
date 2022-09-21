@@ -57,9 +57,29 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Hide_Methods_Settings' ) && !defined( '
                         'options' => array(
                             'no' => esc_html__( 'Do not hide any method', 'table-rate-shipping-rates' ),
                             'hide_others' => esc_html__( 'Hide other shipping methods', 'table-rate-shipping-rates' ),
+                            'prem_1' => esc_html__( 'Hide this shipping method', 'table-rate-shipping-rates' ),
                         ),
                         'width' => '100%',
                         'fold_id' => 'hide_mode'
+                    ),
+                    array(
+                        'id' => 'is_any',
+                        'type' => 'textblock',
+                        'show_box' => true,
+                        'full_width' => true,
+                        'center_head' => true,
+                        'tooltip' => esc_html__( 'The other shipping methods to hide', 'table-rate-shipping-rates' ),
+                        'column_title' => esc_html__( 'Other Shipping Methods', 'table-rate-shipping-rates' ),
+                        'text' => WTARS_Shipped_Admin_Page::get_premium_messages(),
+                        'width' => '100%',
+                        'box_width' => '100%',
+                        'fold' => array(
+                            'target' => 'hide_mode',
+                            'attribute' => 'value',
+                            'value' => 'hide_others',
+                            'oparator' => 'eq',
+                            'clear' => false,
+                        ),
                     ),
                 ),
             );

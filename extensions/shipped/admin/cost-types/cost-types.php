@@ -82,6 +82,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Types' ) ) {
                 'add' => sprintf( esc_html__( 'Add to previous %s', 'table-rate-shipping-rates' ), $module_text )
             );
 
+            if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+
+                $options[ 'prem_1' ] = sprintf( esc_html__( 'Subtract from previous %s (Premium)', 'table-rate-shipping-rates' ), $module_text );
+                $options[ 'prem_2' ] = sprintf( esc_html__( 'Override previous %s (Premium)', 'table-rate-shipping-rates' ), $module_text );
+            }
+
             return apply_filters( 'wtars_shipped_admin/get-cost-add-methods', $options, $args );
         }
 

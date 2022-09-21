@@ -17,7 +17,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Data_List_Checkout_Message_Modes' ) && 
         public function get_data_list( $result, $data_args ) {
 
             $result[ 'all' ] = esc_html__( 'Apply all valid notifications', 'table-rate-shipping-rates' );
-            
+            $result[ 'prem_1' ] = esc_html__( 'Apply first valid notification (Premium)', 'table-rate-shipping-rates' );
+            $result[ 'prem_2' ] = esc_html__( 'Apply last valid notification (Premium)', 'table-rate-shipping-rates' );
             $result[ 'no' ] = esc_html__( 'Do not apply any notification', 'table-rate-shipping-rates' );
 
             return $result;

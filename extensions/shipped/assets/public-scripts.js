@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
             shipped_fee_tips.removeClass('wtars_shipped_tooltip_mv');
         });
 
-        $('.wtars_shipped_tooltip').tipTip({defaultPosition: 'top'});
+        $('.wtars_shipped_tooltip').tipTip({ defaultPosition: 'top' });
     }
 
 });

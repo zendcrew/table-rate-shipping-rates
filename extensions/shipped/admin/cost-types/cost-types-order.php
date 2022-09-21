@@ -26,6 +26,13 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Order' ) ) {
 
             $in_types[ 'fixed_cost' ] = sprintf( esc_html__( 'Fixed %s', 'table-rate-shipping-rates' ), $args[ 'format_text' ] );
 
+            if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+                $in_types[ 'prem_1' ] = sprintf( esc_html__( '%s per shipping classes (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
+                $in_types[ 'prem_2' ] = sprintf( esc_html__( '%s per categories (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
+                $in_types[ 'prem_3' ] = sprintf( esc_html__( '%s per tags (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
+                $in_types[ 'prem_4' ] = sprintf( esc_html__( 'Percentage %s (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_text' ] );
+            }
+
             return $in_types;
         }
 

@@ -4,7 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( !class_exists( 'WTARS_Shipped_WOOCS' ) && class_exists( 'WOOCS' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+if ( !class_exists( 'WTARS_Shipped_WOOCS' ) && class_exists( 'WOOCS' ) && !defined( 'WC_WOOMODE_PREMIUM' ) ) {
 
     require_once 'woocs-cart.php';
     require_once 'woocs-package.php';

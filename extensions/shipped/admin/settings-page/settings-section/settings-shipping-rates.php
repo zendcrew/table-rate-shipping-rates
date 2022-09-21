@@ -99,6 +99,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Settings' ) ) {
             return array(
                 'no' => esc_html__( 'Not taxable', 'table-rate-shipping-rates' ),
                 'ship_rates' => esc_html__( 'Use shipping tax rates only', 'table-rate-shipping-rates' ),
+                'prem_1' => esc_html__( 'Use regular tax rates (Premium)', 'table-rate-shipping-rates' ),
             );
         }
 

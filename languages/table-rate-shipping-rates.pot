@@ -1,0 +1,1974 @@
+# Copyright (C) 2022 zendcrew
+# This file is distributed under the same license as the Shipped - WooCommerce Table Rate Shipping plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/table-rate-shipping\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-09-18T22:48:17+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: table-rate-shipping-rates\n"
+
+#. Plugin Name of the plugin
+msgid "Shipped - WooCommerce Table Rate Shipping"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/table-rate-shipping-rates"
+msgstr ""
+
+#. Description of the plugin
+msgid "Create multiple shipping rates & handling fees based on product rules and cart conditions"
+msgstr ""
+
+#. Author of the plugin
+msgid "zendcrew"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://codecanyon.net/user/zendcrew/portfolio"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:19
+msgid "Billing Address"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:26
+msgid "Billing Continents (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:27
+msgid "Billing Countries (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:28
+msgid "Billing States (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:29
+msgid "Billing Cities (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing-address.php:30
+msgid "Billing Postcode / ZIP (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing.php:19
+msgid "Billing"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-billing.php:26
+msgid "Payment Methods (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:19
+msgid "Customer Values"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:28
+msgid "Coupons Used (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:29
+msgid "Totals Spent (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:30
+msgid "Last Order Date (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:31
+msgid "Last Order Totals (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:32
+msgid "Average (%s) Per Order (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:33
+msgid "Maximum (%s) Per Order (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:34
+msgid "Minimum (%s) Per Order (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:35
+msgid "Number Of Orders (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:36
+msgid "Number Of Reviews (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:22
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:31
+msgid "Customers"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:32
+msgid "Customer Is Logged In"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:33
+msgid "User Roles (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:34
+msgid "User Capabilities (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:35
+msgid "User Meta Field (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:48
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:53
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:90
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:127
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:164
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:49
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:79
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:100
+msgid "Any in the list"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:49
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:57
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:94
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:131
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:168
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:50
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:80
+msgid "None in the list"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:60
+msgid "Search users..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:85
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:171
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:68
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:57
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:61
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:78
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:171
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:52
+msgid "No"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-customer.php:86
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:172
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:106
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:69
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:58
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:62
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:79
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:172
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:53
+msgid "Yes"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:19
+msgid "Dates &amp; Times"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:28
+msgid "Date (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:29
+msgid "Time (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:30
+msgid "Date &amp; Time (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:31
+msgid "Days Of Week (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:32
+msgid "Days Of Month (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-datetime.php:33
+msgid "Months Of Year (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-geolocation.php:19
+msgid "GeoIP Locations"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-geolocation.php:25
+msgid "GeoIP Continents (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-geolocation.php:26
+msgid "GeoIP Countries (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:25
+msgid "Cart &amp; Package Totals"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:34
+msgid "Totals - %s"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:47
+#: extensions/shipped/admin/condition-types/condition-types-order.php:47
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:52
+msgid "Between"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:48
+#: extensions/shipped/admin/condition-types/condition-types-order.php:48
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:53
+msgid "More than or equal to"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:49
+#: extensions/shipped/admin/condition-types/condition-types-order.php:49
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:54
+msgid "More than"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:50
+#: extensions/shipped/admin/condition-types/condition-types-order.php:50
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:55
+msgid "Less than or equal to"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:51
+#: extensions/shipped/admin/condition-types/condition-types-order.php:51
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:56
+msgid "Less than"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:52
+#: extensions/shipped/admin/condition-types/condition-types-order.php:52
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:57
+msgid "Equal to"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:53
+#: extensions/shipped/admin/condition-types/condition-types-order.php:53
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:58
+msgid "Not equal to"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:65
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:86
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:107
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:70
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:91
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:112
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:209
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:209
+msgid "0.00"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:157
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:164
+#: extensions/shipped/admin/data-list/data-list-checkout-totals.php:53
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:175
+msgid "Order Totals"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:21
+msgid "Cart &amp; Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:30
+msgid "Cart Total Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:31
+msgid "Package Total Quantity"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:32
+msgid "Number Of Cart Items (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:33
+msgid "Number Of Package Items (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:34
+msgid "Applied Coupons (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-order.php:65
+#: extensions/shipped/admin/condition-types/condition-types-order.php:86
+#: extensions/shipped/admin/condition-types/condition-types-order.php:107
+msgid "0"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:19
+msgid "Package Item Quantities"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:26
+msgid "Products Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:27
+msgid "Variations Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:28
+msgid "Categories Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:29
+msgid "Tags Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:30
+msgid "Attributes Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:31
+msgid "Tax Classes Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:32
+msgid "Shipping Classes Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-quantity.php:33
+msgid "Product Meta Fields Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:18
+msgid "Package Item Subtotals"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:25
+msgid "Products Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:26
+msgid "Variations Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:27
+msgid "Categories Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:28
+msgid "Tags Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:29
+msgid "Attributes Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:30
+msgid "Tax Classes Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:31
+msgid "Shipping Classes Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-subtotals.php:32
+msgid "Product Meta Fields Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:19
+msgid "Package Item Discounted Totals"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:26
+msgid "Products Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:27
+msgid "Variations Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:28
+msgid "Categories Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:29
+msgid "Tags Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:30
+msgid "Attributes Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:31
+msgid "Tax Classes Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:32
+msgid "Shipping Classes Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items-totals.php:33
+msgid "Product Meta Fields Discounted Total (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:24
+msgid "Items In Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:33
+msgid "Products In Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:34
+msgid "Variations In Package (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:35
+msgid "Categories In Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:36
+msgid "Tags In Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:37
+msgid "Attributes In Package (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:38
+msgid "Tax Classes In Package (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:39
+msgid "Shipping Classes In Package"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:40
+msgid "Product Meta Fields In Package (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:54
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:91
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:128
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:165
+msgid "All in the list"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:55
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:92
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:129
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:166
+msgid "Only in the list"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:56
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:93
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:130
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:167
+msgid "Only all in the list"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:68
+msgid "Search products..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:105
+msgid "Search categories..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:142
+msgid "Search tags..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-items.php:178
+msgid "Search shipping classes..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:28
+msgid "Package Weight (%s)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:39
+msgid "Package Weight - %s (%s)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:162
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:169
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:44
+msgid "Weight"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:19
+msgid "Purchase History Quantities"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:26
+msgid "Purchased Products Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:27
+msgid "Purchased Variations Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:28
+msgid "Purchased Categories Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:29
+msgid "Purchased Tags Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-quantity.php:30
+msgid "Purchased Attributes Quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:19
+msgid "Purchase History Subtotals"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:26
+msgid "Purchased Products Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:27
+msgid "Purchased Variations Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:28
+msgid "Purchased Categories Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:29
+msgid "Purchased Tags Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history-subtotal.php:30
+msgid "Purchased Attributes Subtotal (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:19
+msgid "Purchase History"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:26
+msgid "Purchased Products (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:27
+msgid "Purchased Variations (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:28
+msgid "Purchased Categories (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:29
+msgid "Purchased Tags (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-purchase-history.php:30
+msgid "Purchased Attributes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:23
+msgid "Shipping Address"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:32
+msgid "Shipping Continents (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:33
+msgid "Shipping Countries"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:34
+msgid "Shipping States"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:35
+msgid "Shipping Cities (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:36
+msgid "Shipping Postcode / ZIP"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:63
+msgid "Shipping Countries..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:93
+msgid "Shipping States..."
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:109
+msgid "Match"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:110
+msgid "Not match"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping-address.php:121
+msgid "e.g 1815, 870*, [1870 - 9999], DSE, LDS"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping.php:24
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:37
+msgid "Shipping"
+msgstr ""
+
+#: extensions/shipped/admin/condition-types/condition-types-shipping.php:31
+msgid "Needs Shipping (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-height.php:19
+msgid "%s Per Height"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-height.php:28
+msgid "%s per height (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-height.php:29
+msgid "%s x height (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-length.php:19
+msgid "%s Per Length"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-length.php:28
+msgid "%s per length (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-length.php:29
+msgid "%s x length (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:20
+msgid "%s Per Items"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:27
+msgid "%s per line item (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:28
+msgid "%s per item quantity (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:29
+msgid "%s per product (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:30
+msgid "%s per variation (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:31
+msgid "Percentage %s per item (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:20
+msgid "%s Per Order"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:27
+msgid "Fixed %s"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:30
+msgid "%s per shipping classes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:31
+msgid "%s per categories (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:32
+msgid "%s per tags (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-order.php:33
+msgid "Percentage %s (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:19
+msgid "%s Per Surface Area"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:28
+msgid "%s per surface area (square %s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:29
+msgid "%s x surface area (square %s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:19
+msgid "%s Per Volume"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:28
+msgid "%s per volume (cubic %s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:29
+msgid "%s x volume (cubic %s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:20
+msgid "%s Per Weight"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:29
+msgid "%s per weight (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:30
+msgid "%s x weight (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-width.php:19
+msgid "%s Per Width"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-width.php:28
+msgid "%s per width (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types-width.php:29
+msgid "%s x width (%s) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types.php:74
+msgid "costs"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types.php:78
+msgid "fees"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types.php:82
+msgid "Add to previous %s"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types.php:87
+msgid "Subtract from previous %s (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/cost-types/cost-types.php:88
+msgid "Override previous %s (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-methods.php:19
+msgid "Apply this and other fees"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-methods.php:20
+msgid "Apply only this fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-methods.php:21
+msgid "Apply if other fees are valid (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-methods.php:22
+msgid "Apply if no other valid fees (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:19
+msgid "Apply all valid fees"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:20
+msgid "Apply first valid fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:21
+msgid "Apply last valid fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:22
+msgid "Apply the most expensive fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:23
+msgid "Apply the cheapest fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fee-modes.php:24
+msgid "Do not apply any fee"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-fees.php:25
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:133
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:144
+#: extensions/shipped/public/modules/cart-fees/cart-fees-engine.php:110
+msgid "Handling Fee"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-methods.php:19
+msgid "Apply this and other notifications"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-methods.php:20
+msgid "Apply only this notification (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-methods.php:21
+msgid "Apply if other notifications are valid (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-methods.php:22
+msgid "Apply if no other valid notifications (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-modes.php:19
+msgid "Apply all valid notifications"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-modes.php:20
+msgid "Apply first valid notification (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-modes.php:21
+msgid "Apply last valid notification (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-cart-message-modes.php:22
+msgid "Do not apply any notification"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-checkout-totals.php:41
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:62
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:159
+msgid "Cart Subtotals"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-checkout-totals.php:45
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:165
+msgid "Package Totals"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-methods.php:19
+msgid "Apply this and other rates"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-methods.php:20
+msgid "Apply only this rate (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-methods.php:21
+msgid "Apply if other rates are valid (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-methods.php:22
+msgid "Apply if no other valid rates (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:19
+msgid "Apply all valid rates"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:20
+msgid "Apply first valid rate (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:21
+msgid "Apply last valid rate (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:22
+msgid "Apply the most expensive rate (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:23
+msgid "Apply the cheapest rate (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rate-modes.php:24
+msgid "Do not apply any rate"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-shipping-rates.php:25
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:132
+#: extensions/shipped/public/modules/shipping-rates/shipping-rates-engine.php:101
+msgid "Shipping Rate"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-tax-classes.php:17
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:83
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:90
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:93
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:100
+msgid "Not taxable"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-tax-classes.php:18
+msgid "Based on package items tax option"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-tax-classes.php:22
+msgid "Standard rates (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/data-list/data-list-tax-classes.php:31
+msgid " (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:39
+msgid "shipping rate"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:43
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:119
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:207
+msgid "Fee"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:45
+msgid "handling fee"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:50
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:65
+msgid "Message"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:52
+msgid "message"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:60
+msgid "%s Conditions"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:61
+msgid "List of conditions in which this %s should apply, empty conditions will apply this %s in any scenario"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:65
+msgid "All conditions should match"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:66
+msgid "At least one condition should match (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:81
+msgid "Conditions"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:82
+msgid "List of conditions in which this shipping cost should apply, all specified conditions must match"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:105
+msgid "Method Conditions"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:106
+msgid "List of conditions in which this shipping method should apply, empty conditions will apply this shipping method in any scenario"
+msgstr ""
+
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:142
+msgid "Add Condition"
+msgstr ""
+
+#: extensions/shipped/admin/notices/notices-view-pro.php:2
+#: extensions/shipped/admin/notices/notices-view.php:2
+msgid "Hey, I noticed you having been using <strong>Shipped - WooCommerce Table Rate Shipping</strong>, that’s awesome! Could you please do me a favor and give it a 5-star rating to help us spread the word?"
+msgstr ""
+
+#: extensions/shipped/admin/notices/notices-view-pro.php:4
+#: extensions/shipped/admin/notices/notices-view.php:4
+msgid "Yes! You deserve it"
+msgstr ""
+
+#: extensions/shipped/admin/notices/notices-view-pro.php:5
+#: extensions/shipped/admin/notices/notices-view.php:5
+msgid "Nah, maybe later"
+msgstr ""
+
+#: extensions/shipped/admin/notices/notices-view-pro.php:6
+#: extensions/shipped/admin/notices/notices-view.php:6
+msgid "I already did"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:57
+msgid "Shipping Fees"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:58
+msgid "List of shipping fees to apply, empty list will apply zero fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:89
+msgid "Add Fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:102
+msgid "Shipping Fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:120
+msgid "fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:141
+msgid "Fee Type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:142
+msgid "Controls handling fee type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:156
+msgid "Controls how the fee should be added to previously calculated fees"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:157
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:157
+msgid "Addition / Subtraction"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:167
+msgid "Determines whether no conditions should be validated before fee calculation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:168
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:168
+msgid "Validate Conditions"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:205
+msgid "Controls the fee to apply, based on fee type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:223
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:223
+msgid "Tax Class"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:224
+msgid "Controls fee tax class"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-extra-costs.php:56
+msgid "Extra Fees"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-extra-costs.php:57
+msgid "List of extra fees to apply, empty list will apply zero fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-max.php:71
+msgid "Fees Limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-max.php:72
+msgid "Controls handling fees limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-max.php:76
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:57
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-max.php:75
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:57
+msgid "No limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-max.php:77
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:58
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-max.php:76
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:58
+msgid "Fixed ([0]) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-max.php:78
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:59
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-max.php:77
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:59
+msgid "Percentage (%) (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:28
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:27
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:82
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:37
+msgid "Adds a private note for reference purposes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:30
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:29
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:84
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:39
+msgid "Admin Note"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:32
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:122
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:161
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:31
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:75
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:56
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:86
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:31
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:41
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:76
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:109
+msgid "Type here..."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:39
+msgid "Fee Method"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:40
+msgid "Controls how the handling fee should be applied"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:61
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:83
+msgid "Tax Calculation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:62
+msgid "Controls handling fee tax calculations"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:65
+msgid "Calculate fee exclusive of taxes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:66
+msgid "Calculate fee inclusive of taxes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:83
+#: extensions/shipped/admin/settings-page/settings-page.php:140
+#: extensions/shipped/admin/settings-page/settings-page.php:385
+msgid "Shipping Rates"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:84
+msgid "Controls which shipping rates the fee should be part of"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:88
+msgid "Select shipping rates..."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:96
+msgid "Equals To"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:97
+msgid "Controls how the shipping rates should be included"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:101
+msgid "Any NOT in the list"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:118
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:133
+msgid "Controls handling fee title on cart and checkout pages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:120
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:132
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:29
+msgid "Title"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:156
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:179
+msgid "Controls handling fee tooltip on cart and checkout pages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:158
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:178
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:73
+msgid "Tooltip"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:197
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:203
+msgid "Apply as shipping cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:198
+msgid "Apply as cart fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:204
+msgid "Apply as cart fee (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:52
+msgid "Cost Limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:53
+msgid "Controls handling fees limits"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:68
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:45
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:68
+msgid "Apply Mode"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:69
+msgid "Controls handling fees apply mode"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:104
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:105
+msgid "Please upgrade to premium version in order to add more rates"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:117
+msgid "New Handling Fee"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:186
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:144
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:174
+msgid "Enable"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-section.php:187
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:145
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:175
+msgid "Disable"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:38
+msgid "Notification Type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:39
+msgid "Controls cart notification type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:49
+msgid "Always Show"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:50
+msgid "Always show message"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:66
+msgid "A text to display on the cart / checkout pages. html, shortcodes and {{Parameter ID}} can also by included in the message."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:92
+msgid "Error message"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:93
+msgid "Notice message (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:94
+msgid "Success message (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-options.php:105
+msgid "No (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-parameters.php:57
+msgid "Message Parameters"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-panel-parameters.php:58
+msgid "Specify what parameters needs to be included in the message"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:46
+msgid "Controls cart message apply mode"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:74
+msgid "Please upgrade to premium version in order to add more messages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:87
+msgid "New Cart Notification"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:101
+#: extensions/shipped/admin/settings-page/checkout-messages-section/checkout-messages-section.php:102
+msgid "Cart Notification"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:48
+msgid "Lite v%s"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:52
+msgid "Premium v%s"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:70
+msgid "Shipped"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:72
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:55
+#: extensions/shipped/shipping-method.php:97
+msgid "Table Rate Shipping & Fees"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:80
+#: extensions/shipped/admin/settings-page/settings-page.php:82
+msgid "Done!!"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:81
+msgid "Unable to save your settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:83
+msgid "Unable to reset reset your settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:84
+msgid "invalid nonce"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:92
+#: extensions/shipped/admin/settings-page/settings-page.php:388
+msgid "Import / Export"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:94
+msgid "Import Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:95
+msgid "Here you can import new settings. Simply paste the settings url or data on the field below."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:96
+msgid "Import from url"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:97
+msgid "Paste the url to another site's settings below and click the 'Import Now' button."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:98
+msgid "Paste the url to another site's settings here..."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:99
+msgid "Import Data"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:100
+msgid "Paste your backup settings below and click the 'Import Now' button."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:101
+msgid "Paste your backup settings here..."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:102
+msgid "Import Now"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:103
+msgid "Warning! This will override all existing settings. proceed with caution!"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:106
+msgid "Export Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:107
+msgid "Here you can backup your current settings. You can later use it to restore your settings."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:108
+msgid "Download Data"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:109
+msgid "Export url"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:110
+msgid "Copy the url below, use it to transfer the settings from this site."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:111
+msgid "Export Data"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:112
+msgid "Copy the data below, use it as your backup."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:116
+#: extensions/shipped/admin/settings-page/settings-page.php:121
+msgid "Reset All"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:117
+#: extensions/shipped/admin/settings-page/settings-page.php:122
+msgid "Reset Section"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:118
+#: extensions/shipped/admin/settings-page/settings-page.php:123
+msgid "Save Section"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:134
+#: extensions/shipped/admin/settings-page/settings-page.php:384
+msgid "Method Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:146
+#: extensions/shipped/admin/settings-page/settings-page.php:386
+msgid "Handling Fees"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:152
+#: extensions/shipped/admin/settings-page/settings-page.php:387
+msgid "Cart Notifications"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:191
+msgid "This feature is available on premium version"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:192
+msgid "Premium Feature"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:197
+msgid "Available on premium version"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:284
+msgid "Shipped Premium"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:286
+msgid "Required by %s"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:295
+#: extensions/shipped/admin/settings-page/settings-page.php:313
+msgid "Documentation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:301
+msgid "Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:325
+msgid "Help"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:333
+msgid "Premium Version"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:352
+msgid "Facebook"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:359
+msgid "LinkedIn"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:366
+msgid "Stack Overflow"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:373
+msgid "Instagram"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:39
+msgid "Handling Fees Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:40
+msgid "Use these settings to control handling fees basic settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:53
+msgid "Determines whether or not to use tax rates applied to shipping only for fees tax rates"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:54
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:64
+msgid "Tax Rate Options"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:64
+msgid "Enables handling fees on cart page"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:65
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:54
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:75
+msgid "Enable On \"Cart\" Page"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:84
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:91
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:94
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:101
+msgid "Use shipping tax rates only"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:85
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:95
+msgid "Use regular tax rates"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-cart-fees.php:92
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:102
+msgid "Use regular tax rates (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:39
+msgid "Cart Notifications Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:40
+msgid "Use these settings to control cart notification basic settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-checkout-messages.php:53
+msgid "Enables Cart Notifications on cart page"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:43
+msgid "Debug &amp; Cache Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:44
+msgid "Use these settings to enable debug mode or specify how shipping data should be cached.<br /> Debug mode will disable caching."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:57
+msgid "Enables debug mode for testing purposes only"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:58
+msgid "Enable Debug"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:71
+msgid "Specify when shipping data should be cached based on parameters"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:72
+msgid "Cache Parameters"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:96
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:102
+msgid "Package items"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:97
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:103
+msgid "Cart items"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:104
+msgid "Applied coupons (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:105
+msgid "Billing address (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:106
+msgid "Shipping address (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:107
+msgid "Payment methods (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:108
+msgid "Year (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:109
+msgid "Month (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:110
+msgid "Day (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:111
+msgid "Hour (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:112
+msgid "30 minutes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:113
+msgid "10 minutes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-debug-cache.php:114
+msgid "Minute (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:39
+msgid "Hide Shipping Methods"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:40
+msgid "Use these settings to hide this or other shipping methods"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:53
+msgid "Controls how shipping methods should hidden"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:54
+msgid "Mode"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:58
+msgid "Do not hide any method"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:59
+msgid "Hide other shipping methods"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:60
+msgid "Hide this shipping method"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:71
+msgid "The other shipping methods to hide"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-hide-shipping-methods.php:72
+msgid "Other Shipping Methods"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:38
+msgid "Shipping Rates Settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:39
+msgid "Use these settings to control shipping rates basic settings"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:53
+msgid "Controls the method title for reference purposes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:54
+msgid "Method Title"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:63
+msgid "Determines whether or not to use tax rates applied to shipping only."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:74
+msgid "Enables shipping rates on cart page"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:63
+msgid "Title here..."
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:91
+msgid "Cart &amp; Package Totals Calculation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:92
+msgid "Use these settings to control what are included in the \"based on\" percentage totals &amp; the \"cart &amp; package totals\" conditions"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:110
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:167
+msgid "Please upgrade to premium version in order to add more options"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:121
+msgid "Add Option"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:131
+msgid "Add subtotal"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:132
+msgid "Add subtotal Tax"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:133
+msgid "Add package total"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:134
+msgid "Add package total Tax"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:139
+msgid "Add cart coupons (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:140
+msgid "Add cart coupons taxes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:141
+msgid "Subtract cart coupons (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:142
+msgid "Subtract cart coupon taxes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:144
+msgid "Add package discounts (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:145
+msgid "Add package discounts taxes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:146
+msgid "Subtract package discounts (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:147
+msgid "Subtract package discounts taxes (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:55
+msgid "Volumetric Weight"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:93
+msgid "Volumetric Weight Formula"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:94
+msgid "Determines how volumetric weights should be calculated"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:98
+msgid "No formula"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:99
+msgid "Weight = ( L x W x H ) / DIM Factor (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:100
+msgid "Weight = ( L x W x H ) x DIM Factor (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:119
+msgid "Round Weight"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:120
+msgid "Determines how weights or volumetric weight should be rounded"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:124
+msgid "Do not round weight"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:125
+msgid "Round weight up to whole unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:126
+msgid "Round weight down to whole unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:127
+msgid "Round weight to the nearest whole unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:128
+msgid "Round weight up to half unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:129
+msgid "Round weight down to half unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:130
+msgid "Round weight to the nearest half unit (Premium)"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:147
+msgid "Weights &amp; Volumetric Weight Calculation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:148
+msgid "Use these settings to control how item weights should be calculated"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:181
+msgid "Add Calculator"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:58
+msgid "Shipping Costs"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:59
+msgid "List of shipping costs to apply, empty list will apply zero cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:89
+msgid "Add Cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:102
+msgid "Shipping Cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:119
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:207
+msgid "Cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:120
+msgid "cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:141
+msgid "Cost Type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:142
+msgid "Controls shipping cost type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:156
+msgid "Controls how the shipping cost should be added to previously calculated costs"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:167
+msgid "Determines whether no conditions should be validated before cost calculation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:205
+msgid "Controls the cost to apply, based on cost type"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:224
+msgid "Controls cost tax class"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-extra-costs.php:56
+msgid "Grouped Shipping Costs"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-extra-costs.php:57
+msgid "List of grouped shipping costs to apply, empty list will apply zero cost"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-max.php:70
+msgid "Costs Limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-max.php:71
+msgid "Controls shipping rate costs limit"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:27
+msgid "Controls shipping rate title on cart and checkout pages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:48
+msgid "Default Selection"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:49
+msgid "Controls shipping rate default selection"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:71
+msgid "Controls shipping rate tooltip on cart and checkout pages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:84
+msgid "Controls shipping rate tax calculations"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:87
+msgid "Calculate shipping cost exclusive of taxes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:88
+msgid "Calculate shipping cost inclusive of taxes"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:105
+msgid "Controls shipping rate description on cart and checkout pages"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-options.php:107
+msgid "Description"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:52
+msgid "Cost Limit Per Rate"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:53
+msgid "Controls cost limits per every shipping rates"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:69
+msgid "Controls shipping rate apply mode"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:118
+msgid "New Shipping Rate"
+msgstr ""
+
+#: extensions/shipped/shipping-method.php:13
+msgid "Table Rate Shipping"
+msgstr ""
+
+#: extensions/shipped/shipping-method.php:14
+msgid "Table Rate Shipping & Handling Fees for WooCommerce"
+msgstr ""
+
+#: table-rate-shipping-rates.php:70
+msgid "WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated."
+msgstr ""

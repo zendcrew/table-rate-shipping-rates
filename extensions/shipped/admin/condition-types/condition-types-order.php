@@ -12,7 +12,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order' ) ) {
 
             add_filter( 'wtars_shipped_admin/get-condition-groups', array( $this, 'get_groups' ), 60, 2 );
             add_filter( 'wtars_shipped_admin/get-order-group-conditions', array( $this, 'get_conditions' ), 10, 2 );
-
+            
             add_filter( 'wtars_shipped_admin/get-package_quantity-condition-fields', array( $this, 'get_quantity_fields' ), 10, 2 );
         }
 
@@ -27,14 +27,18 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order' ) ) {
 
             if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
+                $in_list[ 'prem_1' ] = esc_html__( 'Cart Total Quantity (Premium)', 'table-rate-shipping-rates' );
                 $in_list[ 'package_quantity' ] = esc_html__( 'Package Total Quantity', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_2' ] = esc_html__( 'Number Of Cart Items (Premium)', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_3' ] = esc_html__( 'Number Of Package Items (Premium)', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_4' ] = esc_html__( 'Applied Coupons (Premium)', 'table-rate-shipping-rates' );
             }
 
             return $in_list;
         }
-
+        
         public function get_quantity_fields( $in_fields, $args ) {
-
+            
             $in_fields[] = array(
                 'id' => 'compare',
                 'type' => 'select2',
@@ -52,7 +56,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order' ) ) {
                 'box_width' => '44%',
                 'fold_id' => 'order_quantity',
             );
-
+            
             $in_fields[] = array(
                 'id' => 'quantity',
                 'type' => 'textbox',
@@ -73,7 +77,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order' ) ) {
                     'clear' => false,
                 ),
             );
-
+            
             $in_fields[] = array(
                 'id' => 'from_quantity',
                 'type' => 'textbox',
@@ -94,7 +98,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order' ) ) {
                     'clear' => false,
                 ),
             );
-
+            
             $in_fields[] = array(
                 'id' => 'to_quantity',
                 'type' => 'textbox',

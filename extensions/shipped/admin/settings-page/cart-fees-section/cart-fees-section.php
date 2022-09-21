@@ -28,6 +28,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cart_Fees_Section' ) ) {
 
         public function get_settings_fields( $in_fields, $section_id ) {
 
+            $currency = get_woocommerce_currency_symbol( get_woocommerce_currency() );
+
             $in_fields[] = array(
                 'id' => 'cart_fees_settings',
                 'type' => 'panel',
@@ -53,6 +55,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cart_Fees_Section' ) ) {
                                 'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                                 'options' => array(
                                     'no' => esc_html__( 'No limit', 'table-rate-shipping-rates' ),
+                                    'prem_1' => str_replace( '[0]', $currency, esc_html__( 'Fixed ([0]) (Premium)', 'table-rate-shipping-rates' ) ),
+                                    'prem_2' => esc_html__( 'Percentage (%) (Premium)', 'table-rate-shipping-rates' ),
                                 ),
                                 'width' => '100%',
                                 'fold_id' => 'limit_type',

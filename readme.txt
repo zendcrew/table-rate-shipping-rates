@@ -106,8 +106,8 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 * Discounted Subtotal
 * Discounted Subtotal (excluding tax)
 * **Product Weights**
-* Product Weight – Weight
-* Product Weight – Volumetric Weight Calculator (based on DIM Factors)
+* Product Weight â€“ Weight
+* Product Weight â€“ Volumetric Weight Calculator (based on DIM Factors)
 * **Product Dimensions**
 * Product Length
 * Product Width
@@ -127,9 +127,9 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 * Product Meta Field
 * **Product Author (Multi-Vendor)**
 * Product Authors
-* Product Author’s Role
-* Product Author’s Capability
-* Product Author’s Meta Fields
+* Product Authorâ€™s Role
+* Product Authorâ€™s Capability
+* Product Authorâ€™s Meta Fields
 
 = Cart / Package Conditional Logics =
 
@@ -159,11 +159,11 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 * Number Of Package Items
 * Applied Coupons
 * **Shipping Cost Based On Cart & Package Totals**
-* Totals – Cart Subtotals (Dynamically generated based on settings)
-* Totals – Package Totals (Dynamically generated based on settings)
+* Totals â€“ Cart Subtotals (Dynamically generated based on settings)
+* Totals â€“ Package Totals (Dynamically generated based on settings)
 * **Shipping Cost Based On Package Weights**
-* Package Weight – Weight
-* Package Weight – Volumetric Weight Calculator (based on DIM Factors)
+* Package Weight â€“ Weight
+* Package Weight â€“ Volumetric Weight Calculator (based on DIM Factors)
 * **Shipping Cost Based On Items In Package**
 * Products In Package
 * Variations In Package

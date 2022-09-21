@@ -31,9 +31,13 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Package_Items' ) ) {
             if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
                 $in_list[ 'package_ids' ] = esc_html__( 'Products In Package', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_1' ] = esc_html__( 'Variations In Package (Premium)', 'table-rate-shipping-rates' );
                 $in_list[ 'package_cats' ] = esc_html__( 'Categories In Package', 'table-rate-shipping-rates' );
                 $in_list[ 'package_tags' ] = esc_html__( 'Tags In Package', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_2' ] = esc_html__( 'Attributes In Package (Premium)', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_3' ] = esc_html__( 'Tax Classes In Package (Premium)', 'table-rate-shipping-rates' );
                 $in_list[ 'package_sh_classes' ] = esc_html__( 'Shipping Classes In Package', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_4' ] = esc_html__( 'Product Meta Fields In Package (Premium)', 'table-rate-shipping-rates' );
             }
 
             return $in_list;

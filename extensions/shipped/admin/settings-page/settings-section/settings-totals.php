@@ -134,6 +134,19 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Totals_Settings' ) ) {
                 'package_total_tax' => esc_html__( 'Add package total Tax', 'table-rate-shipping-rates' ),
             );
 
+            if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+
+                $options[ 'prem_1' ] = esc_html__( 'Add cart coupons (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_2' ] = esc_html__( 'Add cart coupons taxes (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_3' ] = esc_html__( 'Subtract cart coupons (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_4' ] = esc_html__( 'Subtract cart coupon taxes (Premium)', 'table-rate-shipping-rates' );
+
+                $options[ 'prem_5' ] = esc_html__( 'Add package discounts (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_6' ] = esc_html__( 'Add package discounts taxes (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_7' ] = esc_html__( 'Subtract package discounts (Premium)', 'table-rate-shipping-rates' );
+                $options[ 'prem_8' ] = esc_html__( 'Subtract package discounts taxes (Premium)', 'table-rate-shipping-rates' );
+            }
+
             return apply_filters( 'wtars_shipped_admin/get-totals-options', $options );
         }
 

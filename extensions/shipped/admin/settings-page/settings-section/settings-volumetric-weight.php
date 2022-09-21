@@ -96,6 +96,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Volumetric_Weight_Settings' ) ) {
                         'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                         'options' => array(
                             'no' => esc_html__( 'No formula', 'table-rate-shipping-rates' ),
+                            'prem_1' => esc_html__( 'Weight = ( L x W x H ) / DIM Factor (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_2' => esc_html__( 'Weight = ( L x W x H ) x DIM Factor (Premium)', 'table-rate-shipping-rates' ),
                         ),
                         'width' => '100%',
                         'fold_id' => 'weight_formula',
@@ -120,6 +122,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Volumetric_Weight_Settings' ) ) {
                         'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                         'options' => array(
                             'no' => esc_html__( 'Do not round weight', 'table-rate-shipping-rates' ),
+                            'prem_1' => esc_html__( 'Round weight up to whole unit (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_2' => esc_html__( 'Round weight down to whole unit (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_3' => esc_html__( 'Round weight to the nearest whole unit (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_4' => esc_html__( 'Round weight up to half unit (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_5' => esc_html__( 'Round weight down to half unit (Premium)', 'table-rate-shipping-rates' ),
+                            'prem_6' => esc_html__( 'Round weight to the nearest half unit (Premium)', 'table-rate-shipping-rates' ),
                         ),
                         'width' => '100%',
                     ),

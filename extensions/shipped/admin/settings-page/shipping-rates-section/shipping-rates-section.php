@@ -28,6 +28,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Section' ) ) {
 
         public function get_settings_fields( $in_fields, $section_id ) {
 
+            $currency = get_woocommerce_currency_symbol( get_woocommerce_currency() );
+
             $in_fields[] = array(
                 'id' => 'shipping_rates_settings',
                 'type' => 'panel',
@@ -53,6 +55,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Section' ) ) {
                                 'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                                 'options' => array(
                                     'no' => esc_html__( 'No limit', 'table-rate-shipping-rates' ),
+                                    'prem_1' => str_replace( '[0]', $currency, esc_html__( 'Fixed ([0]) (Premium)', 'table-rate-shipping-rates' ) ),
+                                    'prem_2' => esc_html__( 'Percentage (%) (Premium)', 'table-rate-shipping-rates' ),
                                 ),
                                 'width' => '100%',
                                 'fold_id' => 'limit_type',
@@ -115,7 +119,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Section' ) ) {
                 ),
             );
 
-            return $in_fields;
+            return $this->get_method_condition_field( $in_fields );
         }
 
         public function get_rule_templates( $in_templates, $repeater_args ) {
@@ -187,6 +191,25 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Shipping_Rates_Section' ) ) {
             }
 
             return $options;
+        }
+
+        private function get_method_condition_field( $in_fields ) {
+
+            $args[ 'module' ] = 'method';
+            $args[ 'sub_module' ] = 'method';
+
+            $in_fields[] = array(
+                'id' => 'method_conditions',
+                'type' => 'panel',
+                'last' => true,
+                'white_panel' => false,
+                'panel_size' => 'smaller',
+                'width' => '100%',
+                'merge_fields' => true,
+                'fields' => apply_filters( 'wtars_shipped_admin/get-method-conditions-fields', array(), $args ),
+            );
+
+            return $in_fields;
         }
 
         private function process_rules( $rules ) {

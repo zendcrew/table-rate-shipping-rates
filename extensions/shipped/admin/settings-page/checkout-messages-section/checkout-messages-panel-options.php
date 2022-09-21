@@ -90,6 +90,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Options' ) ) {
 
             return array(
                 'error' => esc_html__( 'Error message', 'table-rate-shipping-rates' ),
+                'prem_1' => esc_html__( 'Notice message (Premium)', 'table-rate-shipping-rates' ),
+                'prem_2' => esc_html__( 'Success message (Premium)', 'table-rate-shipping-rates' ),
             );
         }
 
@@ -100,6 +102,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Options' ) ) {
             }
 
             return array(
+                'prem_1' => esc_html__( 'No (Premium)', 'table-rate-shipping-rates' ),
                 'yes' => esc_html__( 'Yes', 'table-rate-shipping-rates' ),
             );
         }

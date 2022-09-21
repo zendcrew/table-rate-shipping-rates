@@ -29,8 +29,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Shipping_Address' ) ) {
 
             if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
+                $in_list[ 'prem_1' ] = esc_html__( 'Shipping Continents (Premium)', 'table-rate-shipping-rates' );
                 $in_list[ 'shipping_countries' ] = esc_html__( 'Shipping Countries', 'table-rate-shipping-rates' );
                 $in_list[ 'shipping_states' ] = esc_html__( 'Shipping States', 'table-rate-shipping-rates' );
+                $in_list[ 'prem_2' ] = esc_html__( 'Shipping Cities (Premium)', 'table-rate-shipping-rates' );
                 $in_list[ 'shipping_postcodes' ] = esc_html__( 'Shipping Postcode / ZIP', 'table-rate-shipping-rates' );
             }
 

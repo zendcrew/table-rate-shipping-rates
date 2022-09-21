@@ -26,7 +26,7 @@ if ( is_admin() ) {
     require_once (dirname( __FILE__ ) . '/framework/reon_loader.php');
 }
 
-if ( !defined( 'WTARS_Shipped_FILE' ) ) {
+if ( !defined( 'WTARS_SHIPPED_FILE' ) ) {
 
     define( 'WTARS_SHIPPED_FILE', __FILE__ );
 }
@@ -56,8 +56,7 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
 
         public function init() {
 
-            
-            if ( function_exists( 'WC' ) ) {
+            if ( function_exists( 'WC' ) ) { // Check if WooCommerce is active
 
                 require_once 'extensions/extensions.php';
             } else {
@@ -68,7 +67,7 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
 
         public function missing_notice() {
 
-            echo '<div class="error"><p><strong>' . esc_html__( 'WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated.', 'table-rate-shipping-rates' ) . '</strong></p></div>';
+            echo '<div class="error"><p><strong>' .  esc_html__( 'WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated.', 'table-rate-shipping-rates' ) . '</strong></p></div>';
         }
 
     }

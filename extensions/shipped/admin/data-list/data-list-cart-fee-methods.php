@@ -17,7 +17,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Data_List_Cart_Fee_Methods' ) && !defin
         public function get_data_list( $result, $data_args ) {
 
             $result[ 'with_others' ] = esc_html__( 'Apply this and other fees', 'table-rate-shipping-rates' );
-            
+            $result[ 'prem_1' ] = esc_html__( 'Apply only this fee (Premium)', 'table-rate-shipping-rates' );
+            $result[ 'prem_2' ] = esc_html__( 'Apply if other fees are valid (Premium)', 'table-rate-shipping-rates' );
+            $result[ 'prem_3' ] = esc_html__( 'Apply if no other valid fees (Premium)', 'table-rate-shipping-rates' );
+
             return $result;
         }
 

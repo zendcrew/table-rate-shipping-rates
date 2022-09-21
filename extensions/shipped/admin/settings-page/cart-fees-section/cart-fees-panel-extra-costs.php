@@ -4,19 +4,18 @@ if ( !class_exists( 'Reon' ) ) {
     return;
 }
 
-if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters' ) ) {
+if ( !class_exists( 'WTARS_Shipped_Admin_Cart_Fees_Panel_Extra_Costs' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
-    class WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters {
+    class WTARS_Shipped_Admin_Cart_Fees_Panel_Extra_Costs {
 
         public function __construct() {
-            add_filter( 'wtars_shipped_admin/checkout-messages/get-panels', array( $this, 'get_panel' ), 20, 2 );
-
-            if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
-                add_filter( 'wtars_shipped_admin/checkout-messages/get-panel-parameters-fields', array( $this, 'get_panel_fields' ), 10, 2 );
-            }
+            add_filter( 'wtars_shipped_admin/cart-fees/get-panels', array( $this, 'get_panel' ), 30, 2 );
+            add_filter( 'wtars_shipped_admin/cart-fees/get-panel-extra-costs-fields', array( $this, 'get_panel_fields' ), 10, 2 );
+            
         }
 
         public function get_panel( $in_fields, $args ) {
+
 
             $in_fields[] = array(
                 'id' => 'any_id',
@@ -30,7 +29,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters' ) )
                 'css_class' => 'shipped_panel_calcs',
                 'field_css_class' => array( 'shipped_panel_calcs_field', 'shipped_mid_panel_calcs' ),
                 'last' => true,
-                'fields' => apply_filters( 'wtars_shipped_admin/checkout-messages/get-panel-parameters-fields', array(), $args ),
+                'fields' => apply_filters( 'wtars_shipped_admin/cart-fees/get-panel-extra-costs-fields', array(), $args ),
             );
 
             return $in_fields;
@@ -54,8 +53,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters' ) )
                         'type' => 'paneltitle',
                         'full_width' => true,
                         'center_head' => true,
-                        'title' => esc_html__( 'Message Parameters', 'table-rate-shipping-rates' ),
-                        'desc' => esc_html__( 'Specify what parameters needs to be included in the message', 'table-rate-shipping-rates' ),
+                        'title' => esc_html__( 'Extra Fees', 'table-rate-shipping-rates' ),
+                        'desc' => esc_html__( 'List of extra fees to apply, empty list will apply zero fee', 'table-rate-shipping-rates' ),
                     ),
                     array(
                         'id' => 'is_any',
@@ -76,5 +75,6 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters' ) )
 
     }
 
-    new WTARS_Shipped_Admin_Checkout_Messages_Panel_Parameters();
+    new WTARS_Shipped_Admin_Cart_Fees_Panel_Extra_Costs();
 }
+  

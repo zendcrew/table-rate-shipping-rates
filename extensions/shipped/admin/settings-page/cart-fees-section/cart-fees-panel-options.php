@@ -201,6 +201,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cart_Fees_Panel_Options' ) ) {
 
             return array(
                 'rate_cost' => esc_html__( 'Apply as shipping cost', 'table-rate-shipping-rates' ),
+                'prem_1' => esc_html__( 'Apply as cart fee (Premium)', 'table-rate-shipping-rates' ),
             );
         }
 
