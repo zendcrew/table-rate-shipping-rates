@@ -4,7 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( !class_exists( 'WTARS_Shipped_WMC' ) && function_exists( 'wmc_get_price' ) && !defined( 'WC_WOOMODE_PREMIUM' ) ) {
+if ( !class_exists( 'WTARS_Shipped_WMC' ) && function_exists( 'wmc_get_price' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
     require_once 'wmc-cart.php';
     require_once 'wmc-package.php';

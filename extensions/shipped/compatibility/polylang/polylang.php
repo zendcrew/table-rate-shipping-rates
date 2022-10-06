@@ -4,7 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( !class_exists( 'WTARS_Shipped_Polylang' ) && class_exists( 'Polylang' ) && !defined( 'WC_WOOMODE_PREMIUM' ) ) {
+if ( !class_exists( 'WTARS_Shipped_Polylang' ) && class_exists( 'Polylang' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
     require_once 'polylang-rates.php';
     require_once 'polylang-messages.php';

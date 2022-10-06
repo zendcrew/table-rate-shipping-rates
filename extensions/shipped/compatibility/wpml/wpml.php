@@ -4,7 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( !class_exists( 'WTARS_Shipped_WPML' ) && function_exists( 'SitePress' ) && !defined( 'WC_WOOMODE_PREMIUM' ) ) {
+if ( !class_exists( 'WTARS_Shipped_WPML' ) && function_exists( 'SitePress' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
     require_once 'wpml-rates.php';
     require_once 'wpml-messages.php';
