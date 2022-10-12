@@ -53,7 +53,7 @@ if ( !class_exists( 'WTARS_Shipped_WPML' ) && function_exists( 'SitePress' ) && 
 
             if ( function_exists( 'icl_t' ) ) {
 
-                return icl_t( 'zc-woo-pricely', $string_id, $string_value );
+                return icl_t( 'table-rate-shipping-rates', $string_id, $string_value );
             }
 
             return $string_value;
