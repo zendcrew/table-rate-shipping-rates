@@ -30,7 +30,7 @@ if (!class_exists('ReonUtil')) {
                 }
                 $result = $result . esc_attr($key) . '=' . '"' . esc_attr($at_value) . '"';
                 $cnt--;
-                if ($cnt > 0) {
+                if ($cnt >= 0) {
                     $result = $result . ' ';
                 }
             }
@@ -259,18 +259,6 @@ if (!class_exists('ReonUtil')) {
             return $result;
         }
 
-        public static function start_session() {
-            ob_start();
-            if (function_exists('session_status')) {
-                if (session_status() != PHP_SESSION_ACTIVE) {
-                    session_start();
-                }
-            } else {
-                session_start();
-            }
-            ob_clean();
-        }
-
         public static function get_controls_field_ids($fields) {
             $field_ids = array();
             if (isset($fields)) {
@@ -363,4 +351,3 @@ if (!class_exists('ReonUtil')) {
 
 }
 
-ReonUtil::start_session();

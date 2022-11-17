@@ -258,5 +258,9 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 
 == Changelog ==
 
+= 1.1 - 17/11/2022 =
+Fixed session_start errors
+updated admin page
+
 = 1.0 - 19/09/2022 =
 Initial Release
