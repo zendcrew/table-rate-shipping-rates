@@ -159,7 +159,7 @@ if ( !class_exists( 'WTARS_Shipped_Cart' ) ) {
             }
 
             if ( has_filter( 'wtars_shipped/get-cart-customer' ) ) {
-                $cart_data[ 'method_id' ] = apply_filters( 'wtars_shipped/get-cart-customer', $cart_data[ 'customer' ], $cart );
+                $cart_data[ 'customer' ] = apply_filters( 'wtars_shipped/get-cart-customer', $cart_data[ 'customer' ], $cart );
             }
 
             return $cart_data;

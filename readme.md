@@ -3,8 +3,8 @@ Contributors: zendcrew, sundayfanz
 Donate link: 
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping, woocommerce table rate shipping, cart based shipping, weight based shipping, totals based shipping, order based shipping, advanced shipping
 Requires at least: 5.8
-Tested up to: 6.0.2
-Stable tag: 1.0
+Tested up to: 6.1.1
+Stable tag: 1.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,19 +20,19 @@ This plugin can be used to create a variety of the shipping cost types such as *
 
 [TRY LIVE DEMO](https://demo.zendcrew.com/shipped/) | [DOCUMENTATION](https://zencrew.freshdesk.com/support/solutions/51000121629) | [HELP CENTER](https://zencrew.freshdesk.com/support/tickets)
 
-= Unlimited Shipping Methods =
+### Unlimited Shipping Methods
 
 Create unlimited shipping methods and shipping rates based on combinations of about **35+ product rules** and **89+ conditions**, shipping costs can also be based on these same combinations, some of which include **shipping destination**, **item shipping class**, **weight**, and **cart subtotal**, just to name a few.
 
-= Unlimited Handling Fees =
+### Unlimited Handling Fees
 
 In addition to shipping cost calculations, handling fees (or some sort of insurance costs) can also be created either as part of the shipping costs or as separate fees that can be added to the cart.
 
-= Multiple Cart Notifications =
+### Multiple Cart Notifications
 
 Create multiple cart notifications based on combinations of any of the parameter types which include weight, package totals and shipping costs.
 
-= Features =
+### Features
 
 * Define shipping by countries, states and postcode / ZIP.
 * Define shipping by package quantity, cart subtotals, package totals or weight.
@@ -46,7 +46,7 @@ Create multiple cart notifications based on combinations of any of the parameter
 
 
 
-== Premium Features ==
+### Premium Features
 
 = Shipping Costs Calculations =
 
@@ -241,6 +241,18 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 * Purchased Categories Quantity
 * Purchased Tags Quantity
 * Purchased Attributes Quantity
+
+
+### YOU MAY ALSO NEED THESE OTHER PLUGINS
+
+&#9989;&nbsp;[WooCommerce Catalog Mode – Pricing, Enquiry Forms & Promotions](https://wordpress.org/plugins/catalog-mode-pricing-enquiry-forms-promotions): Easily set up **catalog modes**,  **prices and marketing** strategies on your **WooCommerce** store.
+
+&#9989;&nbsp;[WooCommerce Partial COD - Payment Gateway Restrictions & Fees](https://wordpress.org/plugins/partial-cod-payment-gateway-restrictions-fees): A powerful, flexible and easy-to-use WooCommerce extension that can be used to manage payment availability and other gateway-related cart settings based on product rules and conditions.
+
+&#9989;&nbsp;[Dynamic Pricing & Discounts for WooCommerce](https://codecanyon.net/item/woopricely-dynamic-pricing-fees-discounts/23844181?ref=zendcrew): A multi-purpose pricing and discounts toolkit for **WooCommerce**. The dynamic pricing and discounts plugin allows you to automate product pricing, simple discount pricing, bulk discount pricing, tiered discount pricing, buy x get x discount pricing, buy x get y discount pricing, group discount pricing, cart discounts and cart fees by defining rules and conditions. These features are grouped into four easy-to-use modules, the modules include Product Pricing, Checkout Pricing, Checkout Discounts, and Checkout Fees.
+
+&#9989;&nbsp;[WooCommerce Smart Pack - Gift Card, Wallet, Refund & Reward](https://codecanyon.net/item/woocommerce-smart-pack-gift-card-wallet-refund-reward/20265145?ref=zendcrew): A WordPress plugin that allows merchants to implement a wallet system, reward or refund customers and sell an unlimited number of gift card products on their website. These features are grouped into four different extensions, the extensions include **WooCommerce Wallets**, **WooCommerce Refunds**, **WooCommerce Rewards** and **WooCommerce Gift Cards**. Each of these extensions can be enabled or disabled depending on what features are needed on a website.
+
 
 == Screenshots ==
 1. Table Rate Shipping

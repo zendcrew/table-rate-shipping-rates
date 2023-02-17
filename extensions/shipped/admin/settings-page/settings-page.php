@@ -330,10 +330,9 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 );
             } else {
 
-                $prm_link_text = esc_html__( 'Premium Version', 'table-rate-shipping-rates' );
                 $page_links[] = array(
                     'id' => 'wtars_get_premium',
-                    'title' => '<span>' . $prm_link_text . '</span>',
+                    'title' => esc_html__( 'Premium Version', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-file-text-o',
                     'href' => esc_url( 'https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew'),
                     'target' => '_blank',
