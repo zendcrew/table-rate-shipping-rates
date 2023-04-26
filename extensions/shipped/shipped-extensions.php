@@ -37,9 +37,11 @@ if ( !class_exists( 'WTARS_Shipped_Extension' ) ) {
         }
 
         public function add_shipping_method( $methods ) {
-            
+
+            require_once dirname( __FILE__ ) . '/shipping-method.php';
+
             $methods[ 'wtars_shipped' ] = 'WTARS_Shipped_Shipping_Method';
-            
+
             return $methods;
         }
 
@@ -51,7 +53,7 @@ if ( !class_exists( 'WTARS_Shipped_Extension' ) ) {
 
         public function enqueue_admin_scripts() {
 
-            wp_enqueue_style( 'wtars_shipped_admin_css', WTARS_SHIPPED_ASSETS_URL . 'admin-styles.css', array(), '1.0', 'all' );
+            wp_enqueue_style( 'wtars-shipped-admin-styles', WTARS_SHIPPED_ASSETS_URL . 'admin-styles.css', array(), '1.0', 'all' );
 
             WTARS_Shipped_Admin_Notices::get_instance()->enqueue_scripts();
         }
@@ -60,23 +62,23 @@ if ( !class_exists( 'WTARS_Shipped_Extension' ) ) {
 
             wp_enqueue_style( 'dashicons' );
             wp_enqueue_style( 'tipTip', WTARS_SHIPPED_ASSETS_URL . 'tipTip.min.css', array(), '1.0', 'all' );
-            wp_enqueue_style( 'shipped_public_css', WTARS_SHIPPED_ASSETS_URL . 'public-styles.min.css', array(), '1.0', 'all' );
+            wp_enqueue_style( 'shipped-public-styles', WTARS_SHIPPED_ASSETS_URL . 'public-styles.min.css', array(), '1.0', 'all' );
 
             wp_enqueue_script( 'jquery-tipTip', WTARS_SHIPPED_ASSETS_URL . 'jquery.tipTip.min.js', array( 'jquery' ), '1.0', true );
-            wp_enqueue_script( 'shipped_public_scripts_js', WTARS_SHIPPED_ASSETS_URL . 'public-scripts.min.js', array( 'jquery' ), '1.0', true );
+            wp_enqueue_script( 'shipped-public-script', WTARS_SHIPPED_ASSETS_URL . 'public-scripts.min.js', array( 'jquery' ), '1.0', true );
 
             $cart_triggers = array( 'input[name^="payment_method"]' );
 
             if ( has_filter( 'wtars_shipped/get-cart-update-triggers' ) ) {
-                
+
                 $cart_triggers = apply_filters( 'wtars_shipped/get-cart-update-triggers', $cart_triggers );
             }
 
             $script_params = array(
                 'update_triggers' => implode( ",", $cart_triggers ),
             );
-
-            wp_localize_script( 'shipped_public_scripts_js', 'wtars_shipped', $script_params );
+            
+            wp_localize_script( 'shipped-public-script', 'wtars_shipped', $script_params );
         }
 
     }

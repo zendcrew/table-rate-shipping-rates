@@ -92,7 +92,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Notices' ) ) {
 
             $review_request = $review[ 'review_request' ];
 
-            return $this->can_show_request( $review_request, 3 );
+            return $this->can_show_request( $review_request, 7 );
         }
 
         private function can_show_pro_notices() {
@@ -111,7 +111,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Notices' ) ) {
 
             $review_request = $review[ 'review_request_pro' ];
 
-            return $this->can_show_request( $review_request, 3 );
+            return $this->can_show_request( $review_request, 7 );
         }
 
         private function get_notice_option() {

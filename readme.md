@@ -3,8 +3,8 @@ Contributors: zendcrew, sundayfanz
 Donate link: 
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping, woocommerce table rate shipping, cart based shipping, weight based shipping, totals based shipping, order based shipping, advanced shipping
 Requires at least: 5.8
-Tested up to: 6.1.1
-Stable tag: 1.2
+Tested up to: 6.2
+Stable tag: 1.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ Shipped - WooCommerce Table Rate Shipping a powerful, flexible and easy-to-use s
 
 This plugin can be used to create a variety of the shipping cost types such as **costs per weight unit**, **cost per item**, **cost per shipping class**, cost per category, and so much more. Package items can also be **grouped by item unit**, **product category**, **shipping classes**, etc, and charged accordingly.
 
-[TRY LIVE DEMO](https://demo.zendcrew.com/shipped/) | [DOCUMENTATION](https://zencrew.freshdesk.com/support/solutions/51000121629) | [HELP CENTER](https://zencrew.freshdesk.com/support/tickets)
+[TRY LIVE DEMO](https://demo.zendcrew.cc/shipped/) | [DOCUMENTATION](https://zencrew.freshdesk.com/support/solutions/51000121629) | [HELP CENTER](https://zencrew.freshdesk.com/support/tickets)
 
 ### Unlimited Shipping Methods
 
@@ -274,5 +274,12 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 Fixed session_start errors
 updated admin page
 
+= 1.2.1 - 26/04/2023 =
+- WordPress 6.2 update
+= 1.2 - 17/02/2023 =
+- Updated admin page
+= 1.1 - 17/11/2022 =
+- Fixed session_start errors
+- Updated admin page
 = 1.0 - 19/09/2022 =
-Initial Release
+- Initial Release
