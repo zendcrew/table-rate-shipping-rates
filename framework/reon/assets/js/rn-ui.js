@@ -1,6 +1,6 @@
-//jquery-1.12.0.js
+"use strict";
 jQuery(document).ready(function($) {
-    "use strict";
+    
     rn_init($('.rn-ui-app'));
     function rn_init(rn_ui_app) {
         rn_ui_app.children('.rn-ui-section').each(function() {

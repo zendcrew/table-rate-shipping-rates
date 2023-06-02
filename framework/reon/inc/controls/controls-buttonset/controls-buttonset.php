@@ -15,11 +15,7 @@ if (!class_exists('Reon_Controls_ButtonSet')) {
         }
 
         public static function render($field) {
-            $btnset_with = '';
-            if (isset($g_field['width'])) {
-                $btnset_with = ' style="width:' . esc_attr($g_field['width']) . ';"';
-            }
-
+           
             $options = array();
 
             if (isset($field['options'])) {

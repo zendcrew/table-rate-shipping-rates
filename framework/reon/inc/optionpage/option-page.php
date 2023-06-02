@@ -39,7 +39,7 @@ if (!function_exists('reon_optionpage')) {
                 <?php
             }
             ?>
-            <div class="rn-option-page-body<?php echo $is_multi_section != true ? " rn-no-aside" : ''; ?>"<?php echo (isset($page['aside_width']) && $page['aside_width'] != '') ? ' style="margin-left:' . esc_attr($page['aside_width']) . '"' : ''; ?>>
+            <div class="rn-option-page-body<?php echo ($is_multi_section != true) ? " rn-no-aside" : ''; ?>"<?php echo (isset($page['aside_width']) && $page['aside_width'] != '') ? ' style="margin-left:' . esc_attr($page['aside_width']) . '"' : ''; ?>>
                 <?php
                 if (count($page['page_links']) > 0 || count($page['header_buttons']) > 0) {
                     include 'option-page-content-header.php';

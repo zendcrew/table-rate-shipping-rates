@@ -81,7 +81,7 @@ if ( !class_exists( 'WTARS_Shipped_Shipping_Method' ) ) {
 
         public function admin_options() {
 
-            echo $this->get_admin_options_html();
+            echo $this->get_admin_options_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
 
         public function get_admin_options_html() {

@@ -3,8 +3,8 @@ Contributors: zendcrew, sundayfanz
 Donate link: 
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping, woocommerce table rate shipping, cart based shipping, weight based shipping, totals based shipping, order based shipping, advanced shipping
 Requires at least: 5.8
-Tested up to: 6.2
-Stable tag: 1.2.1
+Tested up to: 6.2.2
+Stable tag: 1.2.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -255,31 +255,34 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 
 
 == Screenshots ==
-1. Table Rate Shipping
-2. Table Rate Shipping 2
-3. Table Rate Shipping 3
-4. Table Rate Shipping 4
-5. Table Rate Shipping 5
-6. Table Rate Shipping 6
-7. Table Rate Shipping 7
-8. Table Rate Shipping 8
-9. Table Rate Shipping 9
-10. Table Rate Shipping 10
-11. Table Rate Shipping 11
-12. Table Rate Shipping 12
+1. WooCommerce Table Rate Shipping
+2. WooCommerce Table Rate Shipping 2
+3. WooCommerce Table Rate Shipping 3
+4. WooCommerce Table Rate Shipping 4
+5. WooCommerce Table Rate Shipping 5
+6. WooCommerce Table Rate Shipping 6
+7. WooCommerce Table Rate Shipping 7
+8. WooCommerce Table Rate Shipping 8
+9. WooCommerce Table Rate Shipping 9
+10. WooCommerce Table Rate Shipping 10
+11. WooCommerce Table Rate Shipping 11
+12. WooCommerce Table Rate Shipping 12
 
 == Changelog ==
 
-= 1.1 - 17/11/2022 =
-Fixed session_start errors
-updated admin page
+= 1.2.2 - 02/06/2023 =
+Update - Updated Framework
+Update - WooCommerce 7.7 update
 
 = 1.2.1 - 26/04/2023 =
-- WordPress 6.2 update
+Update - WordPress 6.2 update
+
 = 1.2 - 17/02/2023 =
-- Updated admin page
+Update - Updated admin page
+
 = 1.1 - 17/11/2022 =
-- Fixed session_start errors
-- Updated admin page
+Fix - Fixed session_start errors
+Update - Updated admin page
+
 = 1.0 - 19/09/2022 =
-- Initial Release
+Release - Initial Release

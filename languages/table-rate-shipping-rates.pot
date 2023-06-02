@@ -1,15 +1,15 @@
-# Copyright (C) 2022 zendcrew
+# Copyright (C) 2023 zendcrew
 # This file is distributed under the same license as the Shipped - WooCommerce Table Rate Shipping plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/table-rate-shipping\n"
+"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/table-rate-shipping-rates\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-09-18T22:48:17+02:00\n"
+"POT-Creation-Date: 2023-06-02T03:54:35+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: table-rate-shipping-rates\n"
@@ -31,7 +31,7 @@ msgid "zendcrew"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://codecanyon.net/user/zendcrew/portfolio"
+msgid "https://codecanyon.net/user/zendcrew/portfolio?ref=zendcrew"
 msgstr ""
 
 #: extensions/shipped/admin/condition-types/condition-types-billing-address.php:19
@@ -1159,7 +1159,7 @@ msgstr ""
 
 #: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:83
 #: extensions/shipped/admin/settings-page/settings-page.php:140
-#: extensions/shipped/admin/settings-page/settings-page.php:385
+#: extensions/shipped/admin/settings-page/settings-page.php:384
 msgid "Shipping Rates"
 msgstr ""
 
@@ -1354,7 +1354,7 @@ msgid "invalid nonce"
 msgstr ""
 
 #: extensions/shipped/admin/settings-page/settings-page.php:92
-#: extensions/shipped/admin/settings-page/settings-page.php:388
+#: extensions/shipped/admin/settings-page/settings-page.php:387
 msgid "Import / Export"
 msgstr ""
 
@@ -1442,17 +1442,17 @@ msgid "Save Section"
 msgstr ""
 
 #: extensions/shipped/admin/settings-page/settings-page.php:134
-#: extensions/shipped/admin/settings-page/settings-page.php:384
+#: extensions/shipped/admin/settings-page/settings-page.php:383
 msgid "Method Settings"
 msgstr ""
 
 #: extensions/shipped/admin/settings-page/settings-page.php:146
-#: extensions/shipped/admin/settings-page/settings-page.php:386
+#: extensions/shipped/admin/settings-page/settings-page.php:385
 msgid "Handling Fees"
 msgstr ""
 
 #: extensions/shipped/admin/settings-page/settings-page.php:152
-#: extensions/shipped/admin/settings-page/settings-page.php:387
+#: extensions/shipped/admin/settings-page/settings-page.php:386
 msgid "Cart Notifications"
 msgstr ""
 
@@ -1489,23 +1489,23 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:333
+#: extensions/shipped/admin/settings-page/settings-page.php:335
 msgid "Premium Version"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:352
+#: extensions/shipped/admin/settings-page/settings-page.php:351
 msgid "Facebook"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:359
+#: extensions/shipped/admin/settings-page/settings-page.php:358
 msgid "LinkedIn"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:366
+#: extensions/shipped/admin/settings-page/settings-page.php:365
 msgid "Stack Overflow"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:373
+#: extensions/shipped/admin/settings-page/settings-page.php:372
 msgid "Instagram"
 msgstr ""
 
@@ -1969,6 +1969,6 @@ msgstr ""
 msgid "Table Rate Shipping & Handling Fees for WooCommerce"
 msgstr ""
 
-#: table-rate-shipping-rates.php:70
+#: table-rate-shipping-rates.php:73
 msgid "WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated."
 msgstr ""

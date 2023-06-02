@@ -1,4 +1,3 @@
-//jquery-1.12.0.js
 "use strict";
 jQuery(document).ready(function ($) {
     //Select Default Tab

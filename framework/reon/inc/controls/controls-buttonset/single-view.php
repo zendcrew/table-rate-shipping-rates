@@ -1,4 +1,4 @@
-<div class="rn-field-wrapper<?php echo esc_attr(($field['center_head'] == true) ? ' rn-center' : ''); ?>"<?php echo $btnset_with;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<div class="rn-field-wrapper<?php echo esc_attr(($field['center_head'] == true) ? ' rn-center' : ''); ?>"<?php echo isset( $field[ 'width' ] ) ? ' style="width:' . esc_attr( $field[ 'width' ] ) . ';"' : ''; ?>>
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes(apply_filters('reon/control-box-attributes', $box_attributes, $field))); ?>>
         <?php
         if (isset($field['off_value'])) {

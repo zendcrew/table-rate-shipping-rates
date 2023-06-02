@@ -1,6 +1,6 @@
+"use strict";
 jQuery(document).ready(function($) {
-    "use strict";
-
+    
     if ('' != wtars_shipped.update_triggers) {
 
         $('form.checkout').on('change', wtars_shipped.update_triggers, function() {

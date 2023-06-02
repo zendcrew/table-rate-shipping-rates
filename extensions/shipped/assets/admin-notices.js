@@ -1,7 +1,6 @@
+"use strict";
 jQuery(document).ready(function($) {
-    "use strict";
-
-
+    
     setTimeout(function() {
         init_shipped_notice();
     }, 50);
