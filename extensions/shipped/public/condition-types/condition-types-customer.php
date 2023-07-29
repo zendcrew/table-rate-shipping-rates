@@ -29,10 +29,6 @@ if ( !class_exists( 'WTARS_Shipped_Conditions_Customer' ) ) {
 
             $user_email = WTARS_Shipped_Customer_Util::get_user_email( $data );
 
-            if ( $user_email == '' ) {
-                return false;
-            }
-
             $rule_compare = $condition[ 'compare' ];
 
             return WTARS_Shipped_Validation_Util::validate_value_list( $user_email, $rule_user_emails, $rule_compare );

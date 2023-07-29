@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Shipped - WooCommerce Table Rate Shipping plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.2.2\n"
+"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.2.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/table-rate-shipping-rates\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-02T03:54:35+02:00\n"
+"POT-Creation-Date: 2023-07-29T19:44:17+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: table-rate-shipping-rates\n"
@@ -74,35 +74,40 @@ msgstr ""
 msgid "Coupons Used (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:29
+#. translators: 1: currency symbol
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:30
 msgid "Totals Spent (%s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:30
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:31
 msgid "Last Order Date (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:31
+#. translators: 1: currency symbol
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:33
 msgid "Last Order Totals (%s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:32
+#. translators: 1: currency symbol
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:35
 msgid "Average (%s) Per Order (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:33
+#. translators: 1: currency symbol
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:37
 msgid "Maximum (%s) Per Order (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:34
+#. translators: 1: currency symbol
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:39
 msgid "Minimum (%s) Per Order (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:35
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:40
 msgid "Number Of Orders (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:36
+#: extensions/shipped/admin/condition-types/condition-types-customer-value.php:41
 msgid "Number Of Reviews (Premium)"
 msgstr ""
 
@@ -219,65 +224,66 @@ msgstr ""
 msgid "Cart &amp; Package Totals"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:34
+#. translators: 1: cart totals name
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:35
 msgid "Totals - %s"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:47
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:48
 #: extensions/shipped/admin/condition-types/condition-types-order.php:47
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:52
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:54
 msgid "Between"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:48
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:49
 #: extensions/shipped/admin/condition-types/condition-types-order.php:48
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:53
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:55
 msgid "More than or equal to"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:49
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:50
 #: extensions/shipped/admin/condition-types/condition-types-order.php:49
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:54
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:56
 msgid "More than"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:50
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:51
 #: extensions/shipped/admin/condition-types/condition-types-order.php:50
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:55
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:57
 msgid "Less than or equal to"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:51
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:52
 #: extensions/shipped/admin/condition-types/condition-types-order.php:51
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:56
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:58
 msgid "Less than"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:52
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:53
 #: extensions/shipped/admin/condition-types/condition-types-order.php:52
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:57
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:59
 msgid "Equal to"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:53
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:54
 #: extensions/shipped/admin/condition-types/condition-types-order.php:53
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:58
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:60
 msgid "Not equal to"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:65
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:86
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:107
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:70
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:91
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:112
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:66
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:87
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:108
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:72
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:93
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:114
 #: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-base-costs.php:209
 #: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-panel-base-costs.php:209
 msgid "0.00"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:157
-#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:164
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:158
+#: extensions/shipped/admin/condition-types/condition-types-order-totals.php:165
 #: extensions/shipped/admin/data-list/data-list-checkout-totals.php:53
 #: extensions/shipped/admin/settings-page/settings-section/settings-totals.php:175
 msgid "Order Totals"
@@ -494,16 +500,18 @@ msgstr ""
 msgid "Search shipping classes..."
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:28
+#. translators: 1: weight unit
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:29
 msgid "Package Weight (%s)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:39
-msgid "Package Weight - %s (%s)"
+#. translators: 1: weight calculator name 2: weight unit
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:41
+msgid "Package Weight - %1$s (%2$s)"
 msgstr ""
 
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:162
-#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:169
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:164
+#: extensions/shipped/admin/condition-types/condition-types-package-weight.php:171
 #: extensions/shipped/admin/settings-page/settings-section/settings-volumetric-weight.php:44
 msgid "Weight"
 msgstr ""
@@ -633,124 +641,154 @@ msgstr ""
 msgid "Needs Shipping (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-height.php:19
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-height.php:20
 msgid "%s Per Height"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-height.php:28
-msgid "%s per height (%s) (Premium)"
+#. translators: 1: cost text 2: height unit
+#: extensions/shipped/admin/cost-types/cost-types-height.php:30
+msgid "%1$s per height (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-height.php:29
-msgid "%s x height (%s) (Premium)"
+#. translators: 1: cost text 2: height unit
+#: extensions/shipped/admin/cost-types/cost-types-height.php:32
+msgid "%1$s x height (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-length.php:19
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-length.php:20
 msgid "%s Per Length"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-length.php:28
-msgid "%s per length (%s) (Premium)"
+#. translators: 1: cost text 2: length unit
+#: extensions/shipped/admin/cost-types/cost-types-length.php:30
+msgid "%1$s per length (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-length.php:29
-msgid "%s x length (%s) (Premium)"
+#. translators: 1: cost text 2: length unit
+#: extensions/shipped/admin/cost-types/cost-types-length.php:32
+msgid "%1$s x length (%2$s) (Premium)"
 msgstr ""
 
+#. translators: 1: cost text
 #: extensions/shipped/admin/cost-types/cost-types-order-items.php:20
 msgid "%s Per Items"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order-items.php:27
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:28
 msgid "%s per line item (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order-items.php:28
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:30
 msgid "%s per item quantity (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order-items.php:29
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:32
 msgid "%s per product (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order-items.php:30
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:34
 msgid "%s per variation (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order-items.php:31
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order-items.php:36
 msgid "Percentage %s per item (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:20
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:21
 msgid "%s Per Order"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:27
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:29
 msgid "Fixed %s"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:30
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:33
 msgid "%s per shipping classes (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:31
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:35
 msgid "%s per categories (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:32
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:37
 msgid "%s per tags (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-order.php:33
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-order.php:39
 msgid "Percentage %s (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:19
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:20
 msgid "%s Per Surface Area"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:28
-msgid "%s per surface area (square %s) (Premium)"
+#. translators: 1: cost text 2: surface area unit
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:30
+msgid "%1$s per surface area (square %2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:29
-msgid "%s x surface area (square %s) (Premium)"
+#. translators: 1: cost text 2: surface area unit
+#: extensions/shipped/admin/cost-types/cost-types-surface-area.php:32
+msgid "%1$s x surface area (square %2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-volume.php:19
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:20
 msgid "%s Per Volume"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-volume.php:28
-msgid "%s per volume (cubic %s) (Premium)"
+#. translators: 1: cost text 2: volume unit
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:30
+msgid "%1$s per volume (cubic %2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-volume.php:29
-msgid "%s x volume (cubic %s) (Premium)"
+#. translators: 1: cost text 2: volume unit
+#: extensions/shipped/admin/cost-types/cost-types-volume.php:32
+msgid "%1$s x volume (cubic %2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-weight.php:20
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:21
 msgid "%s Per Weight"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-weight.php:29
-msgid "%s per weight (%s) (Premium)"
+#. translators: 1: cost text 2: weights unit
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:31
+msgid "%1$s per weight (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-weight.php:30
-msgid "%s x weight (%s) (Premium)"
+#. translators: 1: cost text 2: weights unit
+#: extensions/shipped/admin/cost-types/cost-types-weight.php:33
+msgid "%1$s x weight (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-width.php:19
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types-width.php:20
 msgid "%s Per Width"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-width.php:28
-msgid "%s per width (%s) (Premium)"
+#. translators: 1: cost text 2: width unit
+#: extensions/shipped/admin/cost-types/cost-types-width.php:30
+msgid "%1$s sper width (%2$s) (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types-width.php:29
-msgid "%s x width (%s) (Premium)"
+#. translators: 1: cost text 2: width unit
+#: extensions/shipped/admin/cost-types/cost-types-width.php:32
+msgid "%1$s x width (%2$s) (Premium)"
 msgstr ""
 
 #: extensions/shipped/admin/cost-types/cost-types.php:74
@@ -761,15 +799,18 @@ msgstr ""
 msgid "fees"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types.php:82
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types.php:83
 msgid "Add to previous %s"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types.php:87
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types.php:89
 msgid "Subtract from previous %s (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/cost-types/cost-types.php:88
+#. translators: 1: cost text
+#: extensions/shipped/admin/cost-types/cost-types.php:91
 msgid "Override previous %s (Premium)"
 msgstr ""
 
@@ -952,39 +993,41 @@ msgstr ""
 msgid "message"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:60
+#. translators: 1: module name
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:61
 msgid "%s Conditions"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:61
-msgid "List of conditions in which this %s should apply, empty conditions will apply this %s in any scenario"
+#. translators: 1: module name 2: module name
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:63
+msgid "List of conditions in which this %1$s should apply, empty conditions will apply this %2$s in any scenario"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:65
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:67
 msgid "All conditions should match"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:66
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:68
 msgid "At least one condition should match (Premium)"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:81
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:83
 msgid "Conditions"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:82
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:84
 msgid "List of conditions in which this shipping cost should apply, all specified conditions must match"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:105
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:107
 msgid "Method Conditions"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:106
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:108
 msgid "List of conditions in which this shipping method should apply, empty conditions will apply this shipping method in any scenario"
 msgstr ""
 
-#: extensions/shipped/admin/logic-types/logic-types-conditions.php:142
+#: extensions/shipped/admin/logic-types/logic-types-conditions.php:144
 msgid "Add Condition"
 msgstr ""
 
@@ -1318,10 +1361,12 @@ msgstr ""
 msgid "Cart Notification"
 msgstr ""
 
+#. translators: 1: plugin version
 #: extensions/shipped/admin/settings-page/settings-page.php:48
 msgid "Lite v%s"
 msgstr ""
 
+#. translators: 1: plugin version
 #: extensions/shipped/admin/settings-page/settings-page.php:52
 msgid "Premium v%s"
 msgstr ""
@@ -1472,6 +1517,7 @@ msgstr ""
 msgid "Shipped Premium"
 msgstr ""
 
+#. translators: 1: plugin name
 #: extensions/shipped/admin/settings-page/settings-page.php:286
 msgid "Required by %s"
 msgstr ""
@@ -1969,6 +2015,6 @@ msgstr ""
 msgid "Table Rate Shipping & Handling Fees for WooCommerce"
 msgstr ""
 
-#: table-rate-shipping-rates.php:73
+#: table-rate-shipping-rates.php:87
 msgid "WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated."
 msgstr ""

@@ -17,6 +17,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Weight' ) && !defined( 'WTARS
 
         public function get_groups( $in_groups, $args ) {
 
+            /* translators: 1: cost text */
             $in_groups[ 'weights' ] = sprintf( esc_html__( '%s Per Weight', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
 
             return $in_groups;
@@ -26,8 +27,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Weight' ) && !defined( 'WTARS
 
             $weight_unit = get_option( 'woocommerce_weight_unit' );
 
-            $in_types[ 'prem_10' ] = sprintf( esc_html__( '%s per weight (%s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $weight_unit );
-            $in_types[ 'prem_11' ] = sprintf( esc_html__( '%s x weight (%s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $weight_unit );
+            /* translators: 1: cost text 2: weights unit */
+            $in_types[ 'prem_10' ] = sprintf( esc_html__( '%1$s per weight (%2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $weight_unit );
+            /* translators: 1: cost text 2: weights unit */
+            $in_types[ 'prem_11' ] = sprintf( esc_html__( '%1$s x weight (%2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $weight_unit );
 
             return $in_types;
         }

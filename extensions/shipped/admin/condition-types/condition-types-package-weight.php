@@ -25,6 +25,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Package_Weight' ) && !define
                 add_filter( 'wtars_shipped_admin/get-' . $this->prefix . $option[ 'option_id' ] . '-condition-fields', array( $this, 'get_weight_fields' ), 10, 2 );
             }
 
+            /* translators: 1: weight unit */
             $in_groups[ 'package_weight' ] = sprintf( esc_html__( 'Package Weight (%s)', 'table-rate-shipping-rates' ), $unit );
 
             return $in_groups;
@@ -36,7 +37,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Package_Weight' ) && !define
 
             foreach ( $this->get_options() as $option ) {
 
-                $in_list[ $this->prefix . $option[ 'option_id' ] ] = sprintf( esc_html__( 'Package Weight - %s (%s)', 'table-rate-shipping-rates' ), $this->get_title( $option ), $unit );
+                /* translators: 1: weight calculator name 2: weight unit */
+                $in_list[ $this->prefix . $option[ 'option_id' ] ] = sprintf( esc_html__( 'Package Weight - %1$s (%2$s)', 'table-rate-shipping-rates' ), $this->get_title( $option ), $unit );
             }
 
             return $in_list;

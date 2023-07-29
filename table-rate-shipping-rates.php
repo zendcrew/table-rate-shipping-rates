@@ -4,7 +4,7 @@
  * Plugin Name: Shipped - WooCommerce Table Rate Shipping
  * Plugin URI: https://wordpress.org/plugins/table-rate-shipping-rates
  * Description: Create multiple shipping rates & handling fees based on product rules and cart conditions
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: zendcrew
  * Author URI: https://codecanyon.net/user/zendcrew/portfolio?ref=zendcrew
  * Text Domain: table-rate-shipping-rates
@@ -14,7 +14,7 @@
  * Requires PHP: 5.6
  * 
  * WC requires at least: 5.6
- * WC tested up to: 7.7
+ * WC tested up to: 7.9
  */
 
 if ( !defined( 'ABSPATH' ) ) {
@@ -32,18 +32,18 @@ if ( !defined( 'WTARS_SHIPPED_FILE' ) ) {
 }
 
 if ( !defined( 'WTARS_SHIPPED_METHOD_ID' ) ) {
-    
+
     define( 'WTARS_SHIPPED_METHOD_ID', 'wtars_shipped' );
 }
 
 if ( !defined( 'WTARS_SHIPPED_OPTION_NAME' ) ) {
-    
+
     define( 'WTARS_SHIPPED_OPTION_NAME', 'wtars_shipped' );
 }
 
 if ( !defined( 'WTARS_SHIPPED_VERSION' ) ) {
-    
-    define( 'WTARS_SHIPPED_VERSION', '1.2.2' );
+
+    define( 'WTARS_SHIPPED_VERSION', '1.2.3' );
 }
 
 if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
@@ -53,14 +53,16 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
         public function __construct() {
 
             add_action( 'plugins_loaded', array( $this, 'init' ), 1 );
-            
+
+            add_action( 'before_woocommerce_init', array( $this, 'before_woocommerce_init' ) );
+
             load_plugin_textdomain( 'table-rate-shipping-rates', false, dirname( plugin_basename( WTARS_SHIPPED_FILE ) ) . '/languages/' );
         }
 
         public function init() {
 
             if ( function_exists( 'WC' ) ) { // Check if WooCommerce is active
-
+                
                 require_once 'extensions/extensions.php';
             } else {
 
@@ -68,9 +70,21 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
             }
         }
 
+        public function before_woocommerce_init() {
+
+            // Check for HPOS
+            if ( !class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+
+                return;
+            }
+
+            // Adds support for HPOS
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', WTARS_SHIPPED_FILE, true );
+        }
+
         public function missing_notice() {
 
-            echo '<div class="error"><p><strong>' .  esc_html__( 'WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated.', 'table-rate-shipping-rates' ) . '</strong></p></div>';
+            echo '<div class="error"><p><strong>' . esc_html__( 'WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated.', 'table-rate-shipping-rates' ) . '</strong></p></div>';
         }
 
     }

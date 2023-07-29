@@ -1,3 +1,6 @@
+= 1.2.3 - 30/07/2023 =
+Update - WooCommerce 7.9 &amp; HPOS update
+
 = 1.2.2 - 02/06/2023 =
 Update - Updated Framework
 Update - Updated admin page

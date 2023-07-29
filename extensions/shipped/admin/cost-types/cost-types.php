@@ -79,12 +79,15 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Types' ) ) {
             }
 
             $options = array(
+                /* translators: 1: cost text */
                 'add' => sprintf( esc_html__( 'Add to previous %s', 'table-rate-shipping-rates' ), $module_text )
             );
 
             if ( !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
+                /* translators: 1: cost text */
                 $options[ 'prem_1' ] = sprintf( esc_html__( 'Subtract from previous %s (Premium)', 'table-rate-shipping-rates' ), $module_text );
+                /* translators: 1: cost text */
                 $options[ 'prem_2' ] = sprintf( esc_html__( 'Override previous %s (Premium)', 'table-rate-shipping-rates' ), $module_text );
             }
 

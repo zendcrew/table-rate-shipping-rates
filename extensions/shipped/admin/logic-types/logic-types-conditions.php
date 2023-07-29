@@ -57,8 +57,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
                 'type' => 'select2',
                 'full_width' => true,
                 'center_head' => true,
+                /* translators: 1: module name */
                 'title' => sprintf( esc_html__( '%s Conditions', 'table-rate-shipping-rates' ), $module_text ),
-                'desc' => sprintf( esc_html__( 'List of conditions in which this %s should apply, empty conditions will apply this %s in any scenario', 'table-rate-shipping-rates' ), $module_tool_text, $module_tool_text ),
+                /* translators: 1: module name 2: module name */
+                'desc' => sprintf( esc_html__( 'List of conditions in which this %1$s should apply, empty conditions will apply this %2$s in any scenario', 'table-rate-shipping-rates' ), $module_tool_text, $module_tool_text ),
                 'default' => 'match_all',
                 'disabled_list_filter' => 'wtars_shipped_admin/get-disabled-list',
                 'options' => array(

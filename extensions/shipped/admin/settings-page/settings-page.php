@@ -44,11 +44,11 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         }
 
         public function init_page( $option_name ) {
-
+            /* translators: 1: plugin version */
             $version_text = sprintf( esc_html__( 'Lite v%s', 'table-rate-shipping-rates' ), WTARS_SHIPPED_VERSION );
 
             if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
-
+                /* translators: 1: plugin version */
                 $version_text = sprintf( esc_html__( 'Premium v%s', 'table-rate-shipping-rates' ), WTARS_SHIPPED_VERSION );
             }
 
@@ -282,7 +282,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 unset( $links[ 'deactivate' ] );
 
                 $add_on_text = esc_html__( 'Shipped Premium', 'table-rate-shipping-rates' );
-
+                /* translators: 1: plugin name */
                 $required_text = sprintf( esc_html__( 'Required by %s', 'table-rate-shipping-rates' ), $add_on_text );
 
                 $no_deactivate_tag = '<span style="color: #313639">' . $required_text . '</span>';

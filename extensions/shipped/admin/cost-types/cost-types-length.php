@@ -16,6 +16,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Length' ) && !defined( 'WTARS
 
         public function get_groups( $in_groups, $args ) {
 
+            /* translators: 1: cost text */
             $in_groups[ 'lengths' ] = sprintf( esc_html__( '%s Per Length', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
 
             return $in_groups;
@@ -25,8 +26,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Length' ) && !defined( 'WTARS
 
             $length_unit = get_option( 'woocommerce_dimension_unit' );
 
-            $in_types[ 'prem_12' ] = sprintf( esc_html__( '%s per length (%s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $length_unit );
-            $in_types[ 'prem_13' ] = sprintf( esc_html__( '%s x length (%s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $length_unit );
+            /* translators: 1: cost text 2: length unit */
+            $in_types[ 'prem_12' ] = sprintf( esc_html__( '%1$s per length (%2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $length_unit );
+            /* translators: 1: cost text 2: length unit */
+            $in_types[ 'prem_13' ] = sprintf( esc_html__( '%1$s x length (%2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $length_unit );
 
             return $in_types;
         }

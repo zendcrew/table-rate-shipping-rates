@@ -31,6 +31,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Order_Totals' ) && !defined(
 
             foreach ( $this->get_options() as $option ) {
 
+                /* translators: 1: cart totals name */
                 $in_list[ $this->prefix . $option[ 'option_id' ] ] = sprintf( esc_html__( 'Totals - %s', 'table-rate-shipping-rates' ), $this->get_title( $option ) );
             }
 

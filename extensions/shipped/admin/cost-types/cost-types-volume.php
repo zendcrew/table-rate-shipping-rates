@@ -16,6 +16,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Volume' ) && !defined( 'WTARS
 
         public function get_groups( $in_groups, $args ) {
 
+            /* translators: 1: cost text */
             $in_groups[ 'volumes' ] = sprintf( esc_html__( '%s Per Volume', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
 
             return $in_groups;
@@ -25,8 +26,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Volume' ) && !defined( 'WTARS
 
             $volume_unit = get_option( 'woocommerce_dimension_unit' );
 
-            $in_types[ 'prem_20' ] = sprintf( esc_html__( '%s per volume (cubic %s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $volume_unit );
-            $in_types[ 'prem_21' ] = sprintf( esc_html__( '%s x volume (cubic %s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $volume_unit );
+            /* translators: 1: cost text 2: volume unit */
+            $in_types[ 'prem_20' ] = sprintf( esc_html__( '%1$s per volume (cubic %2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $volume_unit );
+            /* translators: 1: cost text 2: volume unit */
+            $in_types[ 'prem_21' ] = sprintf( esc_html__( '%1$s x volume (cubic %2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $volume_unit );
 
             return $in_types;
         }

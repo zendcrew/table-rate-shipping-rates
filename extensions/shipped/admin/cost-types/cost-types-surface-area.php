@@ -16,6 +16,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Surface_Area' ) && !defined( 
         
         public function get_groups( $in_groups, $args ) {
 
+            /* translators: 1: cost text */
             $in_groups[ 'surface_areas' ] = sprintf( esc_html__( '%s Per Surface Area', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ] );
 
             return $in_groups;
@@ -25,8 +26,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Cost_Type_Surface_Area' ) && !defined( 
 
             $surface_area_unit = get_option( 'woocommerce_dimension_unit' );
 
-            $in_types[ 'prem_18' ] = sprintf( esc_html__( '%s per surface area (square %s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $surface_area_unit );
-            $in_types[ 'prem_19' ] = sprintf( esc_html__( '%s x surface area (square %s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $surface_area_unit );
+            /* translators: 1: cost text 2: surface area unit */
+            $in_types[ 'prem_18' ] = sprintf( esc_html__( '%1$s per surface area (square %2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $surface_area_unit );
+            /* translators: 1: cost text 2: surface area unit */
+            $in_types[ 'prem_19' ] = sprintf( esc_html__( '%1$s x surface area (square %2$s) (Premium)', 'table-rate-shipping-rates' ), $args[ 'format_cap_text' ], $surface_area_unit );
 
             return $in_types;
         }

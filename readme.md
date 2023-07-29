@@ -4,7 +4,7 @@ Donate link:
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping, woocommerce table rate shipping, cart based shipping, weight based shipping, totals based shipping, order based shipping, advanced shipping
 Requires at least: 5.8
 Tested up to: 6.2.2
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -269,6 +269,9 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 12. WooCommerce Table Rate Shipping 12
 
 == Changelog ==
+
+= 1.2.3 - 30/07/2023 =
+Update - WooCommerce 7.9 &amp; HPOS update
 
 = 1.2.2 - 02/06/2023 =
 Update - Updated Framework
