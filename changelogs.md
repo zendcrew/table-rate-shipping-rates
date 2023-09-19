@@ -1,3 +1,7 @@
+= 1.2.4 - 19/09/2023 =
+Check - WooCommerce 8.0 compatibility check
+Update - Updated framework
+
 = 1.2.3 - 30/07/2023 =
 Update - WooCommerce 7.9 &amp; HPOS update
 

@@ -242,11 +242,7 @@ if (!class_exists('ReonOptionPage')) {
                 $output['status_message'] = wp_kses_post( $option_args['ajax']['save_error_msg']);
             }
 
-            header("Access-Control-Allow-Origin: *");
-            header("Content-Type: application/json; charset=UTF-8");
-            ob_clean();
-            echo wp_json_encode($output);// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            wp_die();
+            ReonAjax::render_json( $output );
         }
 
         public static function reset_option() {
@@ -273,11 +269,7 @@ if (!class_exists('ReonOptionPage')) {
                 $output['status_message'] = wp_kses_post($option_args['ajax']['reset_error_msg']);
             }
 
-            header("Access-Control-Allow-Origin: *");
-            header("Content-Type: application/json; charset=UTF-8");
-            ob_clean();
-            echo wp_json_encode($output);// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            wp_die();
+            ReonAjax::render_json( $output );
         }
 
         public static function import_option() {
@@ -311,11 +303,7 @@ if (!class_exists('ReonOptionPage')) {
                 $output['status_message'] = wp_kses_post($option_args['ajax']['reset_error_msg']);
             }
 
-            header("Access-Control-Allow-Origin: *");
-            header("Content-Type: application/json; charset=UTF-8");
-            ob_clean();
-            echo wp_json_encode($output);// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            wp_die();
+            ReonAjax::render_json( $output );
         }
 
         public static function export_option() {
@@ -336,12 +324,7 @@ if (!class_exists('ReonOptionPage')) {
                 $output = ReonCore::load_options($option_args, false);
             }
 
-            header('Content-disposition: attachment; filename=' . $option_name . '.json');
-            header("Access-Control-Allow-Origin: *");
-            header("Content-Type: application/json; charset=UTF-8");
-            ob_clean();
-            echo wp_json_encode($output);// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            wp_die();
+            ReonAjax::render_json( $output );
         }
 
         public static function get_page($option_name = '', $process_sections = false, $process_fields = false) {

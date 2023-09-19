@@ -592,7 +592,7 @@ if ( !class_exists( 'ReonApi' ) ) {
                 foreach ( WC()->shipping()->get_shipping_methods() as $key => $method ) {
 
                     $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $key . ')' : '';
-                    $result[ $key ] = $method->method_title . $vl;
+                    $result[ $key ] = $method->get_method_title() . $vl;
                 }
             } catch ( Exception $ex ) {
                 
@@ -624,22 +624,11 @@ if ( !class_exists( 'ReonApi' ) ) {
 
         public static function get_wc_shipping_zones( $args ) {
 
-            global $wpdb;
+            WC_Shipping_Zones::get_zones();
 
-            $result = array();
+            foreach ( WC_Shipping_Zones::get_zones() as $zone ) {
 
-            try {
-                $sql = "SELECT zone_id, zone_name FROM {$wpdb->prefix}woocommerce_shipping_zones "
-                        . "ORDER BY zone_order";
-                $rows = $wpdb->get_results( $sql, ARRAY_A );
-                if ( is_array( $rows ) ) {
-
-                    foreach ( $rows as $row ) {
-                        $result[ $row[ 'zone_id' ] ] = $row[ 'zone_name' ];
-                    }
-                }
-            } catch ( Exception $ex ) {
-                
+                $result[ $zone[ 'zone_id' ] ] = $zone[ 'zone_name' ];
             }
 
             return $result;
@@ -647,74 +636,41 @@ if ( !class_exists( 'ReonApi' ) ) {
 
         public static function get_wc_zones_shipping_methods( $args ) {
 
-            global $wpdb;
-
             $result = array();
 
-            try {
+            $shipping_zones = WC_Shipping_Zones::get_zones();
 
-                $zones = array();
+            foreach ( $shipping_zones as $key => $shipping_zone ) {
 
-                $sql = "SELECT zone_id, zone_name FROM {$wpdb->prefix}woocommerce_shipping_zones "
-                        . "ORDER BY zone_order ASC";
-                $rows = $wpdb->get_results( $sql, ARRAY_A );                
+                foreach ( $shipping_zone[ 'shipping_methods' ] as $key => $shipping_method ) {
 
-                if ( is_array( $rows ) ) {
-                    foreach ( $rows as $row ) {
-                        $zones[ $row[ 'zone_id' ] ] = $row[ 'zone_name' ];
-                    }
+                    $instance_id = $shipping_method->get_instance_id();
+
+                    $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
+
+                    $result[ $instance_id ] = $shipping_zone[ 'zone_name' ] . ' → ' . $shipping_method->get_title() . $vl;
                 }
+            }
 
+            $zero_zone = WC_Shipping_Zones::get_zone_by();
 
-                $methods = array();
+            if ( count( $zero_zone->get_shipping_methods() ) ) {
 
-                $sql = "SELECT zone_id, instance_id, method_id FROM {$wpdb->prefix}woocommerce_shipping_zone_methods "
-                        . "ORDER BY method_order ASC";
-                $rows = $wpdb->get_results( $sql, ARRAY_A );
+                foreach ( $zero_zone->get_shipping_methods() as $key => $shipping_method ) {
 
-                if ( is_array( $rows ) ) {
-                    foreach ( $rows as $row ) {
-                        $methods[ $row[ 'instance_id' ] ] = array( 'method_id' => $row[ 'method_id' ], 'zone_id' => $row[ 'zone_id' ] );
-                    }
+                    $instance_id = $shipping_method->get_instance_id();
+
+                    $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
+
+                    $result[ $instance_id ] = $shipping_method->get_title() . $vl;
                 }
-
-
-
-
-                $shipping_methods = array();
-
-                foreach ( WC()->shipping()->get_shipping_methods() as $key => $method ) {
-                    $shipping_methods[ $key ] = $method->method_title;
-                }
-
-
-
-                foreach ( $zones as $z_key => $zone ) {
-
-                    foreach ( $methods as $m_key => $method ) {
-                        if ( $method[ 'zone_id' ] == $z_key && isset( $shipping_methods[ $method[ 'method_id' ] ] ) ) {
-
-                            $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $m_key . ')' : '';
-
-                            $result[ $m_key ] = $zone . ' → ' . $shipping_methods[ $method[ 'method_id' ] ] . $vl;
-                        }
-                    }
-                }
-
-                foreach ( $methods as $m_key => $method ) {
-                    if ( $method[ 'zone_id' ] == 0 ) {
-                        $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $m_key . ')' : '';
-                        $result[ $m_key ] = $shipping_methods[ $method[ 'method_id' ] ] . $vl;
-                    }
-                }
-            } catch ( Exception $ex ) {
-                
             }
 
             return $result;
         }
 
         public static function get_wc_tax_classes( $args ) {
+            
             global $wpdb;
             $result = array();
 
