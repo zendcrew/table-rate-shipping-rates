@@ -1,3 +1,7 @@
+= 1.2.5 - 08/11/2023 =
+Check - WooCommerce 8.2 compatibility check
+Update - Updated framework
+
 = 1.2.4 - 19/09/2023 =
 Check - WooCommerce 8.0 compatibility check
 Update - Updated framework
