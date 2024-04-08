@@ -1,7 +1,7 @@
 === Table Rate Shipping Method for WooCommerce by Shipped - WooCommerce Table Rate Shipping ===
 Contributors: zendcrew, sundayfanz 
 Donate link: 
-Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping, woocommerce table rate shipping, cart based shipping, weight based shipping, totals based shipping, order based shipping, advanced shipping
+Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping
 Requires at least: 5.8
 Tested up to: 6.5
 Stable tag: 1.3
@@ -9,7 +9,7 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Shipped - WooCommerce Table Rate Shipping a powerful, flexible and easy-to-use shipping plugin for WooCommerce, it can be used to create multiple shipping rates based on product rules and conditions.
+Shipped - WooCommerce Table Rate Shipping a powerful, flexible and easy-to-use shipping plugin for WooCommerce.
 
 == Description ==
 
