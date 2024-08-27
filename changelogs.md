@@ -1,3 +1,7 @@
+= 1.3.1 - 27/08/2024 =
+[Check] - WordPress 6.6 compatibility check
+[Check] - WooCommerce 9.2 compatibility check
+
 = 1.3 - 08/04/2024 =
 [New] - Added "Variation Attributes" product filter
 [Check] - WordPress 6.5 compatibility check
