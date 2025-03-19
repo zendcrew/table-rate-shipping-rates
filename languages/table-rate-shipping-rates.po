@@ -2030,6 +2030,6 @@ msgstr ""
 msgid "Table Rate Shipping & Handling Fees for WooCommerce"
 msgstr ""
 
-#: table-rate-shipping-rates.php:87
+#: table-rate-shipping-rates.php:94
 msgid "WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated."
 msgstr ""

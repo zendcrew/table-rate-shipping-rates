@@ -4,17 +4,19 @@
  * Plugin Name: Shipped - WooCommerce Table Rate Shipping
  * Plugin URI: https://wordpress.org/plugins/table-rate-shipping-rates
  * Description: Create multiple shipping rates & handling fees based on product rules and cart conditions
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: zendcrew
  * Author URI: https://codecanyon.net/user/zendcrew/portfolio?ref=zendcrew
  * Text Domain: table-rate-shipping-rates
  * Domain Path: /languages/
  * Requires at least: 5.8
- * Tested up to: 6.6
  * Requires PHP: 5.6
- * 
  * WC requires at least: 5.6
- * WC tested up to: 9.2
+ * 
+ * Tested up to: 6.7
+ * WC tested up to: 9.7
+ * 
+ * Requires Plugins: woocommerce
  */
 
 if ( !defined( 'ABSPATH' ) ) {
@@ -43,7 +45,7 @@ if ( !defined( 'WTARS_SHIPPED_OPTION_NAME' ) ) {
 
 if ( !defined( 'WTARS_SHIPPED_VERSION' ) ) {
 
-    define( 'WTARS_SHIPPED_VERSION', '1.3.1' );
+    define( 'WTARS_SHIPPED_VERSION', '1.3.2' );
 }
 
 if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
@@ -55,6 +57,11 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
             add_action( 'plugins_loaded', array( $this, 'init' ), 1 );
 
             add_action( 'before_woocommerce_init', array( $this, 'before_woocommerce_init' ) );
+
+            add_action( 'init', array( $this, 'load_textdomain' ) );
+        }
+        
+        public function load_textdomain() {
 
             load_plugin_textdomain( 'table-rate-shipping-rates', false, dirname( plugin_basename( WTARS_SHIPPED_FILE ) ) . '/languages/' );
         }
