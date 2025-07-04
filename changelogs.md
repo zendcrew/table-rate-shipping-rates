@@ -1,3 +1,8 @@
+= 1.3.3 - 04/07/2025 =
+[Update] - Updated documentation links
+[Check] - WordPress 6.8 compatibility check
+[Check] - WooCommerce 9.9 compatibility check
+
 = 1.3.2 - 19/03/2025 =
 [Tweaks] - Minor tweaks
 [Check] - WordPress 6.7 compatibility check

@@ -49,6 +49,13 @@ if ( !class_exists( 'WTARS_Shipped_Shipping_Method' ) ) {
         public function get_rate_id( $suffix = '' ) {
 
             //get shipping rate id used on cart and checkout page
+
+            if ( !class_exists( 'WTARS_Shipped' ) ) {
+
+                return WTARS_SHIPPED_METHOD_ID . ':' . $this->instance_id . '_' . $suffix;
+            }
+
+            //get shipping rate id used on cart and checkout page
             return WTARS_Shipped::get_rate_client_id( $this->instance_id, $suffix );
         }
 

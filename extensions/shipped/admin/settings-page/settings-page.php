@@ -292,7 +292,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 return $links;
             }
 
-            $doc_link = '<a href="' . esc_url( 'https://zencrew.freshdesk.com/support/solutions/51000121629' ) . '">' . esc_html__( 'Documentation', 'table-rate-shipping-rates' ) . '</a>';
+            $doc_link = '<a href="' . esc_url( 'https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping' ) . '" target="_blank">' . esc_html__( 'Documentation', 'table-rate-shipping-rates' ) . '</a>';
 
             array_unshift( $links, $doc_link );
 
@@ -312,7 +312,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_documentation',
                     'title' => esc_html__( 'Documentation', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-file-text',
-                    'href' => esc_url('https://zencrew.freshdesk.com/support/solutions/51000121629'),
+                    'href' => esc_url('https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping'),
                     'target' => '_blank',
                     'show_in' => 'both'
                 ),
@@ -324,7 +324,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_help',
                     'title' => esc_html__( 'Help', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-question-circle',
-                    'href' => esc_url('https://zencrew.freshdesk.com/support/tickets'),
+                    'href' => esc_url('https://support.zendcrew.cc/portal/en/newticket'),
                     'target' => '_blank',
                     'show_in' => 'both'
                 );

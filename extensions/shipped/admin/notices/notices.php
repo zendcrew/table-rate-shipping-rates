@@ -31,7 +31,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Notices' ) ) {
 
         public function enqueue_scripts() {
 
-            wp_enqueue_script( 'shipped_notices_scripts_js', WTARS_SHIPPED_ASSETS_URL . 'admin-notices.js', array( 'jquery' ), '1.0', true );
+            wp_enqueue_script( 'shipped-notices-scripts', WTARS_SHIPPED_ASSETS_URL . 'admin-notices.js', array( 'jquery' ), '1.0', true );
         }
 
         public function show_notice() {

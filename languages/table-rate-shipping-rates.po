@@ -1392,7 +1392,7 @@ msgstr ""
 
 #: extensions/shipped/admin/settings-page/settings-page.php:72
 #: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:55
-#: extensions/shipped/shipping-method.php:97
+#: extensions/shipped/shipping-method.php:104
 msgid "Table Rate Shipping & Fees"
 msgstr ""
 
