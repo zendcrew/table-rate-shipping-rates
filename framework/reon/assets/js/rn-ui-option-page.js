@@ -104,7 +104,13 @@ jQuery(document).ready(function ($) {
         });
 
         $('.rn-reset-all, .rn-reset-section').on('click', function () {
-            rn_reset_option($(this));
+            
+            if( !re_reset_prompt( $( this ) ) ) {
+
+                return false;
+            }
+
+            rn_reset_option( $( this ) );
             return false;
         });
 
@@ -256,6 +262,26 @@ jQuery(document).ready(function ($) {
         });
 
     }
+    
+    function re_reset_prompt( btn ) {
+
+        var msg = '';
+
+        if( btn.attr( 'data-active-group' ) ) {
+
+            msg = $( '.rn-option-page' ).attr( 'data-prompt-section-msg' );
+        } else {
+
+            msg = $( '.rn-option-page' ).attr( 'data-prompt-all-msg' );
+        }
+
+        if( !msg || '' == msg ) {
+
+            return true;
+        }
+
+        return window.confirm( msg );
+    }
 
     function rn_show_wait(show, callback) {
         var icn = $('.rn-option-page').find('.rn-ajax-icon');
@@ -397,7 +423,7 @@ jQuery(document).ready(function ($) {
     }
 
     function option_page_ajax(data, onsuccess, onerror) {
-        jQuery.post(ajaxurl, data, function (response, status, xhr) {
+        jQuery.post(rn_uiv.ajax_url, data, function (response, status, xhr) {
             onsuccess(response, status, xhr);
         }).fail(function () {
             onerror();

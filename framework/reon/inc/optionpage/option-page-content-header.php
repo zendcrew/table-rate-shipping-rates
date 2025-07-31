@@ -1,4 +1,10 @@
-<div class="rn-option-page-tool">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div class="rn-option-page-tool">
     <?php include 'option-page-content-header-title.php'; ?>
     <?php
     if (count($page['page_links']) > 0) {
@@ -8,7 +14,7 @@
             foreach ($page['page_links'] as $page_link) {
                 if ($page_link['show_in'] != 'admin_bar') {
                     ?>
-            <li><a id="<?php echo esc_attr($page_link['id']); ?>"<?php echo (isset($page_link['target']) && $page_link['target'] != '') ? ' target="' . esc_attr($page_link['target']) . '"' : ''; ?> href="<?php echo esc_url($page_link['href']); ?>"><i class="<?php echo esc_attr($page_link['icon']); ?>"></i><?php echo wp_kses_post($page_link['title']); ?></a></li>
+            <li><a id="<?php echo esc_attr($page_link['id']); ?>"<?php echo (isset($page_link['target']) && $page_link['target'] != '') ? ' target="' . esc_attr($page_link['target']) . '"' : ''; ?> href="<?php echo esc_url($page_link['href']); ?>"><i class="<?php echo esc_attr($page_link['icon']); ?>"></i><?php echo wp_kses($page_link['title'],ReonUtil::get_allow_html()); ?></a></li>
                     <?php
                 }
             }

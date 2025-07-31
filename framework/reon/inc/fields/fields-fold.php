@@ -1,4 +1,9 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 add_filter('reon/control-columns-attributes', 'reon_process_field_fold_attributes', 10, 2);
 add_filter('reon/field-attributes', 'reon_process_field_fold_attributes', 10, 2);
 add_filter('reon/control-parent-attributes', 'reon_process_field_fold_attributes', 10, 2);

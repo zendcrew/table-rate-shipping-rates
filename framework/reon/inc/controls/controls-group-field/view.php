@@ -1,4 +1,9 @@
-<div class="rn-field-wrapper<?php echo esc_attr(($g_field['center_head'] == true) ? ' rn-center' : ''); ?>"<?php echo wp_kses_post($group_with); ?><?php echo wp_kses_post((count($dyn_attr) > 0) ? ReonUtil::array_to_attributes($dyn_attr) : ''); ?>>
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?><div class="rn-field-wrapper<?php echo esc_attr(($g_field['center_head'] == true) ? ' rn-center' : ''); ?>"<?php echo wp_kses_post($group_with); ?><?php echo wp_kses_post((count($dyn_attr) > 0) ? ReonUtil::array_to_attributes($dyn_attr) : ''); ?>>
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes(apply_filters('reon/control-parent-attributes', $attr, $g_field))); ?>>
         <?php
         $grp_fields = array();

@@ -1,30 +1,49 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 add_action('reon/render-option-page', 'reon_optionpage', 10, 1);
 if (!function_exists('reon_optionpage')) {
 
     function reon_optionpage($page) {
+        
         $ajax_save_error = '';
         $ajax_reset_error = '';
+        $all_prompt_msg = '';
+        $section_promp_msg = '';
+
         if (isset($page['ajax'])) {
+        
             $ajax_msg = $page['ajax'];
             $ajax_save_error = isset($ajax_msg['save_error_msg']) ? $ajax_msg['save_error_msg'] : '';
             $ajax_reset_error = isset($ajax_msg['reset_error_msg']) ? $ajax_msg['reset_error_msg'] : '';
+            $all_prompt_msg = isset($ajax_msg['reset_prompt_msg']) ? $ajax_msg['reset_prompt_msg'] : '';
+            $section_promp_msg = isset($ajax_msg['reset_prompt_section_msg']) ? $ajax_msg['reset_prompt_section_msg'] : '';
         }
+        
         $no_display = ' rn-no-display';
-        if (isset($page['display']['enabled']) && $page['display']['enabled'] == true) {
+
+        if ( isset( $page[ 'display' ][ 'enabled' ] ) && $page[ 'display' ][ 'enabled' ] == true ) {
+
             $no_display = '';
         }
+
         $is_multi_section = false;
+        
         if (count($page['sections']) > 1 || $page['import_export']['enable'] == true) {
+        
             $is_multi_section = true;
         }
+        
         if (isset($page['page_title']) && $page['page_title'] != '') {
             ?>
             <h1 class="wp-heading-inline"><?php echo esc_html($page['page_title']); ?></h1>
             <?php
         }
         ?>
-            <div<?php echo isset($page['page_id'])? ' id="'. esc_attr($page['page_id']).'"':''; ?> class="rn-container rn-option-page <?php echo (isset($page['is_wc']) && $page['is_wc'] == true) ? 'rn_is_wc' : ''; ?>" data-repeater-pfx="<?php echo esc_attr($page['option_name']); ?>" data-ajax-save-error="<?php echo esc_attr($ajax_save_error); ?>" data-ajax-reset-error="<?php echo esc_attr($ajax_reset_error); ?>" data-option-name="<?php echo esc_attr($page['option_name']); ?>" style="width:<?php echo esc_attr($page['width']); ?>">
+            <div<?php echo isset($page['page_id'])? ' id="'. esc_attr($page['page_id']).'"':''; ?> class="rn-container rn-option-page <?php echo (isset($page['is_wc']) && $page['is_wc'] == true) ? 'rn_is_wc' : ''; ?>" data-repeater-pfx="<?php echo esc_attr($page['option_name']); ?>" data-prompt-all-msg="<?php echo esc_attr($all_prompt_msg); ?>" data-prompt-section-msg="<?php echo esc_attr($section_promp_msg); ?>" data-ajax-save-error="<?php echo esc_attr($ajax_save_error); ?>" data-ajax-reset-error="<?php echo esc_attr($ajax_reset_error); ?>" data-option-name="<?php echo esc_attr($page['option_name']); ?>" style="width:<?php echo esc_attr($page['width']); ?>">
             <?php
             if ($is_multi_section == true) {
                 ?>

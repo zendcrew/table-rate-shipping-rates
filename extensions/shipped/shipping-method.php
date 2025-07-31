@@ -1,6 +1,8 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 if ( !class_exists( 'WTARS_Shipped_Shipping_Method' ) ) {
 

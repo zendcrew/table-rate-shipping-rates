@@ -164,7 +164,7 @@ if ( !class_exists( 'ReonCore' ) ) {
             }
 
             if ( !isset( $result[ 'sanitize_type' ] ) ) {
-                $result[ 'sanitize_type' ] = $result[ 'type' ];
+                $result[ 'sanitize_type' ] = '';
             }
 
             if ( !isset( $result[ 'title' ] ) ) {

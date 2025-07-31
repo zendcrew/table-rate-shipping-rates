@@ -1,4 +1,10 @@
-<div class="notice notice-info wtars-shipped-notice is-dismissible" data-wtars_shipped_id="lite">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div class="notice notice-info wtars-shipped-notice is-dismissible" data-wtars_shipped_id="lite">
     <p><?php echo wp_kses( __( 'Hey, I noticed you having been using <strong>Shipped - WooCommerce Table Rate Shipping</strong>, that’s awesome! Could you please do me a favor and give it a 5-star rating to help us spread the word?', 'table-rate-shipping-rates' ), array( 'strong' => array() ) ); ?></p>
     <p>
         <a href="https://wordpress.org/support/plugin/table-rate-shipping-rates/reviews/?filter=5#new-post" class="wtars-shipped-btn" target="_blank"><span class="dashicons dashicons-external"></span><?php echo esc_html__( 'Yes! You deserve it', 'table-rate-shipping-rates' ); ?></a>

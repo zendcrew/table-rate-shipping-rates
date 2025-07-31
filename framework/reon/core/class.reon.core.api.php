@@ -231,7 +231,7 @@ if ( !class_exists( 'ReonApi' ) ) {
 
                 $sql = $sql_select . $sql_filter . $sql_order_limit;
 
-                $rows = $wpdb->get_results( $sql, ARRAY_A );
+                $rows = $wpdb->get_results( $sql, ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 
 
                 foreach ( $rows as $row ) {
@@ -537,7 +537,7 @@ if ( !class_exists( 'ReonApi' ) ) {
 
             try {
 
-                $attr_taxs = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_name != '' ORDER BY attribute_name ASC;" );
+                $attr_taxs = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_name != '' ORDER BY attribute_name ASC;" );// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 
                 if ( is_array( $attr_taxs ) ) {
                     foreach ( $attr_taxs as $attr_tax ) {
@@ -566,9 +566,6 @@ if ( !class_exists( 'ReonApi' ) ) {
             } catch ( Exception $ex ) {
                 
             }
-
-
-
 
             return $result;
         }
@@ -637,16 +634,11 @@ if ( !class_exists( 'ReonApi' ) ) {
 
         public static function get_wc_shipping_zones( $args ) {
 
-            $result = array();
+            WC_Shipping_Zones::get_zones();
 
-            try {
+            foreach ( WC_Shipping_Zones::get_zones() as $zone ) {
 
-                foreach ( WC_Shipping_Zones::get_zones( 'admin' ) as $zone ) {
-
-                    $result[ $zone[ 'zone_id' ] ] = $zone[ 'zone_name' ];
-                }
-            } catch ( Exception $ex ) {
-                
+                $result[ $zone[ 'zone_id' ] ] = $zone[ 'zone_name' ];
             }
 
             return $result;
@@ -656,44 +648,39 @@ if ( !class_exists( 'ReonApi' ) ) {
 
             $result = array();
 
-            try {
+            $shipping_zones = WC_Shipping_Zones::get_zones();
 
-                $shipping_zones = WC_Shipping_Zones::get_zones( 'admin' );
+            foreach ( $shipping_zones as $key => $shipping_zone ) {
 
-                foreach ( $shipping_zones as $key => $shipping_zone ) {
+                foreach ( $shipping_zone[ 'shipping_methods' ] as $key => $shipping_method ) {
 
-                    foreach ( $shipping_zone[ 'shipping_methods' ] as $key => $shipping_method ) {
+                    $instance_id = $shipping_method->get_instance_id();
 
-                        $instance_id = $shipping_method->get_instance_id();
+                    $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
 
-                        $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
-
-                        $result[ $instance_id ] = $shipping_zone[ 'zone_name' ] . ' → ' . $shipping_method->get_title() . $vl;
-                    }
+                    $result[ $instance_id ] = $shipping_zone[ 'zone_name' ] . ' → ' . $shipping_method->get_title() . $vl;
                 }
+            }
 
-                $zero_zone = WC_Shipping_Zones::get_zone_by( 'zone_id', 0 );
 
-                if ( count( $zero_zone->get_shipping_methods( false, 'admin' ) ) ) {
+            $zero_zone = WC_Shipping_Zones::get_zone_by();
 
-                    foreach ( $zero_zone->get_shipping_methods( false, 'admin' ) as $key => $shipping_method ) {
+            if ( count( $zero_zone->get_shipping_methods() ) ) {
 
-                        $instance_id = $shipping_method->get_instance_id();
+                foreach ( $zero_zone->get_shipping_methods() as $key => $shipping_method ) {
 
-                        $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
+                    $instance_id = $shipping_method->get_instance_id();
 
-                        $result[ $instance_id ] = $shipping_method->get_title() . $vl;
-                    }
+                    $vl = (isset( $args[ 'show_value' ] ) && $args[ 'show_value' ] == true) ? ' (' . $instance_id . ')' : '';
+
+                    $result[ $instance_id ] = $shipping_method->get_title() . $vl;
                 }
-            } catch ( Exception $ex ) {
-                
             }
 
             return $result;
         }
 
         public static function get_wc_tax_classes( $args ) {
-
             global $wpdb;
             $result = array();
 

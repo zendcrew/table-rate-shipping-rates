@@ -1,7 +1,7 @@
 .#{$css-prefix}-datetimepicker{
-    border: solid 1px #e0e5e7;
+    border: solid 1px $reon-focus-color;
     z-index:400!important;
-    @include border-radius(0);
+    @include border-radius($fields-border-radius);
     @include box-shadow(0px, 0px, 25px, rgba(0,0,0,0.15));
     padding:0px 10px 0px 10px;
     min-width: 250px;
@@ -16,6 +16,19 @@
         border-bottom: 1px solid #e0e5e7;
         padding: 7px 5px;
         @include border-radius(0);
+        @include border-top-left-radius($fields-border-radius);
+        @include border-top-right-radius($fields-border-radius);
+        .ui-datepicker-title{
+            margin: 6px 0px;
+        }
+        .ui-datepicker-year,
+        .ui-datepicker-month{
+            border: 1px solid #ccc;
+            @include border-radius($fields-border-radius);
+        }
+        .ui-datepicker-month{
+            margin-right: 5px;
+        }
         .ui-datepicker-prev, .ui-datepicker-next{
             top:7px;
         }
@@ -56,6 +69,9 @@
     }
     table{
         margin: 0 0 15px 0;
+        .ui-state-default,.ui-widget-content .ui-state-default{
+            @include border-radius($fields-choice-border-radius);
+        }
     }
     .ui-timepicker-div{
         display:block;
@@ -65,7 +81,7 @@
             height: 30px;
             background: #f1f6f8;
             border: 1px solid #ced4d6;
-            @include border-radius(0);
+            @include border-radius($fields-border-radius);
             @include box-shadow-none();
 
         }
@@ -84,6 +100,8 @@
             padding: 7px;
             margin: 0px -10px;
             @include border-radius(0);
+            @include border-top-left-radius($fields-border-radius);
+        @include border-top-right-radius($fields-border-radius);
         }
 
         &.ui-timepicker-oneLine{
@@ -103,10 +121,12 @@
         border-top: 1px solid #e0e5e7;
         height: 49px;
         margin: 0 -10px;
+        @include border-bottom-left-radius($fields-border-radius);
+        @include border-bottom-right-radius($fields-border-radius);
         button {
             margin: 10px;
             padding: 6px 11px;
-            @include border-radius(0);
+            @include border-radius($fields-border-radius);
         }
     }
 

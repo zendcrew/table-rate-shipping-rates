@@ -7,7 +7,11 @@
 }
 
 #wtars_shipped_page {
-    margin-top: 0;
+    margin-top: 25px;
+}
+
+.woocommerce_page_wc-settings-shipping .rn-woocommerce{
+    padding-bottom: 1px!important;
 }
 
 #wtars_shipped_page .form-table td {

@@ -1,20 +1,20 @@
-=== Table Rate Shipping Method for WooCommerce by Shipped - WooCommerce Table Rate Shipping ===
+=== Shipped - Table Rate Shipping Method | for WooCommerce ===
 Contributors: zendcrew, sundayfanz 
 Donate link: 
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping
 Requires at least: 5.8
 Tested up to: 6.8
-Stable tag: 1.3.3
+Stable tag: 1.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Shipped - WooCommerce Table Rate Shipping a powerful, flexible and easy-to-use shipping plugin for WooCommerce.
+Shipped - Table Rate Shipping Method a powerful, flexible and easy-to-use shipping plugin for WooCommerce.
 
 == Description ==
 
 = Table Rate Shipping =
-[Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew) is a powerful, flexible and easy-to-use shipping plugin for **WooCommerce**, it can be used to create multiple shipping rates based on product rules and conditions.
+[Shipped - Table Rate Shipping Method](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew) is a powerful, flexible and easy-to-use shipping plugin for **WooCommerce**, it can be used to create multiple shipping rates based on product rules and conditions.
 
 This plugin can be used to create a variety of the shipping cost types such as **costs per weight unit**, **cost per item**, **cost per shipping class**, cost per category, and so much more. Package items can also be **grouped by item unit**, **product category**, **shipping classes**, etc, and charged accordingly.
 
@@ -50,7 +50,7 @@ Create multiple cart notifications based on combinations of any of the parameter
 
 = Shipping Costs Calculations =
 
-[Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew) can be used to create dynamic shipping costs (or handling fees) based on product rules and conditions, about 22 shipping cost/fee combinations are included in the plugin:
+[Shipped - Table Rate Shipping Method](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew) can be used to create dynamic shipping costs (or handling fees) based on product rules and conditions, about 22 shipping cost/fee combinations are included in the plugin:
 
 * **Shipping Cost Per Order**
 * Fixed shipping cost
@@ -86,7 +86,7 @@ Create multiple cart notifications based on combinations of any of the parameter
 
 = Product Rules Validations =
 
-With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew), package items can be filtered based on combinations of any of the **35+ product rules** included:
+With [Shipped - Table Rate Shipping Method](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew), package items can be filtered based on combinations of any of the **35+ product rules** included:
 
 * **Products**
 * Specific Products
@@ -133,7 +133,7 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 
 = Cart / Package Conditional Logics =
 
-With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew), **shipping costs**, **handling fees** and **cart notifications** can be created based on combinations of any of the **89+ conditional logics**:
+With [Shipped - Table Rate Shipping Method](https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew), **shipping costs**, **handling fees** and **cart notifications** can be created based on combinations of any of the **89+ conditional logics**:
 
 * **Shipping Cost Based On GeoIP Locations**
 * GeoIP Continents
@@ -245,9 +245,9 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 
 ### YOU MAY ALSO NEED THESE OTHER PLUGINS
 
-&#9989;&nbsp;[WooCommerce Catalog Mode – Pricing, Enquiry Forms & Promotions](https://wordpress.org/plugins/catalog-mode-pricing-enquiry-forms-promotions): Easily set up **catalog modes**,  **prices and marketing** strategies on your **WooCommerce** store.
+&#9989;&nbsp;[wModes - Catalog Mode, Product Pricing, Enquiry Forms & Promotions | for WooCommerce](https://wordpress.org/plugins/catalog-mode-pricing-enquiry-forms-promotions): Easily set up **catalog modes**,  **prices and marketing** strategies on your **WooCommerce** store.
 
-&#9989;&nbsp;[WooCommerce Partial COD - Payment Gateway Restrictions & Fees](https://wordpress.org/plugins/partial-cod-payment-gateway-restrictions-fees): A powerful, flexible and easy-to-use WooCommerce extension that can be used to manage payment availability and other gateway-related cart settings based on product rules and conditions.
+&#9989;&nbsp;[PCOD - Partial COD, Payment Gateway Restrictions & Fees | for WooCommerce](https://wordpress.org/plugins/partial-cod-payment-gateway-restrictions-fees): A powerful, flexible and easy-to-use WooCommerce extension that can be used to manage payment availability and other gateway-related cart settings based on product rules and conditions.
 
 &#9989;&nbsp;[Dynamic Pricing & Discounts for WooCommerce](https://codecanyon.net/item/woopricely-dynamic-pricing-fees-discounts/23844181?ref=zendcrew): A multi-purpose pricing and discounts toolkit for **WooCommerce**. The dynamic pricing and discounts plugin allows you to automate product pricing, simple discount pricing, bulk discount pricing, tiered discount pricing, buy x get x discount pricing, buy x get y discount pricing, group discount pricing, cart discounts and cart fees by defining rules and conditions. These features are grouped into four easy-to-use modules, the modules include Product Pricing, Checkout Pricing, Checkout Discounts, and Checkout Fees.
 
@@ -255,20 +255,27 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 
 
 == Screenshots ==
-1. WooCommerce Table Rate Shipping
-2. WooCommerce Table Rate Shipping 2
-3. WooCommerce Table Rate Shipping 3
-4. WooCommerce Table Rate Shipping 4
-5. WooCommerce Table Rate Shipping 5
-6. WooCommerce Table Rate Shipping 6
-7. WooCommerce Table Rate Shipping 7
-8. WooCommerce Table Rate Shipping 8
-9. WooCommerce Table Rate Shipping 9
-10. WooCommerce Table Rate Shipping 10
-11. WooCommerce Table Rate Shipping 11
-12. WooCommerce Table Rate Shipping 12
+1. Shipped - Table Rate Shipping Method | for WooCommerce
+2. Shipped - Table Rate Shipping Method | for WooCommerce 2
+3. Shipped - Table Rate Shipping Method | for WooCommerce 3
+4. Shipped - Table Rate Shipping Method | for WooCommerce 4
+5. Shipped - Table Rate Shipping Method | for WooCommerce 5
+6. Shipped - Table Rate Shipping Method | for WooCommerce 6
+7. Shipped - Table Rate Shipping Method | for WooCommerce 7
+8. Shipped - Table Rate Shipping Method | for WooCommerce 8
+9. Shipped - Table Rate Shipping Method | for WooCommerce 9
+10. Shipped - Table Rate Shipping Method | for WooCommerce 10
+11. Shipped - Table Rate Shipping Method | for WooCommerce 11
+12. Shipped - Table Rate Shipping Method | for WooCommerce 12
 
 == Changelog ==
+
+= 1.4 - 31/07/2025 =
+[Update] - Updated Framework
+[Tweaks] - Changed Plugin name and banner
+[Check] - WordPress 6.8 compatibility check
+[Check] - WooCommerce 10.0 compatibility check
+[Check] - Full security check using Plugin Check (PCP)
 
 = 1.3.3 - 04/07/2025 =
 [Update] - Updated documentation links
@@ -290,29 +297,29 @@ With [Shipped - WooCommerce Table Rate Shipping](https://codecanyon.net/item/woo
 [Check] - WooCommerce 8.7 compatibility check
 
 = 1.2.5 - 08/11/2023 =
-Check - WooCommerce 8.2 compatibility check
-Update - Updated framework
+[Check] - WooCommerce 8.2 compatibility check
+[Update] - Updated framework
 
 = 1.2.4 - 19/09/2023 =
-Check - WooCommerce 8.0 compatibility check
-Update - Updated framework
+[Check] - WooCommerce 8.0 compatibility check
+[Update] - Updated framework
 
 = 1.2.3 - 30/07/2023 =
-Update - WooCommerce 7.9 &amp; HPOS update
+[Update] - WooCommerce 7.9 &amp; HPOS update
 
 = 1.2.2 - 02/06/2023 =
-Update - Updated Framework
-Update - WooCommerce 7.7 update
+[Update] - Updated Framework
+[Update] - WooCommerce 7.7 update
 
 = 1.2.1 - 26/04/2023 =
-Update - WordPress 6.2 update
+[Update] - WordPress 6.2 update
 
 = 1.2 - 17/02/2023 =
-Update - Updated admin page
+[Update] - Updated admin page
 
 = 1.1 - 17/11/2022 =
-Fix - Fixed session_start errors
-Update - Updated admin page
+[Fix] - Fixed session_start errors
+[Update] - Updated admin page
 
 = 1.0 - 19/09/2022 =
-Release - Initial Release
+[Release] - Initial Release

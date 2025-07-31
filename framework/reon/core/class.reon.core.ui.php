@@ -38,15 +38,15 @@ if (!class_exists('ReonUI')) {
         private static function register_styles() {
             $rn_style_path = REON_ASSETS . '/css/';
             $rn_script_path = REON_ASSETS . '/js/';
-            wp_register_style('fontawsome', $rn_style_path . 'fontawesome/css/all.min.css');
-            wp_register_style('spectrum', $rn_style_path . 'spectrum.css');
-            wp_register_style('nouislider', $rn_style_path . 'nouislider.min.css');
-            wp_register_style('select2', $rn_script_path . 'select2/css/select2.min.css');
-            wp_register_style('rn-jquery-ui', $rn_style_path . 'jquery-ui.min.css');
-            wp_register_style('timepicker_addon', $rn_script_path . 'timepicker-addon/jquery-ui-timepicker-addon.css');
+            wp_register_style('fontawsome', $rn_style_path . 'fontawesome/css/all.min.css', array(),'6.1.2');
+            wp_register_style('spectrum', $rn_style_path . 'spectrum.css',array(),'1.8.0');
+            wp_register_style('nouislider', $rn_style_path . 'nouislider.min.css',array(),'8.5.1');
+            wp_register_style('select2', $rn_script_path . 'select2/css/select2.min.css',array(),'4.0.3');
+            wp_register_style('rn-jquery-ui', $rn_style_path . 'jquery-ui.min.css',array(),'1.12.1');
+            wp_register_style('timepicker_addon', $rn_script_path . 'timepicker-addon/jquery-ui-timepicker-addon.css',array(),'1.6.3');
 
 
-            wp_register_style('rn-admin', $rn_style_path . 'admin.css');
+            wp_register_style('rn-admin', $rn_style_path . 'admin.css',array(),'1.0');
             do_action('reon/register-styles');
         }
 
@@ -134,7 +134,7 @@ if (!class_exists('ReonUI')) {
 
 
             $client_variables = array(
-                'ajax_url' => admin_url('admin-ajax.php'),
+                'ajax_url' => admin_url('admin-ajax.php?rn-admin-options=1'),
                 'culture' => apply_filters('roen/get-culture', array())
             );
 

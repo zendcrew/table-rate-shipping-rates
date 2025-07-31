@@ -1,4 +1,9 @@
-<div class="rn-repeater-section-body">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?><div class="rn-repeater-section-body">
     <table class="rn-repeater-section-inner">
         <tbody class="rn-ui-subapp">
             <?php
@@ -6,11 +11,11 @@
             if (isset($template['fields'])) {
                 $fields = $template['fields'];
             }
-
-            $args['id'] = $template['id'];
-            $fields = apply_filters('roen/get-repeater-template-' . $template_args['filter_id'] . '-' . $template['id'] . '-fields', $fields, $args);
+            
+            $fields = self::get_fields( $fields, $template_args[ 'filter_id' ], $template[ 'id' ], $args );
 
             $index = 0;
+            
             foreach ($fields as $fld) {
                 $field = ReonCore::process_default_field($fld);
                 $field['in_repeater'] = true;

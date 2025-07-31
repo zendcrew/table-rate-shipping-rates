@@ -11,13 +11,16 @@ if ( !class_exists( 'WTARS_Shipped_Extension' ) ) {
         public function __construct() {
 
             if ( !defined( 'WTARS_SHIPPED_ASSETS_URL' ) ) {
+                
                 define( 'WTARS_SHIPPED_ASSETS_URL', plugins_url( 'assets/', __FILE__ ) );
             }
 
             if ( is_admin() ) {
-                add_action( 'reon/init', array( $this, 'load_admin_page' ) );
+
+                add_action( 'init', array( $this, 'load_admin_page' ) );
                 add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ), 20 );
             } else {
+  
                 add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_public_scripts' ), 20 );
             }
 

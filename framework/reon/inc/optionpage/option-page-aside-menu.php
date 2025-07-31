@@ -1,4 +1,9 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 $import_export = $page['import_export'];
 $sections = array();
 $last = -1;

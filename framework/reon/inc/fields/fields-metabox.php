@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 add_action('reon/render-metabox-fields', 'reon_fields_metabox', 10, 3);
 if (!function_exists('reon_fields_metabox')) {
 

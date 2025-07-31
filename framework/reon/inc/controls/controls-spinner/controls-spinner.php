@@ -1,6 +1,6 @@
 <?php
-if (!class_exists('Reon')) {
-    return;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if (!class_exists('Reon_Controls_Spinner')) {

@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if ( !class_exists( 'WTARS_Shipped_Cache' ) ) {
 
     class WTARS_Shipped_Cache {

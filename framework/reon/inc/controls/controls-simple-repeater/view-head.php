@@ -1,4 +1,10 @@
-<div class="rn-repeater-head">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div class="rn-repeater-head">
     <?php
     if ($is_sortable == true) {
         ?>

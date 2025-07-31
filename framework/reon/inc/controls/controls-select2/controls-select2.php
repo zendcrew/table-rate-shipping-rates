@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists('Reon')) {
-    return;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if (!class_exists('Reon_Controls_Select2')) {
@@ -19,7 +19,7 @@ if (!class_exists('Reon_Controls_Select2')) {
                 'data-minimum-input-length' => 0,
                 'data-minimum-results-forsearch' => 10,
             );
-
+            
             if (isset($field['tags'])) {
                 $attributes['data-tags'] = $field['tags'];
             }
@@ -31,7 +31,11 @@ if (!class_exists('Reon_Controls_Select2')) {
             if (isset($field['minimum_results_forsearch'])) {
                 $attributes['data-minimum-results-forsearch'] = $field['minimum_results_forsearch'];
             }
-
+            
+            if (isset($field['placeholder_width'])) {
+                $attributes['data-placeholder-width'] = $field['placeholder_width'];
+            }
+            
             if (isset($field['multiple']) && $field['multiple'] == true) {
                 $attributes['multiple'] = 'multiple';
             }
@@ -83,6 +87,19 @@ if (!class_exists('Reon_Controls_Select2')) {
             if (isset($field['dyn_switcher_id'])) {
                 $box_classes[] = 'rn-dyn-switcher';
             }
+            
+            if ( isset( $field[ 'box_css_class' ] ) && is_array( $field[ 'box_css_class' ] ) ) {
+
+                foreach ( $field[ 'box_css_class' ] as $css_class ) {
+
+                    $box_classes[] = $css_class;
+                }
+            } else if ( isset( $field[ 'box_css_class' ] ) ) {
+
+                $box_classes[] = $field[ 'box_css_class' ];
+            }
+            
+            
             $box_attributes = array('class' => ReonUtil::array_to_classes(apply_filters('reon/control-box-classes', $box_classes, $field)));
 
             $wrapper_class = array('rn-field-wrapper');

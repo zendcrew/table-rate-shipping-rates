@@ -33,6 +33,7 @@ if (!class_exists('ReonUtil')) {
                 if ($cnt >= 0) {
                     $result = $result . ' ';
                 }
+                
             }
             return $result;
         }
@@ -84,7 +85,7 @@ if (!class_exists('ReonUtil')) {
                 $result = ' ' . esc_attr($type) . '="' . esc_attr($type) . '"';
             }
             if ($echo) {
-                echo wp_kses_post($result);
+                echo wp_kses($result,self::get_allow_html());
             }
             return $result;
         }
@@ -103,24 +104,6 @@ if (!class_exists('ReonUtil')) {
                 }
             }
             return false;
-        }
-
-        public static function get_session_object($id) {
-            return $_SESSION[$id];
-        }
-
-        public static function is_session_object_set($id) {
-            return (isset($_SESSION[$id]));
-        }
-
-        public static function set_session_object($id, $object = array()) {
-            $_SESSION[$id] = $object;
-        }
-
-        public static function unset_session_object($id) {
-            if (self::is_session_object_set($id)) {
-                unset($_SESSION[$id]);
-            }
         }
 
         public static function get_screen_args_from_field($field, $args = array()) {
@@ -167,7 +150,7 @@ if (!class_exists('ReonUtil')) {
             $cnt = 0;
             $allowed_chars = str_split(!empty($allowedchars) ? $allowedchars : '0123456789abcdefghijklmnopqrstwxyzABCDEFGHIJKLMNOPQRSTWXYZ-_+=!#@~.,', 1);
             while ($cnt < $length) {
-                $index = rand(0, (count($allowed_chars) - 1));
+                $index = wp_rand(0, (count($allowed_chars) - 1));
                 $result = $result . $allowed_chars[$index];
                 $cnt++;
             }
@@ -259,6 +242,18 @@ if (!class_exists('ReonUtil')) {
             return $result;
         }
 
+        public static function start_session() {
+            ob_start();
+            if (function_exists('session_status')) {
+                if (session_status() != PHP_SESSION_ACTIVE) {
+                    session_start();
+                }
+            } else {
+                session_start();
+            }
+            ob_clean();
+        }
+
         public static function get_controls_field_ids($fields) {
             $field_ids = array();
             if (isset($fields)) {
@@ -329,6 +324,47 @@ if (!class_exists('ReonUtil')) {
             }
             return $field_types;
         }
+        
+        public static function get_allow_html( ) {
+            
+            $allowed_html = array(
+                'br' => array(),
+                'div' => array(
+                    'id' => true,
+                    'title' => true,
+                    'class' => true,
+                ),
+                'span' => array(
+                    'id' => true,
+                    'title' => true,
+                    'class' => true,
+                ),
+                'a' => array(
+                    'id' => true,
+                    'href' => true,
+                    'title' => true,
+                    'class' => true,
+                    'target' => true,
+                ),
+                'strong' => array(
+                    'id' => true,
+                    'title' => true,
+                    'class' => true,
+                ),
+                'b' => array(
+                    'id' => true,
+                    'title' => true,
+                    'class' => true,
+                ),
+                'i' => array(
+                    'id' => true,
+                    'title' => true,
+                    'class' => true,
+                ),
+            );
+
+           return $allowed_html;
+        }
 
         public static function recursive_require( $dir, $ingore_list = array(), $subdirs = array() ) {
 
@@ -350,4 +386,3 @@ if (!class_exists('ReonUtil')) {
     }
 
 }
-

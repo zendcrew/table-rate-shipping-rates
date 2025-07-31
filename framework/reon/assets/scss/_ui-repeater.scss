@@ -3,7 +3,7 @@
     text-align: left;
     .#{$css-prefix}-repeater-head{
         display: block;
-        min-height: 55px;                
+        min-height: 55px;
         background-color: #f8f8f0;
         padding-right: 2px;
         border:1px solid #e0e5e7;
@@ -13,7 +13,7 @@
         .#{$css-prefix}-repeater-col-buttons,
         .#{$css-prefix}-repeater-col-spacer,
         .#{$css-prefix}-repeater-col-titles{
-            display:table-cell; 
+            display:table-cell;
             vertical-align:top;
         }
         .#{$css-prefix}-repeater-col-titles{
@@ -51,7 +51,7 @@
             font-weight: 600;
             .#{$css-prefix}-tips{
                 top: 0px;
-                left: 1px;  
+                left: 1px;
             }
         }
         .#{$css-prefix}-repeater-col-space{
@@ -59,8 +59,8 @@
         }
     }
     .#{$css-prefix}-repeater-sections{
-        display: block;  
-        min-height: 55px;  
+        display: block;
+        min-height: 55px;
         clear: both;
         width: 100%;
         .#{$css-prefix}-repeater-section{
@@ -71,20 +71,20 @@
             clear: both;
             width: 100%;
             &.#{$css-prefix}-max-h{
-                max-height: 55px!important;  
+                max-height: 55px!important;
                 overflow: hidden!important;
             }
             .#{$css-prefix}-repeater-section-head{
                 display: block;
-                min-height: 55px;                
+                min-height: 55px;
                 background-color: #f8f8f0;
-                padding-right: 2px; 
+                padding-right: 2px;
                 .#{$css-prefix}-repeater-head-left-buttons{
-                    display: table-cell;  
+                    display: table-cell;
                     vertical-align: top;
                 }
                 .#{$css-prefix}-repeater-head-right-buttons{
-                    display: table-cell;  
+                    display: table-cell;
                     vertical-align: top;
                 }
 
@@ -97,7 +97,7 @@
                     }
                 }
                 &.#{$css-prefix}-head-max-h{
-                    max-height: 55px!important;  
+                    max-height: 55px!important;
                     overflow: hidden!important;
                 }
                 .#{$css-prefix}-repeater-head-left,
@@ -118,7 +118,7 @@
                         margin-right: 3px;
                     }
                 }
-                .#{$css-prefix}-repeater-head-left{                    
+                .#{$css-prefix}-repeater-head-left{
                     .#{$css-prefix}-group{
                         .#{$css-prefix}-select2{
                             margin-bottom: 0px;
@@ -126,7 +126,7 @@
                     }
                 }
                 .#{$css-prefix}-repeater-head-right{
-                    float: right; 
+                    float: right;
                     .#{$css-prefix}-repeater-head-controls{
                         .#{$css-prefix}-field-wrapper{
                             .#{$css-prefix}-last{
@@ -190,7 +190,7 @@
                         height: 19px;
                         width: 1px;
                         background-color: #c3c7c9;
-                        margin: 19px 6px 12px 14px;                     
+                        margin: 19px 6px 12px 14px;
                     }
                     .#{$css-prefix}-repeater-head-duplicate{
                         font-size: 20px;
@@ -211,18 +211,18 @@
                             color:$reon-theme-color;
                         }
                     }
-                }                
+                }
             }
 
             .#{$css-prefix}-repeater-section-body{
-                display: none; 
-                border-top:1px solid #e0e5e7;  
+                display: none;
+                border-top:1px solid #e0e5e7;
                 padding: 0px 25px 25px 25px;
                 &.#{$css-prefix}-repeater-panel-body{
                     border-top:0;
                 }
                 .#{$css-prefix}-repeater-section-inner{
-                    display: block; 
+                    display: block;
                     width: 100%;
 
                 }
@@ -230,7 +230,7 @@
 
             &.#{$css-prefix}-active-section{
                 > .#{$css-prefix}-repeater-section-body{
-                    display: block; 
+                    display: block;
                 }
             }
         }
@@ -239,7 +239,7 @@
         {
             display: block;
             border:1px dashed #e0e5e7;
-            min-height: 57px;   
+            min-height: 57px;
             margin-bottom: 10px;
         }
         &.#{$css-prefix}-no-sortable{
@@ -271,19 +271,59 @@
             }
         }
 
+        .#{$css-prefix}-repeater-adder-icon-only{
+            margin-right:0px;
+        }
+
         .#{$css-prefix}-btn,.#{$css-prefix}-select2{
-            float: left; 
+            float: left;
+        }
+        .#{$css-prefix}-select2{
+           
+            &.#{$css-prefix}-select2-open{
+
+                &.#{$css-prefix}-select2-below{
+
+                    .#{$css-prefix}-no-space{
+                        @include border-bottom-left-radius($fields-border-radius);
+                        @include border-bottom-right-radius($fields-border-radius);
+                    }
+                }
+
+                &.#{$css-prefix}-select2-above{
+
+                    .#{$css-prefix}-no-space{
+                        @include border-top-left-radius($fields-border-radius);
+                        @include border-top-right-radius($fields-border-radius);
+                    }
+                }
+
+            }
         }
         .#{$css-prefix}-field{
             margin-right: 3px;
-        }   
+            &.#{$css-prefix}-repeater-template-list{
+                @include border-bottom-left-radius(0px);
+                @include border-top-left-radius(0px);
+                .select2-container{
+                    @include border-bottom-left-radius(0px);
+                    @include border-top-left-radius(0px);
+                }
+            }
+        }
         .#{$css-prefix}-no-space{
             margin-right: -1px;
+            @include border-bottom-right-radius(0px);
+            @include border-top-right-radius(0px);
+            .#{$css-prefix}-label{
+                @include border-bottom-left-radius($fields-border-radius);
+                @include border-top-left-radius($fields-border-radius);
+            }
         }
         .#{$css-prefix}-repeater-adder-center{
             text-align: center;
             .#{$css-prefix}-field-wrapper{
-                float: none; 
+                float: none;
             }
         }
     }
@@ -326,13 +366,13 @@
             .#{$css-prefix}-repeater-section{
                 margin-bottom:5px;
                 &.#{$css-prefix}-max-h{
-                    max-height: 41px!important;  
+                    max-height: 41px!important;
                     overflow: hidden!important;
                 }
                 .#{$css-prefix}-repeater-section-head{
                     min-height: 41px;
                     &.#{$css-prefix}-head-max-h{
-                        max-height: 41px!important;  
+                        max-height: 41px!important;
                         overflow: hidden!important;
                     }
                     .#{$css-prefix}-repeater-head-sort{
@@ -355,11 +395,11 @@
                         padding: 5px 0px 5px 0px;
                     }
 
-                    .#{$css-prefix}-repeater-head-sep{                               
-                        margin: 12px 3px 10px 17px;            
+                    .#{$css-prefix}-repeater-head-sep{
+                        margin: 12px 3px 10px 17px;
                     }
-                    .#{$css-prefix}-repeater-head-duplicate{                               
-                        padding: 7px 3px 6px 14px;;                              
+                    .#{$css-prefix}-repeater-head-duplicate{
+                        padding: 7px 3px 6px 14px;
                     }
                     .#{$css-prefix}-repeater-head-delete{
                         padding: 7px 12px 6px 3px;
@@ -379,15 +419,15 @@
 
                         &.#{$css-prefix}-last{
                             border-bottom:0;
-                        } 
+                        }
                         &.#{$css-prefix}-ui-big-section{
                             > .#{$css-prefix}-ui-block{
                                 > .#{$css-prefix}-ui-head{
-                                    padding: 0px 0 15px 0;                            
+                                    padding: 0px 0 15px 0;
                                 }
                                 padding:19px 0 25px 0px;
                             }
-                        } 
+                        }
                     }
 
                     .#{$css-prefix}-ui-heading-section{
@@ -404,7 +444,7 @@
 
             .#{$css-prefix}-sortable-repeater-state
             {
-                min-height: 43px;   
+                min-height: 43px;
                 margin-bottom: 5px;
             }
 
@@ -432,7 +472,7 @@
     &.#{$css-prefix}-smaller-repeater{
         .#{$css-prefix}-repeater-head{
             margin-bottom:3px;
-            min-height: 36px;  
+            min-height: 36px;
             .#{$css-prefix}-repeater-col-sort{
                 height: 36px;
                 width: 36px;
@@ -448,15 +488,15 @@
         .#{$css-prefix}-repeater-sections{
             min-height: 36px;
             .#{$css-prefix}-repeater-section{
-                margin-bottom:5px;  
+                margin-bottom:5px;
                 &.#{$css-prefix}-max-h{
-                    max-height: 38px!important;  
+                    max-height: 38px!important;
                     overflow: hidden!important;
                 }
                 .#{$css-prefix}-repeater-section-head{
                     min-height: 36px;
                     &.#{$css-prefix}-head-max-h{
-                        max-height: 36px!important;  
+                        max-height: 36px!important;
                         overflow: hidden!important;
                     }
                     .#{$css-prefix}-repeater-head-sort{
@@ -491,11 +531,11 @@
 
 
 
-                    .#{$css-prefix}-repeater-head-sep{                               
-                        margin: 9px 0px 10px 15px;              
+                    .#{$css-prefix}-repeater-head-sep{
+                        margin: 9px 0px 10px 15px;
                     }
-                    .#{$css-prefix}-repeater-head-duplicate{                               
-                        padding: 5px 1px 3px 14px;                            
+                    .#{$css-prefix}-repeater-head-duplicate{
+                        padding: 5px 1px 3px 14px;
                     }
                     .#{$css-prefix}-repeater-head-delete{
                         padding: 5px 7px 2px 3px;
@@ -515,15 +555,15 @@
 
                         &.#{$css-prefix}-last{
                             border-bottom:0;
-                        } 
+                        }
                         &.#{$css-prefix}-ui-big-section{
                             > .#{$css-prefix}-ui-block{
                                 > .#{$css-prefix}-ui-head{
-                                    padding: 0px 0 15px 0;                            
+                                    padding: 0px 0 15px 0;
                                 }
                                 padding:15px 0 25px 0px;
                             }
-                        } 
+                        }
                     }
 
                     .#{$css-prefix}-ui-heading-section{
@@ -540,7 +580,7 @@
 
             .#{$css-prefix}-sortable-repeater-state
             {
-                min-height: 38px;   
+                min-height: 38px;
                 margin-bottom: 3px;
             }
 
@@ -593,6 +633,117 @@
                 background-color: #fff;
                 > .#{$css-prefix}-repeater-section-head{
                     background-color: #fff;
+                }
+            }
+        }
+
+    }
+
+    &.#{$css-prefix}-round,
+    &.#{$css-prefix}-round-top{
+
+        > .#{$css-prefix}-repeater-sections{
+
+            > .#{$css-prefix}-repeater-section{
+
+                &.#{$css-prefix}-first-section,
+                &.#{$css-prefix}-single-section{
+
+                    @include border-top-left-radius($panel-border-radius);
+                    @include border-top-right-radius($panel-border-radius);
+                    > .#{$css-prefix}-repeater-section-head{
+
+                        @include border-top-left-radius($panel-border-radius);
+                        @include border-top-right-radius($panel-border-radius);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.#{$css-prefix}-round,
+    &.#{$css-prefix}-round-bottom{
+
+        > .#{$css-prefix}-repeater-sections{
+
+            > .#{$css-prefix}-repeater-section{
+
+                &.#{$css-prefix}-last-section,
+                &.#{$css-prefix}-single-section{
+
+                    @include border-bottom-left-radius($panel-border-radius);
+                    @include border-bottom-right-radius($panel-border-radius);
+                    > .#{$css-prefix}-repeater-section-head{
+
+                        @include border-bottom-left-radius($panel-border-radius);
+                        @include border-bottom-right-radius($panel-border-radius);
+                    }
+
+                    &.#{$css-prefix}-active-section{
+
+                        > .#{$css-prefix}-repeater-section-head{
+
+                            @include border-bottom-left-radius(0px);
+                            @include border-bottom-right-radius(0px);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    &.#{$css-prefix}-round-small,
+    &.#{$css-prefix}-round-small-top{
+
+        > .#{$css-prefix}-repeater-sections{
+
+            > .#{$css-prefix}-repeater-section{
+
+                &.#{$css-prefix}-first-section,
+                &.#{$css-prefix}-single-section{
+
+                    @include border-top-left-radius($panel-small-border-radius);
+                    @include border-top-right-radius($panel-small-border-radius);
+                    > .#{$css-prefix}-repeater-section-head{
+
+                        @include border-top-left-radius($panel-small-border-radius);
+                        @include border-top-right-radius($panel-small-border-radius);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.#{$css-prefix}-round-small,
+    &.#{$css-prefix}-round-small-bottom{
+
+        > .#{$css-prefix}-repeater-sections{
+
+            > .#{$css-prefix}-repeater-section{
+
+                &.#{$css-prefix}-last-section,
+                &.#{$css-prefix}-single-section{
+
+                    @include border-bottom-left-radius($panel-small-border-radius);
+                    @include border-bottom-right-radius($panel-small-border-radius);
+                    > .#{$css-prefix}-repeater-section-head{
+
+                        @include border-bottom-left-radius($panel-small-border-radius);
+                        @include border-bottom-right-radius($panel-small-border-radius);
+                    }
+
+                    &.#{$css-prefix}-active-section{
+
+                        > .#{$css-prefix}-repeater-section-head{
+
+                            @include border-bottom-left-radius(0px);
+                            @include border-bottom-right-radius(0px);
+                        }
+                    }
                 }
             }
         }

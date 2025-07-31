@@ -1,4 +1,9 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 $import_export = $page['import_export'];
 $section_styles = array();
 if (isset($page['default_min_height'])) {
@@ -17,7 +22,7 @@ if (!isset($page['group'])||$page['group'] == 0) {
                     <div class="rn-ui-head">
                         <h6 class="rn-ui-head-title"><?php echo esc_attr($import_export['import']['title']); ?></h6>
                         <p class="rn-ui-head-desc">
-                            <?php echo wp_kses_post($import_export['import']['desc']); ?>
+                            <?php echo wp_kses($import_export['import']['desc'], ReonUtil::get_allow_html()); ?>
                         </p>
                     </div>
                     <div class="rn-field-wrapper rn-import-export-wrapper">
@@ -27,20 +32,20 @@ if (!isset($page['group'])||$page['group'] == 0) {
                     <div class="rn-clear"></div>
                     <div class="rn-field-wrapper rn-import-export-wrapper rn-url-import-panel" style="width:100%; display: none">
                         <p class="rn-field-desc">
-                            <?php echo wp_kses_post($import_export['import']['url_textbox_desc']); ?>
+                            <?php echo wp_kses($import_export['import']['url_textbox_desc'], ReonUtil::get_allow_html()); ?>
                         </p>
                         <textarea id="rn_import_field_url" placeholder="<?php echo esc_attr($import_export['import']['url_textbox_hint']); ?>" style="width:100%;height:50px;" cols="80" rows="5"></textarea>                                        
                     </div>
                     <div class="rn-field-wrapper rn-import-export-wrapper rn-data-import-panel" style="width:100%; display: none">
                         <p class="rn-field-desc">
-                            <?php echo wp_kses_post($import_export['import']['data_textbox_desc']); ?>
+                            <?php echo wp_kses($import_export['import']['data_textbox_desc'], ReonUtil::get_allow_html()); ?>
                         </p>
                         <textarea id="rn_import_field_data" placeholder="<?php echo esc_attr($import_export['import']['data_textbox_hint']); ?>" style="width:100%;height:150px;" cols="80" rows="5"></textarea>                                        
                     </div>
                     <div class="rn-clear"></div>
                     <div class="rn-field-wrapper rn-data-importnow-panel" style="width:100%; display: none;">
                         <a href="#" class="rn-btn rn-btn-primary rn-import-btn" data-import-type="data"><?php echo esc_html($import_export['import']['import_button_text']); ?></a>
-                        <p class="rn-import-export-warn"><?php echo wp_kses_post($import_export['import']['warn_text']); ?></p>
+                        <p class="rn-import-export-warn"><?php echo wp_kses($import_export['import']['warn_text'], ReonUtil::get_allow_html() ); ?></p>
                     </div> 
                 </td><!-- .rn-ui-block -->
             </tr><!-- .rn-ui-section -->
@@ -60,13 +65,13 @@ if (!isset($page['group'])||$page['group'] == 0) {
                     <div class="rn-clear"></div>
                     <div class="rn-field-wrapper rn-import-export-wrapper rn-url-export-panel" style="width:100%; display: none;">
                         <p class="rn-field-desc">
-                            <?php echo wp_kses_post($import_export['export']['url_textbox_desc']); ?>
+                            <?php echo wp_kses($import_export['export']['url_textbox_desc'], ReonUtil::get_allow_html() ); ?>
                         </p>
                         <textarea id="rn_export_url" autofocus="autofocus" onfocus="this.select()" style="width:100%;height:50px;" cols="80" rows="5"><?php echo esc_url($page['export_url']); ?></textarea>                                        
                     </div>
                     <div class="rn-field-wrapper rn-import-export-wrapper rn-data-export-panel" style="width:100%; display: none;">
                         <p class="rn-field-desc">
-                            <?php echo wp_kses_post($import_export['export']['data_textbox_desc']); ?>
+                            <?php echo wp_kses($import_export['export']['data_textbox_desc'], ReonUtil::get_allow_html() ); ?>
                         </p>
                         <textarea id="rn_export_data" autofocus="autofocus" onfocus="this.select()" style="width:100%;height:150px;" cols="80" rows="5" data-option-url="<?php echo esc_url($page['export_url']); ?>"></textarea>                                        
                     </div>

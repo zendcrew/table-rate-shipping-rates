@@ -1,4 +1,10 @@
-<div <?php echo wp_kses_post(ReonUtil::array_to_attributes($wrapper_attr)); ?>>            
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div <?php echo wp_kses_post(ReonUtil::array_to_attributes($wrapper_attr)); ?>>            
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes(apply_filters('reon/control-box-attributes', $box_attributes, $field))); ?>>
         <?php
         if (isset($field['label'])) {

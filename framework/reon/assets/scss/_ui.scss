@@ -6,24 +6,24 @@
     ================
     */
 
-    input[type=text], 
-    input[type=password], 
-    input[type=color], 
-    input[type=date], 
-    input[type=datetime], 
-    input[type=datetime-local], 
-    input[type=email], 
-    input[type=number], 
-    input[type=tel], 
-    input[type=time], 
-    input[type=url], 
-    input[type=week], 
-    input[type=search], 
-    select, 
+    input[type=text],
+    input[type=password],
+    input[type=color],
+    input[type=date],
+    input[type=datetime],
+    input[type=datetime-local],
+    input[type=email],
+    input[type=number],
+    input[type=tel],
+    input[type=time],
+    input[type=url],
+    input[type=week],
+    input[type=search],
+    select,
     textarea{
         @include box-shadow-none();
         background-color: #f1f6f8;
-        color: #33393b;  
+        color: #33393b;
         padding: 4px 9px;
         max-height: 32px;
         height: auto;
@@ -31,7 +31,7 @@
         vertical-align: baseline;
         line-height: 22px;
         font-size: 13px;
-        border-radius: 0px;
+        @include border-radius($fields-border-radius);
     }
     select{
         padding: 7px 11px;
@@ -39,37 +39,60 @@
 
 
     textarea{
-        max-width: 100%; 
+        max-width: 100%;
         max-height:none;
         float:left;
         border: 1px solid #ced4d6;
         resize: vertical;
+        &:hover,
+            &:focus{
+
+            border-color: $reon-focus-color;
+        }
     }
 
 
     label.#{$css-prefix}-field{
         float: none;
+
+        &.#{$css-prefix}-textbox{
+            overflow: hidden;
+            @include border-radius($fields-border-radius);
+            &:hover{
+                border-color: $reon-focus-color;
+            }
+            &.#{$css-prefix}-field-focus{
+
+                border-color: $reon-focus-color;
+
+                .#{$css-prefix}-label{
+
+                    border-right-color: $reon-focus-color;
+                }
+            }
+        }
+
     }
 
     .#{$css-prefix}-field{
         border: 1px solid #ced4d6;
         display: inline-block;
         padding: 0;
-        background-color: #fff;        
-        input[type=text], 
-        input[type=password], 
-        input[type=color], 
-        input[type=date], 
-        input[type=datetime], 
-        input[type=datetime-local], 
-        input[type=email], 
-        input[type=number], 
-        input[type=tel], 
-        input[type=time], 
-        input[type=url], 
-        input[type=week], 
-        input[type=search], 
-        select, 
+        background-color: #fff;
+        input[type=text],
+        input[type=password],
+        input[type=color],
+        input[type=date],
+        input[type=datetime],
+        input[type=datetime-local],
+        input[type=email],
+        input[type=number],
+        input[type=tel],
+        input[type=time],
+        input[type=url],
+        input[type=week],
+        input[type=search],
+        select,
         textarea{
             border: none;
             color:#33393b;
@@ -98,7 +121,7 @@
             &.#{$css-prefix}-icon-label{
                 .fa, .dashicons{
                     margin-right: 0px;
-                } 
+                }
             }
 
 
@@ -121,7 +144,7 @@
             .#{$css-prefix}-group{
                 text-align: left;
             }
-            .#{$css-prefix}-group{                
+            .#{$css-prefix}-group{
                 float: none;
             }
         }
@@ -136,13 +159,16 @@
     .#{$css-prefix}-colorpicker,
     .ui-spinner,
     .#{$css-prefix}-group
-    {    margin-bottom:0px;
-         margin-right: 8px;
-         &.last{margin-right: 0px;}
-         &.#{$css-prefix}-no-space{
-             margin-right: -1px; 
-             z-index: 1;
-         }
+    {
+        margin-bottom:0px;
+        margin-right: 8px;
+        &.last{
+            margin-right: 0px;
+        }
+        &.#{$css-prefix}-no-space{
+            margin-right: -1px;
+            z-index: 1;
+        }
 
     }
     .#{$css-prefix}-spectrum,
@@ -162,7 +188,7 @@
         .#{$css-prefix}-field{
             float: left;
             margin-bottom: 5px;
-        } 
+        }
     }
     .#{$css-prefix}-group{
         display: inline-block;
@@ -186,7 +212,7 @@
         table{
             display: block;
             width: 100%;
-            tbody{    
+            tbody{
                 display: table;
                 tr{
                     td{
@@ -209,7 +235,7 @@
         }
 
         .#{$css-prefix}-columns-title{
-            font-size: 13px; 
+            font-size: 13px;
             margin-bottom: 3px;
             .#{$css-prefix}-tips{
                 top: 0px;
@@ -237,7 +263,7 @@
             background-color: #fbfbf6;
             padding:22px 20px 28px 20px;
 
-            table{           
+            table{
                 tbody{
                     tr{
                         td{
@@ -284,6 +310,13 @@
                     border-right: 1px solid #ced4d6;
                     background-color: #f4f8f9;
                 }
+
+                &.sp-active{
+                    .sp-preview,
+                    .sp-dd{
+                        border-color: $reon-focus-color;
+                    }
+                }
             }
 
         }
@@ -303,7 +336,7 @@
                 width: 100%;
                 margin-right:0!important;
                 .select2{
-                    width: 100%!important; 
+                    width: 100%!important;
                 }
             }
         }
@@ -320,7 +353,7 @@
             }
         }
         .#{$css-prefix}-textblock{
-            margin-right:0!important; 
+            margin-right:0!important;
         }
 
         .#{$css-prefix}-colorpicker{
@@ -338,7 +371,7 @@
                     border-right: 1px solid #ced4d6;
                     background-color: #f4f8f9;
 
-                } 
+                }
             }
 
         }
@@ -371,6 +404,9 @@
         float: left;
         margin-right:5px;
         cursor:pointer;
+        font-size:12px;
+        font-weight: 600;
+        @include border-radius($buttons-border-radius);
         &.#{$css-prefix}-icon-btn{
             padding-left: 15px;
         }
@@ -386,7 +422,7 @@
             background-color: #bec9cc;
         }
         &:active{
-            @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));                     
+            @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));
         }
         &.#{$css-prefix}-btn-primary{
             color: #fff;
@@ -404,6 +440,7 @@
         display: inline-block;
         padding: 2px 10px;
         border-color: #e2e5e6;
+        @include border-radius($fields-border-radius);
     }
 
     /*
@@ -418,25 +455,25 @@
 
     .#{$css-prefix}-grey-parent{
         input[type=text],
-        input[type=password], 
-        input[type=color], 
-        input[type=date], 
-        input[type=datetime], 
-        input[type=datetime-local], 
-        input[type=email], 
-        input[type=number], 
-        input[type=tel], 
-        input[type=time], 
-        input[type=url], 
-        input[type=week], 
-        input[type=search], 
-        select, 
+        input[type=password],
+        input[type=color],
+        input[type=date],
+        input[type=datetime],
+        input[type=datetime-local],
+        input[type=email],
+        input[type=number],
+        input[type=tel],
+        input[type=time],
+        input[type=url],
+        input[type=week],
+        input[type=search],
+        select,
         textarea,
         .select2-container .selection .select2-selection--single,
         .select2-container .selection .select2-selection--single .select2-selection__rendered .select2-selection__clear{
             background-color: #fff;
         }
-        .rn-field .rn-label{
+        .#{$css-prefix}-field .#{$css-prefix}-label{
             background-color: #fff;
         }
 
@@ -448,9 +485,47 @@
     }
 
 
+    .#{$css-prefix}-merge-field{
+
+        &.#{$css-prefix}-field{
+
+            border-radius: 0px!important;
+            input{
+                border-radius: 0px!important;
+            }
+        }
+
+    }
+
+    .#{$css-prefix}-merge-field-first{
+
+        &.#{$css-prefix}-field{
+            border-top-right-radius: 0px!important;
+            border-bottom-right-radius: 0px!important;
+            input{
+                border-top-right-radius: 0px!important;
+                border-bottom-right-radius: 0px!important;
+            }
+        }
+
+
+    }
+    .#{$css-prefix}-merge-field-last{
+
+        &.#{$css-prefix}-field{
+            border-top-left-radius: 0px!important;
+            border-bottom-left-radius: 0px!important;
+            input{
+                border-top-left-radius: 0px!important;
+                border-bottom-left-radius: 0px!important;
+            }
+        }
+
+    }
+
 
     /*
-    Select2 Styles
+    Repeater Styles
     ================
     */
     @import "ui-repeater.scss";
@@ -508,22 +583,22 @@ TipTip Styles
             min-width:0px!important;
             margin-bottom: 0px;
         }
-        input[type=text], 
-        input[type=password], 
-        input[type=color], 
-        input[type=date], 
-        input[type=datetime], 
-        input[type=datetime-local], 
-        input[type=email], 
-        input[type=number], 
-        input[type=tel], 
-        input[type=time], 
-        input[type=url], 
-        input[type=week], 
-        input[type=search], 
-        select, 
+        input[type=text],
+        input[type=password],
+        input[type=color],
+        input[type=date],
+        input[type=datetime],
+        input[type=datetime-local],
+        input[type=email],
+        input[type=number],
+        input[type=tel],
+        input[type=time],
+        input[type=url],
+        input[type=week],
+        input[type=search],
+        select,
         textarea{
-            padding: 4px 11px;  
+            padding: 4px 11px;
         }
     }
 
@@ -552,4 +627,18 @@ TipTip Styles
 
 .wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container .select2-selection--single .select2-selection__arrow b{
     display: inline;
+}
+
+.wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container.select2-container--focus .select2-selection--single,
+.wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container.select2-container--open .select2-selection--multiple,
+.wc-wp-version-gte-53 .#{$css-prefix}-container .select2-container.select2-container--open .select2-selection--single{
+
+    box-shadow: 0 0 0 0 transparent!important;
+}
+
+.wp-admin.wc-wp-version-gte-53 .select2-dropdown--above.#{$css-prefix}-container,
+.wp-admin.wc-wp-version-gte-53 .select2-dropdown--below.#{$css-prefix}-container{
+    
+    box-shadow: 0 0 0 0 transparent!important;
+    border-color: $reon-focus-color;
 }

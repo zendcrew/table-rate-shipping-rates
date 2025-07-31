@@ -2,10 +2,11 @@
     display:block;
     background-color:#fff;
     border:1px solid #e2e5e7;
-    margin:20px 20px 0 0;
+    @include border-radius($page-border-radius);
+    margin:20px 20px 20px 0;
     .#{$css-prefix}-option-page-aside{
         display: block;
-        float: left;       
+        float: left;
         width: 250px;
         min-height: 600px;
         background-color:#23282d;
@@ -13,6 +14,8 @@
         margin: -1px 0 -1px -1px;
         color:#fff;
         padding-bottom:50px;
+        @include border-top-left-radius($page-border-radius);
+        @include border-bottom-left-radius($page-border-radius);
         &.#{$css-prefix}-no-display{
             padding-top:40px;
         }
@@ -22,6 +25,7 @@
             width:100%;
             text-align: center;
             background-color: $option-page-color;
+            @include border-top-left-radius($page-border-radius);
             .#{$css-prefix}-option-page-aside-details-version{
                 display: block;
                 text-align: right;
@@ -62,6 +66,7 @@
                 display: inline-block;
                 font-size: 55px;
                 top: -15px;
+                line-height: 25px;
             }
         }
 
@@ -91,7 +96,7 @@
                     &.active,&.activeparent{
                         > a{
                             background-color: $option-page-color;
-                        }  
+                        }
                     }
 
                     &.active{
@@ -102,13 +107,13 @@
                             font-size: 33px;
                             right: -8px;
                             top: 6px;
-                        }  
+                        }
                     }
 
                     &:hover{
                         > a{
                             background-color: $option-page-color;
-                        }  
+                        }
                     }
 
                     &.haschild{
@@ -121,13 +126,13 @@
                                 right: 13px;
                                 top: 5px;
                                 @include transition(all, 0.3s, ease);
-                            }      
+                            }
                         }
                         &.activeparent{
                             > a{
                                 &:after{
                                     transform: rotate(90deg);
-                                }   
+                                }
                             }
                         }
                     }
@@ -165,7 +170,7 @@
                                     &:before{
                                         background-color: #474d52;
                                     }
-                                }  
+                                }
                                 &:after{
                                     content: '\f0d9';
                                     font-family: 'FontAwesome';
@@ -173,18 +178,18 @@
                                     font-size: 33px;
                                     right: -8px;
                                     top: 6px;
-                                }  
+                                }
                             }
                             &:hover:not(.active){
                                 a{
                                     color:$option-page-color;
                                     background-color: #2d333a;
-                                }   
+                                }
                             }
                         }
                     }
                 }
-            }            
+            }
         }
     }
     .#{$css-prefix}-option-page-body{
@@ -197,6 +202,7 @@
             height:72px;
             width: 100%;
             border-bottom:1px solid #e0e5e7;
+            @include border-top-right-radius($page-border-radius);
             .#{$css-prefix}-option-page-section-title{
                 display: inline-block;
                 float: left;
@@ -215,10 +221,13 @@
                         font-size: 14px;
                         color:#667377;
                         float: left;
-                        i{margin-right: 8px; font-weight:normal;}
+                        i{
+                            margin-right: 8px;
+                            font-weight:normal;
+                        }
                         &:hover{
                             color:$option-page-color;
-                        }                        
+                        }
                     }
                 }
                 &.#{$css-prefix}-social-links{
@@ -229,11 +238,11 @@
                         height: 27px;
                         width: 27px;
                         border:1px solid;
-                        text-align:center; 
+                        text-align:center;
                         margin-right: 9px;
                         @include border-radius(50%);
                         i{
-                            vertical-align: top;
+                            vertical-align: baseline;
                             margin-right: 0px;
                         }
 
@@ -249,12 +258,15 @@
                     color: #697578;
                     background-color: #cad4d7;
                     float: left;
-                    margin-right:1px;
+                    margin-right:4px;
+                    font-size:13px;
+                    font-weight: 600;
+                    @include border-radius($buttons-border-radius);
                     &:hover{
                         background-color: #bec9cc;
                     }
                     &:active{
-                        @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));                     
+                        @include  box-shadow-inset(0px, 1px, 1px, rgba(0,0,0,0.3));
                     }
                 }
                 .#{$css-prefix}-save-btn{
@@ -264,6 +276,9 @@
                     background-color: #00a0d2;
                     float: left;
                     margin-right:1px;
+                    font-size:13px;
+                    font-weight: 600;
+                    @include border-radius($buttons-border-radius);
                     &:hover{
                         background-color: #0090bd;
                     }
@@ -272,11 +287,11 @@
                     }
                 }
                 .#{$css-prefix}-btn-sep{
-                    margin-right:5px;
+                    margin-right:4px;
                 }
 
                 .#{$css-prefix}-ajax-icon{
-                    display: none;                    
+                    display: none;
                     height: 20px;
                     width: 20px;
                     background-image: url(images/spinner.gif);
@@ -290,6 +305,7 @@
             &.#{$css-prefix}-option-page-footer{
                 border-top:1px solid #e0e5e7;
                 border-bottom:0;
+                @include border-top-right-radius(0px);
             }
         }
 
@@ -299,7 +315,7 @@
             .#{$css-prefix}-option-page-group{
                 display: none;
                 width: 100%;
-                padding:0 30px 27px 30px;
+                padding:0 22px 27px 25px;
                 &.active-group{
                     display: block;
                 }
@@ -326,6 +342,8 @@
             bottom: -1px;
             left: -1px;
             z-index: 99999999;
+            @include border-top-right-radius($page-border-radius);
+            @include border-bottom-right-radius($page-border-radius);
         }
         .#{$css-prefix}-import-export-wrapper{
             margin-bottom: 15px;

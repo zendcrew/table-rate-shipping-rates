@@ -1,4 +1,9 @@
-<div class="rn-field-wrapper<?php echo esc_attr(($p_field['center_head'] == true) ? ' rn-center' : ''); ?>" style="width:100%;">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?><div class="rn-field-wrapper<?php echo esc_attr(($p_field['center_head'] == true) ? ' rn-center' : ''); ?>" style="width:100%;">
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes($attr)); ?>>
         <div class="rn-repeater-sections rn-sortable-repeater">
             <div class="rn-repeater-section rn-active-section">

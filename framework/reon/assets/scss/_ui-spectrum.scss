@@ -4,17 +4,18 @@
     .#{$css-prefix}-spectrum{
         display:inline-block;
         .sp-replacer{
-            padding:0px;            
+            padding:0px;
             background-color: #eff4f6;
             border:0;
             float: left;
             height: 32px;
-            @include box-shadow-none();            
-            &.sp-light{   
+            @include box-shadow-none();
+            @include border-radius($fields-border-radius);
+            &.sp-light{
 
                 .sp-preview,.sp-dd{
                     height: 32px;
-                    display: inline-block;                    
+                    display: inline-block;
                     font-size: 13px;
                     line-height: 24px;
                     font-family: "Open Sans",sans-serif;
@@ -25,8 +26,10 @@
                     width: 120px;
                     margin-right: 0px;
                     height: 32px;
+                    @include border-radius($fields-border-radius);
                     .sp-preview-inner{
                         height: 30px;
+                        @include border-radius($fields-border-radius);
                         &.sp-clear-display{
                             background-position: 8px 8px;
                         }
@@ -35,7 +38,9 @@
                 .sp-dd{
                     border:1px solid #ced4d6;
                     color:#555;
-                    padding: 3px 13px;;
+                    padding: 3px 13px;
+                    @include border-top-right-radius($fields-border-radius);
+                    @include border-bottom-right-radius($fields-border-radius);
                 }
             }
         }
@@ -52,7 +57,8 @@
     &.sp-container{
         display: inline-block;
         background-color: #fff;
-        border: 1px solid #ced4d6;
+        border: 1px solid $reon-focus-color;
+        @include border-radius($fields-border-radius);
         @include box-shadow(0px, 0px, 25px, rgba(0,0,0,0.15));
         *{
             display: inline-block;
@@ -63,6 +69,10 @@
             .sp-top{
                 .sp-color{
                     right: 37px;
+                    @include border-radius($fields-border-radius);
+                    .sp-val{
+                        @include border-radius($fields-border-radius);
+                    }
                     .sp-dragger{
                         background: transparent;
                         border: 5px solid #aaa;
@@ -89,9 +99,9 @@
                 }
                 .sp-hue{
                     left: 89%;
-
+                    @include border-radius($fields-border-radius);
                     .sp-slider{
-                        background: 0;                    
+                        background: 0;
                         right: -3px;
                         left: -3px;
                         border: 4px solid #aaa;
@@ -112,15 +122,17 @@
                             @include border-radius(3px);
                         }
                     }
-                }            
+                }
                 .sp-alpha{
                     bottom: -21px;
                     height: 12px;
                     border: 0;
                     display:block;
+                    @include border-radius($fields-border-radius);
                     @include box-shadow-inset(0, 0, 5px, rgba(0,0,0,.2));
                     .sp-alpha-inner{
                         border: 0;
+                        @include border-radius($fields-border-radius);
                         @include box-shadow-inset(0, 0, 5px, rgba(0,0,0,.2));
                     }
                     .sp-alpha-handle{
@@ -161,6 +173,8 @@
             height: 31px;
             border:0;
             margin-bottom: 10px;
+            @include border-radius($fields-border-radius);
+            overflow: hidden;
             @include box-shadow-inset(0, 0, 5px, rgba(0,0,0,.2));
             span{
                 height: 31px;
@@ -172,8 +186,9 @@
             .sp-input{
                 padding: 6px 10px;
                 background-color: #f7f7f7;
+                border: solid 1px #ccc;
                 @include box-shadow-none();
-                @include border-radius(0);
+                @include border-radius($fields-border-radius);
             }
         }
 
@@ -184,35 +199,35 @@
                 border:1px solid #ccc;
                 background-image:initial;
                 background-color: #f9f9f9;
-                background-image: #f9f9f9; 
+                background-image: #f9f9f9;
                 text-shadow:none;
-                background: #f9f9f9; 
+                background: #f9f9f9;
                 padding: 7px 13px;
                 max-height: 30px;
                 font-size: 13px;
                 font-family: "Open Sans",sans-serif;
                 font-weight: 400;
 
-                @include border-radius(0);
+                @include border-radius($fields-border-radius);
                 @include box-sizing(border-box);
 
                 &:hover{
                     background: #fafafa;
                     border-color: #999;
-                } 
+                }
                 &:active{
                     background: #eee;
                     border-color: #999;
                     box-shadow: inset 0 2px 5px -3px rgba(0,0,0,.5);
-                }  
+                }
             }
             .sp-cancel{
                 padding-top: 4px;
                 padding-bottom: 5px;
-                margin-right: 5px;         
+                margin-right: 5px;
                 &:hover{
                     text-decoration: none;
-                } 
+                }
             }
             button.sp-choose{
                 color:#555;

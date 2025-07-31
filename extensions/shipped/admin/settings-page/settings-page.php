@@ -1,5 +1,9 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if ( !class_exists( 'Reon' ) ) {
     return;
 }
@@ -33,7 +37,6 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
             //Configure section menus
             add_filter( 'reon/get-option-page-' . $option_name . '-sections', array( $this, 'config_sections' ), 10 );
-            add_filter( 'reon/get-option-page-' . $option_name . '-section-title', array( $this, 'get_page_title' ), 10, 2 );
             add_action( 'reon/before-save-' . $option_name . '-options', array( $this, 'init_data_store' ), 1 );
             add_action( 'reon/before-import-' . $option_name . '-options', array( $this, 'init_data_store' ), 1 );
 
@@ -90,6 +93,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'enable' => true,
                     'min_height' => '565px',
                     'title' => esc_html__( 'Import / Export', 'table-rate-shipping-rates' ),
+                    'header_title' => esc_html__( 'Import / Export', 'table-rate-shipping-rates' ),
                     'import' => array(
                         'title' => esc_html__( 'Import Settings', 'table-rate-shipping-rates' ),
                         'desc' => esc_html__( 'Here you can import new settings. Simply paste the settings url or data on the field below.', 'table-rate-shipping-rates' ),
@@ -132,41 +136,33 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
             $in_sections[] = array(
                 'title' => esc_html__( 'Method Settings', 'table-rate-shipping-rates' ),
+                'header_title' => esc_html__( 'Method Settings', 'table-rate-shipping-rates' ),
                 'id' => 'settings',
                 'group' => 4,
             );
 
             $in_sections[] = array(
                 'title' => esc_html__( 'Shipping Rates', 'table-rate-shipping-rates' ),
+                'header_title' => esc_html__( 'Shipping Rates', 'table-rate-shipping-rates' ),
                 'id' => 'shipping_rates',
                 'group' => 1,
             );
 
             $in_sections[] = array(
                 'title' => esc_html__( 'Handling Fees', 'table-rate-shipping-rates' ),
+                'header_title' => esc_html__( 'Handling Fees', 'table-rate-shipping-rates' ),
                 'id' => 'cart_fees',
                 'group' => 2,
             );
 
             $in_sections[] = array(
                 'title' => esc_html__( 'Cart Notifications', 'table-rate-shipping-rates' ),
+                'header_title' => esc_html__( 'Cart Notifications', 'table-rate-shipping-rates' ),
                 'id' => 'checkout_messages',
                 'group' => 3,
             );
 
             return $in_sections;
-        }
-
-        public function get_page_title( $in_title, $tab ) {
-
-            $section_titles = $this->get_section_titles();
-
-            if ( isset( $section_titles[ $tab - 1 ] ) ) {
-
-                return $section_titles[ $tab - 1 ];
-            }
-
-            return $in_title;
         }
 
         public function get_option_name() {
@@ -176,9 +172,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
         public function get_instance_id() {
 
-            if ( isset( $_GET[ 'instance_id' ] ) ) {
-                $instance_id = sanitize_key( $_GET[ 'instance_id' ] );
+            if ( isset( $_GET[ 'instance_id' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+                $instance_id = sanitize_key( $_GET[ 'instance_id' ] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
                 if ( is_numeric( $instance_id ) ) {
+
                     return (( int ) $instance_id);
                 }
             }
@@ -187,10 +186,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         }
 
         public static function get_premium_messages( $message_id = '' ) {
+
             $premium_url = esc_url( "https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew" );
             $message = esc_html__( 'This feature is available on premium version', 'table-rate-shipping-rates' );
             $link_text = esc_html__( 'Premium Feature', 'table-rate-shipping-rates' );
-
 
             switch ( $message_id ) {
                 case 'short_message':
@@ -206,6 +205,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         public function get_disabled_list_keys( $options ) {
 
             if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+
                 return array();
             }
 
@@ -214,8 +214,11 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
 
 
             for ( $i = 1; $i <= $prem_max; $i++ ) {
+
                 $d_key = 'prem_' . $i;
+
                 if ( is_array( $d_key, $options ) ) {
+
                     $d_list[] = $d_key;
                 }
             }
@@ -226,14 +229,19 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         public static function get_disabled_list( $list, $options ) {
 
             if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+
                 return array();
             }
 
             $d_list = array();
             $prem_max = count( $options );
+
             for ( $i = 1; $i <= $prem_max; $i++ ) {
+
                 $d_key = 'prem_' . $i;
+
                 if ( isset( $options[ $d_key ] ) ) {
+
                     $d_list[] = $d_key;
                 }
             }
@@ -244,6 +252,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         public function get_grouped_disabled_list( $list, $grouped_options ) {
 
             if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
+
                 return array();
             }
 
@@ -252,10 +261,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             foreach ( $grouped_options as $grouped_option ) {
 
                 if ( !isset( $grouped_option[ 'options' ] ) ) {
+
                     continue;
                 }
 
                 foreach ( $grouped_option[ 'options' ] as $key => $option ) {
+
                     $options[ $key ] = $option;
                 }
             }
@@ -282,6 +293,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 unset( $links[ 'deactivate' ] );
 
                 $add_on_text = esc_html__( 'Shipped Premium', 'table-rate-shipping-rates' );
+
                 /* translators: 1: plugin name */
                 $required_text = sprintf( esc_html__( 'Required by %s', 'table-rate-shipping-rates' ), $add_on_text );
 
@@ -312,7 +324,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_documentation',
                     'title' => esc_html__( 'Documentation', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-file-text',
-                    'href' => esc_url('https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping'),
+                    'href' => esc_url( 'https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping' ),
                     'target' => '_blank',
                     'show_in' => 'both'
                 ),
@@ -324,7 +336,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_help',
                     'title' => esc_html__( 'Help', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-question-circle',
-                    'href' => esc_url('https://support.zendcrew.cc/portal/en/newticket'),
+                    'href' => esc_url( 'https://support.zendcrew.cc/portal/en/newticket' ),
                     'target' => '_blank',
                     'show_in' => 'both'
                 );
@@ -334,7 +346,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_get_premium',
                     'title' => esc_html__( 'Premium Version', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-file-text-o',
-                    'href' => esc_url( 'https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew'),
+                    'href' => esc_url( 'https://codecanyon.net/item/woocommerce-table-rate-shipping/39691473?ref=zendcrew' ),
                     'target' => '_blank',
                     'show_in' => 'both'
                 );
@@ -350,41 +362,30 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     'id' => 'wtars_facebook',
                     'title' => esc_html__( 'Facebook', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-facebook',
-                    'href' => esc_url('http://www.facebook.com/zendcrew'),
+                    'href' => esc_url( 'http://www.facebook.com/zendcrew' ),
                     'target' => '_blank',
                 ),
                 array(
                     'id' => 'wtars_linkedin',
                     'title' => esc_html__( 'LinkedIn', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-linkedin',
-                    'href' => esc_url('https://www.linkedin.com/company/zendcrew'),
+                    'href' => esc_url( 'https://www.linkedin.com/company/zendcrew' ),
                     'target' => '_blank',
                 ),
                 array(
                     'id' => 'wtars_stack_overflow',
                     'title' => esc_html__( 'Stack Overflow', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-stack-overflow',
-                    'href' => esc_url('https://stackoverflow.com/users/8692713/zendcrew'),
+                    'href' => esc_url( 'https://stackoverflow.com/users/8692713/zendcrew' ),
                     'target' => '_blank',
                 ),
                 array(
                     'id' => 'wtars_instagram',
                     'title' => esc_html__( 'Instagram', 'table-rate-shipping-rates' ),
                     'icon' => 'fa fa-instagram',
-                    'href' => esc_url('https://www.instagram.com/zendcrew/'),
+                    'href' => esc_url( 'https://www.instagram.com/zendcrew/' ),
                     'target' => '_blank',
                 ),
-            );
-        }
-
-        private function get_section_titles() {
-
-            return array(
-                esc_html__( 'Method Settings', 'table-rate-shipping-rates' ),
-                esc_html__( 'Shipping Rates', 'table-rate-shipping-rates' ),
-                esc_html__( 'Handling Fees', 'table-rate-shipping-rates' ),
-                esc_html__( 'Cart Notifications', 'table-rate-shipping-rates' ),
-                esc_html__( 'Import / Export', 'table-rate-shipping-rates' )
             );
         }
 

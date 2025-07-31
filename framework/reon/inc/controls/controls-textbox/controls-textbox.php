@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists('Reon')) {
-    return;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if (!class_exists('Reon_Controls_TextBox')) {
@@ -30,7 +30,21 @@ if (!class_exists('Reon_Controls_TextBox')) {
             if (isset($field['value'])) {
                 $attributes['value'] = $field['value'];
             }
-            $box_attributes = array('class' => ReonUtil::array_to_classes(apply_filters('reon/control-box-classes', array('rn-field', 'rn-textbox'), $field)));
+            
+            $textbox_css_classes = array( 'rn-field', 'rn-textbox' );
+
+            if ( isset( $field[ 'box_css_class' ] ) && is_array( $field[ 'box_css_class' ] ) ) {
+
+                foreach ( $field[ 'box_css_class' ] as $css_class ) {
+
+                    $textbox_css_classes[] = $css_class;
+                }
+            } else if ( isset( $field[ 'box_css_class' ] ) ) {
+
+                $textbox_css_classes[] = $field[ 'box_css_class' ];
+            }
+
+            $box_attributes = array('class' => ReonUtil::array_to_classes(apply_filters('reon/control-box-classes', $textbox_css_classes, $field)));
 
 
             $wrapper_class = array('rn-field-wrapper');

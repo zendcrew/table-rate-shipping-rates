@@ -1,4 +1,9 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 $option_page_display = $page['display'];
 $styles = array();
 $a_styles = array();
@@ -15,6 +20,7 @@ if (isset($option_page_display['styles']['color']) && $option_page_display['styl
 if (isset($option_page_display['styles']['height']) && $option_page_display['styles']['height'] != '') {
     $styles['height'] = $option_page_display['styles']['height'];
 }
+// phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 ?>
 <div class="rn-option-page-aside-details" style="<?php echo ReonUtil::array_to_styles($styles);// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
     <div class="rn-option-page-aside-details-version"><?php echo esc_html($option_page_display['version']); ?></div>

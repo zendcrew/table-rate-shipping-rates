@@ -1,4 +1,9 @@
-<div <?php echo wp_kses_post( ReonUtil::array_to_attributes( apply_filters( 'reon/control-parent-attributes', $attr, $g_field ) ) ); ?>>
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?><div <?php echo wp_kses_post( ReonUtil::array_to_attributes( apply_filters( 'reon/control-parent-attributes', $attr, $g_field ) ) ); ?>>
     <table>
         <?php
         if ( isset( $g_field[ 'inner_title' ] ) || isset( $g_field[ 'inner_desc' ] ) ) {

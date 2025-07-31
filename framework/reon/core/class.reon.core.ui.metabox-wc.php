@@ -36,13 +36,18 @@ if (!class_exists('ReonWCMetaBox')) {
         }
 
         public static function save_product_type_options($product_id) {
+            
             foreach (self::get_product_type_options() as $product_t_opt) {
+                
                 $product_type_option = apply_filters('reon/get-product-type-option', $product_t_opt);
 
                 $meta_value = 'no';
-                if (isset($_POST[$product_type_option['meta_id']])) {
+                
+                if ( isset( $_POST[ $product_type_option[ 'meta_id' ] ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+
                     $meta_value = 'yes';
                 }
+
                 $meta_value = apply_filters('reon/save-product-type-option-meta', $meta_value, $product_id, $product_type_option['meta_id']);
                 update_post_meta($product_id, $product_type_option['meta_id'], $meta_value);
             }

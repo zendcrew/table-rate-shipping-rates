@@ -1,4 +1,9 @@
-<div class="<?php echo esc_attr(ReonUtil::array_to_classes($wrp_class)); ?>"<?php echo (isset($field['dyn_field_id'])) ? ' data-dyn_field_id="' . esc_attr($field['dyn_field_id']) . '"' : ''; ?>>
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?><div class="<?php echo esc_attr(ReonUtil::array_to_classes($wrp_class)); ?>"<?php echo (isset($field['dyn_field_id'])) ? ' data-dyn_field_id="' . esc_attr($field['dyn_field_id']) . '"' : ''; ?>>
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes(apply_filters('reon/control-box-attributes', $box_attributes, $field))); ?>>
         <?php
         if (isset($field['labels'])) {
@@ -11,7 +16,7 @@
                 <?php
                 do_action('reon/render-control-label', $field['labels'][0]);
                 ?>
-                <input <?php echo ReonUtil::array_to_attributes(apply_filters('reon/control-attributes', $attributes, $field)); ?> />
+                <input <?php echo ReonUtil::array_to_attributes(apply_filters('reon/control-attributes', $attributes, $field)); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> />
             </span>
             <span class="rn-field rn-slider-input">
                 <?php

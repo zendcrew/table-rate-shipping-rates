@@ -1,4 +1,9 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 include_once 'controls-textblock/controls-textblock.php';
 include_once 'controls-textbox/controls-textbox.php';
 include_once 'controls-autoid/controls-autoid.php';

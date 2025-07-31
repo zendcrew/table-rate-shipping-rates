@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists('Reon')) {
-    return;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if (!class_exists('Reon_Controls_SimpleRepeater')) {
@@ -188,10 +188,10 @@ if (!class_exists('Reon_Controls_SimpleRepeater')) {
             return array();
         }
 
-        private static function get_fields($fields, $pos) {
+        private static function get_section_fields($fields, $posistion) {
             $re_fields = array();
             foreach ($fields as $field) {
-                if ($pos == 'right') {
+                if ($posistion == 'right') {
                     if (isset($field['position']) && $field['position'] == 'right') {
                         $re_fields[] = $field;
                     }
@@ -374,8 +374,7 @@ if (!class_exists('Reon_Controls_SimpleRepeater')) {
                     }
                 }
 
-                $args['id'] = $template['id'];
-                $fields = apply_filters('roen/get-simple-repeater-template-' . $template_args['filter_id'] . '-' . $template['id'] . '-fields', $fields, $args);
+                $fields = self::get_fields( $fields, $template_args[ 'filter_id' ], $template[ 'id' ], $args );
 
                 $sec_types = array(
                     'id' => $template['id'],
@@ -439,10 +438,6 @@ if (!class_exists('Reon_Controls_SimpleRepeater')) {
                 $field_types[] = $sec_types;
             }
 
-
-
-
-
             return $field_types;
         }
 
@@ -488,6 +483,20 @@ if (!class_exists('Reon_Controls_SimpleRepeater')) {
 
 
             return $opt;
+        }
+
+        private static function get_disabled_templates( $args ) {
+            
+            return apply_filters( 'reon/get-simple-repeater-field-' . $args[ 'filter_id' ] . '-disabled-templates', array(), $args );
+        }
+
+        private static function get_fields( $in_fields, $filter_id, $template_id, $args ) {
+
+            $args[ 'id' ] = $template_id;
+
+            $fields = apply_filters( 'roen/get-simple-repeater-template-' . $filter_id . '-' . $template_id . '-fields', $in_fields, $args );
+
+            return apply_filters( 'roen/get-simple-repeater-template-' . $filter_id . '-fields', $fields, $args );
         }
 
     }

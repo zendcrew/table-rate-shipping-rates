@@ -3,13 +3,95 @@
     visibility: hidden;
 }
 .#{$css-prefix}-select2 {
+
     display: inline-block;
-    input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
-    input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+    .#{$css-prefix}-field{
+        @include border-radius($fields-border-radius);
+    }
+
+    &.#{$css-prefix}-merge-field-last{
+        .#{$css-prefix}-field{
+            border-top-left-radius: 0px!important;
+            border-bottom-left-radius: 0px!important;
+
+            .select2-container{
+
+                border-top-left-radius: 0px!important;
+                border-bottom-left-radius: 0px!important;
+                .select2-selection{
+
+                    border-top-left-radius: 0px!important;
+                    border-bottom-left-radius: 0px!important;
+                }
+
+
+            }
+        }
+    }
+
+    input[type=text]::-ms-clear {
+        display: none;
+        width : 0;
+        height: 0;
+    }
+
+    input[type=text]::-ms-reveal {
+        display: none;
+        width : 0;
+        height: 0;
+    }
+
     input[type="search"]::-webkit-search-decoration,
     input[type="search"]::-webkit-search-cancel-button,
     input[type="search"]::-webkit-search-results-button,
-    input[type="search"]::-webkit-search-results-decoration { display: none; }
+    input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+
+    &:hover{
+
+        border-color: $reon-focus-color;
+
+        .#{$css-prefix}-field{
+            border-color: $reon-focus-color;
+        }
+
+        .select2-container{
+            border-color: $reon-focus-color!important;
+        }
+    }
+
+    &.#{$css-prefix}-select2-focus{
+
+        .#{$css-prefix}-field{
+            border-color: $reon-focus-color;
+        }
+
+        .select2-container{
+            border-color: $reon-focus-color;
+        }
+    }
+
+    &.#{$css-prefix}-select2-open{
+
+        &.#{$css-prefix}-select2-below{
+
+            .#{$css-prefix}-field{
+                @include border-bottom-left-radius(0px);
+                @include border-bottom-right-radius(0px);
+            }
+        }
+
+        &.#{$css-prefix}-select2-above{
+
+            .#{$css-prefix}-field{
+                @include border-top-left-radius(0px);
+                @include border-top-right-radius(0px);
+            }
+        }
+
+    }
 }
 
 .select2-container{
@@ -20,27 +102,31 @@
     box-sizing: content-box;
     vertical-align: middle;
     min-height: 30px;
+    @include border-radius($fields-border-radius);
     .selection{
-        display: block;  
+        display: block;
         min-height: 30px;
-        .select2-selection{            
-            display: block;    
+        .select2-selection{
+            display: block;
+            @include border-radius($fields-border-radius);
             .select2-selection__rendered{
-                display: block;                
+                display: block;
                 .select2-selection__placeholder{
-                    color:#999;  
+                    color:#999;
                 }
             }
             .select2-selection__arrow{
                 display: inline-block;
+                @include border-top-right-radius($fields-border-radius);
+                @include border-bottom-right-radius($fields-border-radius);
             }
         }
         .select2-selection--single{
             background-color: #f1f6f8;
             outline: none;
             border:0;
-            min-height: 30px;            
-            @include border-radius(0);
+            min-height: 30px;
+            @include border-radius($fields-border-radius);
 
             .select2-selection__rendered{
                 cursor: pointer;
@@ -62,7 +148,7 @@
                     cursor: pointer;
                     margin-top: -4px;
                     padding-top: 4px;
-                    text-align: center;                    
+                    text-align: center;
                 }
                 &:after{
                     content:'';
@@ -89,7 +175,7 @@
                         font-size: 18px;
                         position: relative;
                         left: -3px;
-                        top: -12px;              
+                        top: -12px;
                     }
                     &:hover{
                         color: #555;
@@ -108,12 +194,12 @@
             line-height: 1px;
             border: 0;
             min-height: 30px;
-            .select2-selection__rendered{                
-                display: block;  
-                min-height: 30px;  
+            .select2-selection__rendered{
+                display: block;
+                min-height: 30px;
                 padding: 0px 0 0px 2px;
                 .select2-selection__placeholder{
-                    padding-left: 8px; 
+                    padding-left: 8px;
                 }
                 .select2-selection__clear{
                     display:none;
@@ -122,7 +208,7 @@
                 input{
                     padding: 3px 6px;
                     margin-top: 0px !important;
-                    display:inline-block;                    
+                    display:inline-block;
                     background-color: transparent;
                     min-width: 30px;
                     line-height: 1px!important;
@@ -142,7 +228,7 @@
                         margin-top: 2px;
                         margin-bottom: 0px;
                         border: 0;
-                        @include border-radius(0);
+                        @include border-radius($fields-choice-border-radius);
                         .select2-selection__choice__remove{
                             display:inline-block;
                             padding-right: 4px;
@@ -174,7 +260,7 @@
                     &:before{
                         content:'\f106';
                     }
-                }  
+                }
             }
         }
 
@@ -183,7 +269,26 @@
 
 
 
-}   
+}
+
+.#{$css-prefix}-select2-open{
+
+    &.#{$css-prefix}-select2-below{
+
+        .select2-container{
+            @include border-bottom-left-radius(0px);
+            @include border-bottom-right-radius(0px);
+        }
+    }
+
+    &.#{$css-prefix}-select2-above{
+
+        .select2-container{
+            @include border-top-left-radius(0px);
+            @include border-top-right-radius(0px);
+        }
+    }
+}
 
 .#{$css-prefix}-select2 {
     > .select2-container{
@@ -196,10 +301,26 @@
     display:block;
     z-index: 999999!important;
     left:0px;
-    @include border-radius(0);
+    @include border-radius($fields-border-radius);
     @include box-shadow(0px, 5px, 25px, rgba(0,0,0,0.1));
     background-color: #fff;
-    border: 1px solid #ced4d6;
+    border: 1px solid $reon-focus-color;
+
+    &.select2-dropdown--below{
+        @include border-top-left-radius(0px);
+        @include border-top-right-radius(0px);
+    }
+    &.select2-dropdown--above{
+        @include border-bottom-left-radius(0px);
+        @include border-bottom-right-radius(0px);
+        .select2-search {
+            input{
+                @include border-top-left-radius($fields-border-radius);
+                @include border-top-right-radius($fields-border-radius);
+            }
+
+        }
+    }
     .select2-search{
         display:block;
         border-bottom: 1px solid #ced4d6;
@@ -234,7 +355,7 @@
             li{
                 outline: none!important;
                 display: block;
-                padding: 3px 13px;;
+                padding: 3px 13px;
                 cursor:pointer;
                 &[aria-selected='true']{
                     background-color: #f7f7f7;
@@ -250,7 +371,7 @@
                     display:block;
                     color:#999;
                     cursor:initial;
-                } 
+                }
             }
 
 
@@ -263,13 +384,14 @@
             padding:0;
             .select2-results__group{
                 font-weight: 600;
-                padding: 3px 13px;
+                padding: 0px 13px;
                 color: #8db4c3;
             }
             .select2-results__options--nested{
                 padding:0;
                 .select2-results__option{
-                    padding: 3px 13px;;
+                    padding: 3px 13px;
+                    padding-left: 18px;
                 }
             }
         }

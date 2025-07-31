@@ -47,33 +47,68 @@ if (!class_exists('ReonOptionPageWC')) {
         }
 
         public static function show_wc_menu_page() {
+            
+            if ( !isset( $_GET[ 'page' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
-            if (isset($_GET['page']) && sanitize_key($_GET['page']) == 'wc-settings') {
+                return;
+            }
 
-                if (isset($_GET['tab'])) {
-                    $wc_tab = sanitize_key($_GET['tab']);
-                    foreach (self::get_wc_pages() as $page) {
-                        if (isset($page['wc_menu']['enable']) && $page['wc_menu']['enable'] == true) {
-                            if (isset($page['wc_menu']['parent']) && $page['wc_menu']['parent'] == '' && $page['wc_menu']['slug'] = $wc_tab) {
-                                woocommerce_admin_fields($page['wc_fields']);
-                            }
-                        }
+            $page_slug = sanitize_key( wp_unslash( $_GET[ 'page' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+            if ( 'wc-settings' !== $page_slug ) {
+
+                return;
+            }
+
+            $wc_tab = '';
+
+            if ( isset( $_GET[ 'tab' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+                $wc_tab = sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            }
+
+            foreach ( self::get_wc_pages() as $page ) {
+
+                if ( isset( $page[ 'wc_menu' ][ 'enable' ] ) && $page[ 'wc_menu' ][ 'enable' ] == true ) {
+
+                    if ( isset( $page[ 'wc_menu' ][ 'parent' ] ) && $page[ 'wc_menu' ][ 'parent' ] == '' && $page[ 'wc_menu' ][ 'slug' ] = $wc_tab ) {
+
+                        woocommerce_admin_fields( $page[ 'wc_fields' ] );
                     }
                 }
             }
         }
 
         public static function update_wc_menu_page() {
-            if (isset($_GET['page']) && sanitize_key($_GET['page']) == 'wc-settings') {
+            
+            if ( !isset( $_GET[ 'page' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
-                if (isset($_GET['tab'])) {
-                    $wc_tab = sanitize_key($_GET['tab']);
-                    foreach (self::get_wc_pages() as $page) {
-                        if (isset($page['wc_menu']['enable']) && $page['wc_menu']['enable'] == true) {
-                            if (isset($page['wc_menu']['parent']) && $page['wc_menu']['parent'] == '' && $page['wc_menu']['slug'] = $wc_tab) {
-                                woocommerce_update_options($page['wc_fields']);
-                            }
-                        }
+                return;
+            }
+
+            $page_slug = sanitize_key( wp_unslash( $_GET[ 'page' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+            if ( 'wc-settings' !== $page_slug ) {
+
+                return;
+            }
+            
+            
+            $wc_tab = '';
+
+            if ( isset( $_GET[ 'tab' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+                $wc_tab = sanitize_key( wp_unslash( $_GET[ 'tab' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            }
+           
+            foreach ( self::get_wc_pages() as $page ) {
+
+                if ( isset( $page[ 'wc_menu' ][ 'enable' ] ) && $page[ 'wc_menu' ][ 'enable' ] == true ) {
+
+                    if ( isset( $page[ 'wc_menu' ][ 'parent' ] ) && $page[ 'wc_menu' ][ 'parent' ] == '' && $page[ 'wc_menu' ][ 'slug' ] = $wc_tab ) {
+                        
+                        // options update is handled be ReonOptionPage
+                        woocommerce_update_options( $page[ 'wc_fields' ] );
                     }
                 }
             }
@@ -169,10 +204,11 @@ if (!class_exists('ReonOptionPageWC')) {
                         
             $tabs_key = $page['tabs_key'];
             
-            if (isset($_GET[$tabs_key])) {
-                $page['tab'] = sanitize_key($_GET[$tabs_key]);
+            if ( isset( $_GET[ $tabs_key ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+                $page[ 'tab' ] = sanitize_key( wp_unslash( $_GET[ $tabs_key ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
-            
+
             $page['group'] = self::get_active_group_by_tab($page['sections'], $page['tab']);
 
             if (isset($page_field['instance_id'])) {
@@ -206,8 +242,8 @@ if (!class_exists('ReonOptionPageWC')) {
                     ?>
                     <th scope="row" class="titledesc">
                         <label for="<?php echo esc_attr($page_field['id']); ?>"><?php echo esc_html($page_field['title']); ?></label>
-                        <?php echo wp_kses_post($description['tooltip_html']); ?>
-                        &lrm; <p class="rn_wc_desc"><?php echo wp_kses_post($page_field['description']); ?></p>
+                        <?php echo wp_kses($description['tooltip_html'], ReonUtil::get_allow_html()); ?>
+                        &lrm; <p class="rn_wc_desc"><?php echo wp_kses($page_field['description'], ReonUtil::get_allow_html()); ?></p>
                     </th>
                     <td class="forminp forminp-<?php echo esc_attr(sanitize_title($page_field['type'])); ?>">
                         <?php

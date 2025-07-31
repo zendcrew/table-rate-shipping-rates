@@ -1,7 +1,20 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if ( isset( $page[ 'enable_section_title' ] ) && $page[ 'enable_section_title' ] ) {
 
-    $section_title = apply_filters( 'reon/get-option-page-' . $page[ 'option_name' ] . '-section-title', '', $page[ 'tab' ] );
+    $section_title = '';
+
+    if ( isset( $page[ 'header_title' ] ) ) {
+
+        $section_title = $page[ 'header_title' ];
+    } else if ( (!isset( $page[ 'group' ] ) || $page[ 'group' ] == 0) && isset( $page[ 'import_export' ][ 'header_title' ] ) ) {
+
+        $section_title = $page[ 'import_export' ][ 'header_title' ];
+    }
 
     if ( !empty( $section_title ) ) {
         ?>

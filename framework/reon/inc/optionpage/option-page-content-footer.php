@@ -1,4 +1,10 @@
-<div class="rn-option-page-tool rn-option-page-footer">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div class="rn-option-page-tool rn-option-page-footer">
     <?php
     if (count($page['social_links']) > 0) {
         ?>

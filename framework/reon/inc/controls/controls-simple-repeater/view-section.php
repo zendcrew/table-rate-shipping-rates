@@ -1,4 +1,10 @@
-<div class="rn-repeater-section rn-repeater-pfx">
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+?><div class="rn-repeater-section rn-repeater-pfx">
     <?php if (isset($template_args['section_type_id'])) {
         ?>
         <input type="hidden" data-repeater-name="<?php echo esc_attr($template_args['section_type_id']); ?>" value="<?php echo esc_attr($template['id']); ?>" />
@@ -41,15 +47,14 @@
             if (isset($template['fields'])) {
                 $fields = $template['fields'];
             }
-
-            $args['id'] = $template['id'];
-            $fields = apply_filters('roen/get-simple-repeater-template-' . $template_args['filter_id'] . '-' . $template['id'] . '-fields', $fields, $args);
+            
+            $fields = self::get_fields( $fields, $template_args['filter_id'], $template['id'], $args );
 
             $switcher_id = self::get_dyn_switcher_field_id($fields);
 
 
-            $heas_left = self::get_fields($fields, 'left');
-            $heas_right = self::get_fields($fields, 'right');
+            $heas_left = self::get_section_fields($fields, 'left');
+            $heas_right = self::get_section_fields($fields, 'right');
             ?>
             <div class="rn-repeater-head-left" style="width:<?php echo esc_attr($template_args['left_width']); ?>;">
                 <?php

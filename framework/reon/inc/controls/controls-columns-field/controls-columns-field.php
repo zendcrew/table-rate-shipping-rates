@@ -1,7 +1,7 @@
 <?php
 
-if (!class_exists('Reon')) {
-    return;
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 if (!class_exists('Reon_Controls_ColumnsField')) {
@@ -98,13 +98,22 @@ if (!class_exists('Reon_Controls_ColumnsField')) {
                             $field_types[] = $fld_tp;
                         }
                     } else {
+                        
+                        $sanitize_type = '';
+
+                        if ( isset( $field[ 'sanitize_type' ] ) ) {
+
+                            $sanitize_type = $field[ 'sanitize_type' ];
+                        }
+                        
                         $fld_tp = array(
                             'id' => $field['id'],
                             'type' => $field['type'],
-                            'sanitize_type' => $field['sanitize_type'],
+                            'sanitize_type' => $sanitize_type,
                             'screen' => $field_args['screen'],
                             'children' => apply_filters('reon/get-' . $field['type'] . '-children-types', array(), $field, $field_args)
                         );
+                        
                         if (isset($field_args['option_name'])) {
                             $fld_tp['option_name'] = $field_args['option_name'];
                         }

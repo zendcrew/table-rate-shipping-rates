@@ -1,3 +1,9 @@
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+?>
 <div class="rn-field-wrapper<?php echo esc_attr(($field['center_head'] == true) ? ' rn-center' : ''); ?>"<?php echo isset( $field[ 'width' ] ) ? ' style="width:' . esc_attr( $field[ 'width' ] ) . ';"' : ''; ?>>
     <div <?php echo wp_kses_post(ReonUtil::array_to_attributes(apply_filters('reon/control-box-attributes', $box_attributes, $field))); ?>>
         <?php
