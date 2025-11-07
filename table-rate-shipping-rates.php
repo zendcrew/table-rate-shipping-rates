@@ -4,7 +4,7 @@
  * Plugin Name: Shipped - WooCommerce Table Rate Shipping
  * Plugin URI: https://wordpress.org/plugins/table-rate-shipping-rates
  * Description: Create multiple shipping rates & handling fees based on product rules and cart conditions
- * Version: 1.4
+ * Version: 1.4.1
  * Author: zendcrew
  * Author URI: https://codecanyon.net/user/zendcrew/portfolio?ref=zendcrew
  * Text Domain: table-rate-shipping-rates
@@ -16,7 +16,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * 
  * Tested up to: 6.8
- * WC tested up to: 10.0
+ * WC tested up to: 10.3
  * 
  * Requires Plugins: woocommerce
  */
@@ -47,7 +47,7 @@ if ( !defined( 'WTARS_SHIPPED_OPTION_NAME' ) ) {
 
 if ( !defined( 'WTARS_SHIPPED_VERSION' ) ) {
 
-    define( 'WTARS_SHIPPED_VERSION', '1.4' );
+    define( 'WTARS_SHIPPED_VERSION', '1.4.1' );
 }
 
 if ( !class_exists( 'WTARS_Shipped_Main' ) ) {

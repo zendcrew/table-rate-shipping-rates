@@ -1,3 +1,7 @@
+= 1.4.1 - 07/11/2025 =
+[Fix] - Fixed variation shipping class issue
+[Check] - WooCommerce 10.3 compatibility check
+
 = 1.4 - 31/07/2025 =
 [Update] - Updated Framework
 [Tweaks] - Changed Plugin name and banner

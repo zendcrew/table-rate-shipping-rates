@@ -119,6 +119,15 @@ if ( !class_exists( 'WTARS_Shipped_Cart' ) ) {
 
                 $item_data[ 'category_ids' ] = $v_product->get_category_ids();
                 $item_data[ 'tag_ids' ] = $v_product->get_tag_ids();
+                
+                
+                $v_shipping_class_id = $v_product->get_shipping_class_id();
+
+                if ( $v_shipping_class_id ) {
+
+                    $item_data[ 'shipping_class_id' ] = $v_shipping_class_id;
+                }
+                
             } else {
 
                 $item_data[ 'category_ids' ] = $product->get_category_ids();
