@@ -1,3 +1,7 @@
+= 1.5 - 11/11/2025 =
+[Fix] - Fixed AJAX related vulnerabilities
+[Update] - Updated Framework
+
 = 1.4.1 - 07/11/2025 =
 [Fix] - Fixed variation shipping class issue
 [Check] - WooCommerce 10.3 compatibility check

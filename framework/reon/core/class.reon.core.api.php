@@ -9,6 +9,7 @@ if ( !class_exists( 'ReonApi' ) ) {
     class ReonApi {
 
         private static $data_list = array();
+        private static $user_can;
 
         public static function map_data_list( $list_object, $data_args ) {
 
@@ -45,7 +46,11 @@ if ( !class_exists( 'ReonApi' ) ) {
         }
 
         public static function get_data_list( $data_args ) {
+            
+            if ( !self::user_can_list() ) {
 
+                return false;
+            }
 
             $data_key = md5( wp_json_encode( $data_args ) );
 
@@ -352,6 +357,11 @@ if ( !class_exists( 'ReonApi' ) ) {
         public static function get_users( $args ) {
 
             $result = array();
+
+            if ( !current_user_can( 'list_users' ) ) {
+
+                return false;
+            }
 
             $user_q = array(
                 'orderby' => 'user_login',
@@ -698,6 +708,36 @@ if ( !class_exists( 'ReonApi' ) ) {
             }
 
             return $result;
+        }
+
+        private static function user_can_list() {
+
+            if ( is_null( self::$user_can ) ) {
+
+                self::$user_can = self::get_user_can_list();
+            }
+            
+            return self::$user_can;
+        }
+
+        private static function get_user_can_list() {
+
+            $capabilities = ReonOptionPage::get_user_capabilities();
+
+            if ( !$capabilities ) {
+
+                return current_user_can( 'manage_options' );
+            }
+
+            foreach ( $capabilities as $capability ) {
+
+                if ( current_user_can( $capability ) ) {
+
+                    return true;
+                }
+            }
+
+            return false;
         }
 
     }

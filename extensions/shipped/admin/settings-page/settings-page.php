@@ -67,6 +67,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 'enable_section_title' => true,
                 'width' => 'auto',
                 'aside_width' => '210px',
+                'user_capability' => 'manage_woocommerce',
                 'display' => array(
                     'enabled' => true,
                     'image' => WTARS_SHIPPED_ASSETS_URL . 'images/aside_logo.png',

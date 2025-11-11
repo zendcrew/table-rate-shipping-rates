@@ -176,7 +176,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Logic_Types_Conditions' ) ) {
 
         public function get_condition_template_fields( $in_fields, $repeater_args ) {
 
-            $args = $repeater_args[ 'field_args' ];
+            $args = array();
+            
+            if ( isset( $repeater_args[ 'field_args' ] ) ) {
+
+                $args = $repeater_args[ 'field_args' ];
+            }
 
             $list = array();
 

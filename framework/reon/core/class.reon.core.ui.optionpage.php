@@ -10,6 +10,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
 
         public $admin_bar_page;
         private static $option_page;
+        private static $user_capabilities;
 
         public function __construct( $args = array() ) {
 
@@ -20,7 +21,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
 
         public static function init() {
             add_action( 'after_setup_theme', array( new self(), 'init_options' ) );
-            add_action( "admin_menu", array( new self(), 'init_menu' ), 100 );
+            add_action( "admin_menu", array( new self(), 'init_menu' ), 100 );          
             ReonAjax::add_action( 'rn_save_option', array( new self(), 'save_option' ) ); //export_option
             ReonAjax::add_action( 'rn_reset_option', array( new self(), 'reset_option' ) );
             ReonAjax::add_action( 'rn_import_option', array( new self(), 'import_option' ) );
@@ -54,7 +55,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
                 $option_page_menu = $option_page[ 'menu' ];
                 $args[ 'page_title' ] = $option_page_menu[ 'page_title' ];
                 $args[ 'menu_title' ] = $option_page_menu[ 'title' ];
-                $args[ 'capability' ] = $option_page_menu[ 'capability' ];
+                $args[ 'capability' ] = $option_page[ 'user_capability' ];
                 $args[ 'menu_slug' ] = $option_page[ 'slug' ];
                 $args[ 'menu_icon' ] = $option_page_menu[ 'icon' ];
                 $args[ 'menu_parent' ] = $option_page_menu[ 'parent' ];
@@ -184,10 +185,11 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function render() {
-
+            
             $page_slug = '';
 
             if ( isset( $_GET[ 'page' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+               
                 $page_slug = sanitize_key( wp_unslash( $_GET[ 'page' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
 
@@ -196,6 +198,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
             $tabs_key = $page[ 'tabs_key' ];
 
             if ( isset( $_GET[ $tabs_key ] ) && $page_slug != 'wc-settings' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+               
                 $page[ 'tab' ] = sanitize_key( wp_unslash( $_GET[ $tabs_key ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
 
@@ -216,13 +219,13 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function render_page( $page ) {
-
+            
             $page[ 'nonce_path' ] = basename( __FILE__ );
 
             if ( get_option( 'rn_' . $page[ 'option_name' ] . '_export_id', '' ) == '' ) {
                 update_option( 'rn_' . $page[ 'option_name' ] . '_export_id', ReonUtil::random_char( 20, '0123456789abcdefghijklmnopqrstwxyz' ), true );
             }
-
+            
             if ( !isset( $page[ 'header_title' ] ) ) {
 
                 $active_section_data = self::get_active_section_data_by_tab( $page[ 'sections' ], $page[ 'tab' ] );
@@ -234,9 +237,9 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
             }
 
             $instance_id_param = '';
-
+            
             if ( isset( $page[ 'instance_id' ] ) && $page[ 'instance_id' ] != '' ) {
-
+                
                 $instance_id_param = '&instance_id=' . $page[ 'instance_id' ];
             }
 
@@ -246,7 +249,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function save_option() {
-
+            
             $output = array();
             $instance_id = '';
             $opt_name = '';
@@ -269,7 +272,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
 
 
             do_action( 'reon/before-save-' . $opt_name . '-options', $instance_id );
-
+            
             $options = array();
 
             if ( isset( $_POST[ 'options' ][ $opt_name ] ) ) {
@@ -283,16 +286,17 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
 
 
             $nonce_id = 'option_page_' . $opt_name;
-            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( wp_unslash( $_POST[ $nonce_id ] ), basename( __FILE__ ) ) ) ? true : false; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-            if ( $is_valid_nonce ) {
+            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ $nonce_id ] ) ), basename( __FILE__ ) ) ) ? true : false;
+            $user_capability = self::get_user_capability( $opt_name );
+                        
+            if ( $is_valid_nonce && current_user_can( $user_capability ) ) {
 
                 ReonCore::save_options( $option_args, $options, false, $field_ids );
-
+                
                 $output[ 'status' ] = 200;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'save_msg' ], ReonUtil::get_allow_html() );
             } else {
-
+                
                 $output[ 'status' ] = 400;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'save_error_msg' ], ReonUtil::get_allow_html() );
             }
@@ -301,44 +305,45 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function reset_option() {
-
+            
             $output = array();
             $instance_id = '';
             $option_name = '';
             $section_id = '';
 
             if ( isset( $_POST[ 'reon_instance_id' ] ) ) {
-
-                $instance_id = sanitize_key( wp_unslash( $_POST[ 'reon_instance_id' ] ) );
+                
+                $instance_id = sanitize_key( wp_unslash( $_POST[ 'reon_instance_id' ]) );
             }
-
+            
             if ( isset( $_POST[ 'option_name' ] ) ) {
-
-                $option_name = sanitize_key( wp_unslash( $_POST[ 'option_name' ] ) );
+                
+                $option_name = sanitize_key( wp_unslash( $_POST[ 'option_name' ]) );
             }
-
+            
             if ( isset( $_POST[ 'section_id' ] ) ) {
-
-                $section_id = sanitize_key( wp_unslash( $_POST[ 'section_id' ] ) );
+                
+                $section_id = sanitize_key( wp_unslash( $_POST[ 'section_id' ]) );
             }
 
-
+            
             $field_ids = self::get_page_field_ids( $option_name, $section_id );
-
+                        
             $option_args = self::get_page_option_args( $option_name, $instance_id );
 
             $nonce_id = 'option_page_' . $option_name;
 
-            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( wp_unslash( $_POST[ $nonce_id ] ), basename( __FILE__ ) ) ) ? true : false; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-            if ( $is_valid_nonce ) {
-
+            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ $nonce_id ] ) ), basename( __FILE__ ) ) ) ? true : false;
+            $user_capability = self::get_user_capability( $option_name );
+            
+            if ( $is_valid_nonce && current_user_can( $user_capability ) ) {
+               
                 ReonCore::reset_options( $option_args, $field_ids );
-
+                
                 $output[ 'status' ] = 200;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'reset_msg' ], ReonUtil::get_allow_html() );
             } else {
-
+                
                 $output[ 'status' ] = 400;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'reset_error_msg' ], ReonUtil::get_allow_html() );
             }
@@ -350,42 +355,43 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
 
             $output = array( 'status' => 200 );
             $instance_id = '';
-            $opt_name = '';
-
+            $opt_name='';
+            
             if ( isset( $_POST[ 'reon_instance_id' ] ) ) {
 
                 $instance_id = sanitize_key( wp_unslash( $_POST[ 'reon_instance_id' ] ) );
             }
-
+            
             if ( isset( $_POST[ 'option_name' ] ) ) {
 
                 $opt_name = sanitize_key( wp_unslash( $_POST[ 'option_name' ] ) );
             }
 
-            do_action( 'reon/before-import-' . $opt_name . '-options', $instance_id );
+            do_action( 'reon/before-import-' . $opt_name . '-options', $instance_id );  
 
             $nonce_id = 'option_page_' . $opt_name;
+            
+            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ $nonce_id ] ) ), basename( __FILE__ ) ) ) ? true : false;
+            $user_capability = self::get_user_capability( $opt_name );
 
-            $is_valid_nonce = ( isset( $_POST[ $nonce_id ] ) && wp_verify_nonce( wp_unslash( $_POST[ $nonce_id ] ), basename( __FILE__ ) ) ) ? true : false; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-            if ( $is_valid_nonce ) {
-
+            if ( $is_valid_nonce && current_user_can( $user_capability ) ) {
+                
                 $options = self::sanitize_options( $opt_name, '', $_POST[ 'import_data' ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated,WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
+                
                 $option_args = self::get_page_option_args( $opt_name, $instance_id );
                 $opt = ReonCore::load_options( $option_args, false, array() );
 
                 foreach ( $options as $key => $value ) {
-
+                
                     $opt[ $key ] = $value;
                 }
 
                 ReonCore::save_options( $option_args, $opt, false );
-
+                
                 $output[ 'status' ] = 200;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'reset_msg' ], ReonUtil::get_allow_html() );
             } else {
-
+                
                 $output[ 'status' ] = 400;
                 $output[ 'status_message' ] = wp_kses( $option_args[ 'ajax' ][ 'reset_error_msg' ], ReonUtil::get_allow_html() );
             }
@@ -394,30 +400,33 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function export_option() {
-
+            
             $output = array();
 
             $instance_id = '';
-            $option_name = '';
-            $rn_secret = '';
-
+            $option_name='';
+            $rn_secret='';
+            
             if ( isset( $_GET[ 'instance_id' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                
                 $instance_id = sanitize_key( wp_unslash( $_GET[ 'instance_id' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
-
+            
             if ( isset( $_GET[ 'optn' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                
                 $option_name = sanitize_key( wp_unslash( $_GET[ 'optn' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
-
+            
             if ( isset( $_GET[ 'secret' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                
                 $rn_secret = sanitize_key( wp_unslash( $_GET[ 'secret' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             }
 
-
+            
             $db_secret = get_option( 'rn_' . $option_name . '_export_id', '' );
 
             if ( $db_secret == $rn_secret ) {
-
+                
                 $option_args = self::get_page_option_args( $option_name, $instance_id );
                 $output = ReonCore::load_options( $option_args, false );
             }
@@ -459,41 +468,56 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
         }
 
         public static function get_page_option_args( $option_name = '', $instance_id = '' ) {
+          
             $page = self::get_page( $option_name );
+            
             if ( count( $page ) > 0 ) {
+            
                 return array(
                     'option_name' => $page[ 'option_name' ],
                     'database' => $page[ 'database' ],
                     'ajax' => $page[ 'ajax' ],
-                    'instance_id' => $instance_id
+                    'instance_id' => $instance_id,
                 );
             } else {
+                
                 return array();
             }
         }
 
         public static function get_pages( $process_sections = false, $process_fields = false ) {
+            
             $pages = array();
 
             if ( !is_array( self::$option_page ) ) {
+            
                 return $pages;
             }
 
             foreach ( self::$option_page as $page ) {
+             
                 $page = apply_filters( 'reon/process-option-page-' . $page[ 'option_name' ] . '-args', $page );
+                
                 if ( $process_sections == true ) {
+                
                     $page[ 'sections' ] = self::get_page_sections( $page[ 'option_name' ], $page[ 'sections' ], $process_fields );
                 }
+                
                 $pages[] = $page;
             }
+            
             return $pages;
         }
 
         public static function set_page( $args = array() ) {
+   
             $option = self::default_optionpage();
+            
             foreach ( $args as $key => $value ) {
+            
                 $option[ $key ] = $value;
             }
+            
             self::$option_page[] = $option;
         }
 
@@ -530,7 +554,34 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
             }
             return apply_filters( 'reon/get-page-field-ids', $field_ids );
         }
+        
+        public static function get_user_capability( $option_name ) {
+           
+            $capabilities = self::get_user_capabilities();
 
+            if ( !$capabilities ) {
+
+                return 'manage_options';
+            }
+
+            if ( !isset( $capabilities[ $option_name ] ) ) {
+
+                return 'manage_options';
+            }
+
+            return $capabilities[ $option_name ];
+        }
+
+        public static function get_user_capabilities(){
+            
+            if ( is_null( self::$user_capabilities ) ) {
+
+                self::$user_capabilities = self::load_user_capabilities();
+            }
+
+            return self::$user_capabilities;
+        }
+        
         private static function sanitize_options( $option_name = '', $section_id = '', $options = array() ) {
 
             $sanitize_mode = self::get_sanitize_mode( $option_name );
@@ -675,6 +726,45 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
             $fields = apply_filters( 'get-option-page-' . $option_name . 'section-' . $section_id . '-fields', $in_fields, $section_id );
             return ReonCore::process_default_option_page_fields( $fields );
         }
+        
+        public static function load_user_capabilities(){
+            
+            $capabilities = array();
+
+            if ( !is_array( self::$option_page ) ) {
+            
+                return $capabilities;
+            }
+
+            foreach ( self::$option_page as $in_page ) {
+             
+                $page = apply_filters( 'reon/process-option-page-' . $in_page[ 'option_name' ] . '-args', $in_page );
+
+                if ( !isset( $page[ 'option_name' ] ) ) {
+
+                    continue;
+                }
+
+                $option_name = $page[ 'option_name' ];
+                $capability = 'manage_options';
+
+                if ( empty( $option_name ) ) {
+
+                    continue;
+                }
+
+                if ( !isset( $page[ 'user_capability' ] ) || empty( $page[ 'user_capability' ] ) ) {
+
+                    $capabilities[ $option_name ] = $capability;
+
+                    continue;
+                }
+
+                $capabilities[ $option_name ] = $page[ 'user_capability' ];
+            }
+            
+            return $capabilities;
+        }
 
         private static function default_optionpage() {
             $defuault_args = array(
@@ -687,6 +777,7 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
                 'auto_load' => true,
                 'tabs_key' => 'tab',
                 'tab' => 1,
+                'user_capability' => 'manage_options',
                 'display' => array(
                     'enabled' => true,
                     'image' => '',
@@ -704,8 +795,8 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
                     'save_error_msg' => 'Unable to save your settings',
                     'reset_msg' => 'Done!!',
                     'reset_error_msg' => 'Unable to reset your settings',
-                    'reset_prompt_msg' => "All settings will be removed, Press 'OK' to continue",
-                    'reset_prompt_section_msg' => "Settings in this section will be removed, Press 'OK' to continue",
+                    'reset_prompt_msg' =>"All settings will be removed, Press 'OK' to continue",
+                    'reset_prompt_section_msg' =>"Settings in this section will be removed, Press 'OK' to continue",
                     'nonce_error_msg' => 'invalid nonce'
                 ),
                 'menu' => array(
@@ -714,7 +805,6 @@ if ( !class_exists( 'ReonOptionPage' ) ) {
                     'icon' => 'dashicons-admin-generic',
                     'priority' => null,
                     'parent' => 'themes.php',
-                    'capability' => 'manage_options',
                     'page_title' => '',
                 ),
                 'admin_bar' => array(

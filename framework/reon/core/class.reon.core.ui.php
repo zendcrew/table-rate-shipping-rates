@@ -134,8 +134,9 @@ if (!class_exists('ReonUI')) {
 
 
             $client_variables = array(
-                'ajax_url' => admin_url('admin-ajax.php?rn-admin-options=1'),
-                'culture' => apply_filters('roen/get-culture', array())
+                'ajax_url' => admin_url( 'admin-ajax.php?rn-admin-options=1' ),
+                'data_list_ajax_url' => wp_nonce_url( admin_url( 'admin-ajax.php' ), 'rn_data_list_ajax' ) . '&rn-admin-options=1',
+                'culture' => apply_filters( 'roen/get-culture', array() ),
             );
 
             $output = json_encode(apply_filters('roen/client-variables', $client_variables), JSON_UNESCAPED_SLASHES);

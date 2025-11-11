@@ -79,7 +79,7 @@ if (!class_exists('ReonWCMetaBox')) {
             $is_autosave = wp_is_post_autosave($product_id);
             $is_revision = wp_is_post_revision($product_id);
 
-            $is_valid_nonce = ( isset($_POST['reon_product_meta' . $metabox_id]) && wp_verify_nonce(wp_unslash($_POST['reon_product_meta' . $metabox_id]), basename(__FILE__)) ) ? true : false;// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            $is_valid_nonce = ( isset($_POST['reon_product_meta' . $metabox_id]) && wp_verify_nonce( sanitize_key( wp_unslash($_POST['reon_product_meta' . $metabox_id]) ), basename(__FILE__)) ) ? true : false;
 
             if ($is_autosave || $is_revision || !$is_valid_nonce) {
                 return;

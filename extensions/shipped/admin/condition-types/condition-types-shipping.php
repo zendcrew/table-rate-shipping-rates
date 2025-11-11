@@ -38,6 +38,11 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Conditions_Shipping' ) && !defined( 'WT
         }
 
         private function can_include( $args ) {
+            
+            if ( !isset( $args[ 'module' ] ) ) {
+
+                return true;
+            }
 
             if ( 'cart-fees' == $args[ 'module' ] ) {
                 return false;

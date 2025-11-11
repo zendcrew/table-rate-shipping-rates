@@ -451,7 +451,7 @@ jQuery( document ).ready( function( $ ) {
     }
 
     function rn_send_request( data, onsuccess, onerror ) {
-        jQuery.post( rn_uiv.ajax_url, data, function( response, status, xhr ) {
+        jQuery.post( rn_uiv.data_list_ajax_url, data, function( response, status, xhr ) {
             onsuccess( response, status, xhr );
         } ).fail( function() {
             onerror();

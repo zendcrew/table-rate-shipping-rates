@@ -32,6 +32,13 @@ if ( !class_exists( 'ReonAjax' ) ) {
             $drop_list = array( 'results' => array() );
 
             $args = self::get_data_list_ajax_args();
+            
+            if ( false === $args ) {
+
+                return;
+               
+                wp_die();
+            }
 
             if ( !isset( $args[ 'source' ] ) ) {
 
@@ -70,6 +77,13 @@ if ( !class_exists( 'ReonAjax' ) ) {
             }
 
             $src_dt = ReonApi::get_data_list( $data_args, array() );
+            
+            if ( false === $src_dt ) {
+
+                return;
+                
+                wp_die();
+            }
 
             $disabled_list = array();
 
@@ -121,8 +135,13 @@ if ( !class_exists( 'ReonAjax' ) ) {
         }
 
         private static function get_data_list_ajax_args() {
+            
+            $is_valid_nonce = ( isset( $_GET[ '_wpnonce' ] ) && wp_verify_nonce( $_GET[ '_wpnonce' ], 'rn_data_list_ajax' ) ) ? true : false;
 
-            // phpcs:disable WordPress.Security.NonceVerification.Missing
+            if ( !$is_valid_nonce ) {
+
+                return false;
+            }
 
             if ( !isset( $_POST[ 'ajaxsource' ] ) ) {
 
@@ -158,11 +177,9 @@ if ( !class_exists( 'ReonAjax' ) ) {
                 $args[ 'value_col_pre' ] = self::sanitize_value( wp_unslash( $_POST[ 'ajaxsource_value_col_pre' ] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             }
 
-            // phpcs:enable WordPress.Security.NonceVerification.Missing
-            
             return $args;
         }
-
+        
         private static function is_ajax_action() {
 
             if ( isset( $_GET[ 'rn-admin-options' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
