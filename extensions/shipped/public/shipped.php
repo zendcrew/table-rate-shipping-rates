@@ -5,6 +5,9 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 if ( !class_exists( 'WTARS_Shipped' ) ) {
+    
+    require_once dirname( __FILE__ ) . '/shipped-locale.php';
+    require_once dirname( __FILE__ ) . '/shipped-currency.php';
     require_once dirname( __FILE__ ) . '/utils/shipped-inc.php';
     require_once dirname( __FILE__ ) . '/utils/shipped-utils.php';
     require_once dirname( __FILE__ ) . '/shipped-cart.php';

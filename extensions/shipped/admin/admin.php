@@ -4,6 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
+require_once (dirname( __FILE__ ) . '/admin-locale/admin-locale.php');
 require_once dirname( __FILE__ ) . '/settings-page/settings-page.php';
 
 require_once dirname( __FILE__ ) . '/cost-types/cost-types.php';
