@@ -39,11 +39,21 @@ if ( !class_exists( 'WTARS_Shipped_Condition_Types' ) ) {
 
                     $condition = self::get_condition_args( $condition, $cond[ 'condition_type_' . $condition_type ] );
                 }
+                
+                //TODO: check this later
+                if ( isset( $cond[ 'module' ] ) ) {
 
-                $condition[ 'module' ] = $cond[ 'module' ];
-                $condition[ 'sub_module' ] = $cond[ 'sub_module' ];
+                    $condition[ 'module' ] = $cond[ 'module' ];
+                }
+
+                //TODO: check this later
+                if ( isset( $cond[ 'sub_module' ] ) ) {
+
+                    $condition[ 'sub_module' ] = $cond[ 'sub_module' ];
+                }
 
                 if ( false == apply_filters( 'wtars_shipped/validate-' . $condition_type . '-condition', $condition, $data ) ) {
+                
                     return false;
                 }
             }

@@ -83,7 +83,29 @@ if ( !class_exists( 'WTARS_Shipped_Cart' ) ) {
             foreach ( $cart->cart_contents as $key => $item ) {
 
                 $cart_data[ 'items' ][ $key ] = $this->get_item( $cart->cart_contents[ $key ] );
-                $cart_data[ 'items' ][ $key ][ 'data' ] = $this->get_product_data( $cart->cart_contents[ $key ][ 'data' ], $key );
+
+                $id = $item[ 'product_id' ];
+                $v_id = $item[ 'variation_id' ];
+
+                if ( !$id ) {
+
+                    continue;
+                }
+
+                if ( $v_id > 0 ) {
+
+                    $product = $this->get_parent_product( $id );
+
+                    if ( !$product ) {
+
+                        continue;
+                    }
+
+                    $cart_data[ 'items' ][ $key ][ 'data' ] = $this->get_product_data( $product, $item[ 'data' ], $key );
+                } else {
+
+                    $cart_data[ 'items' ][ $key ][ 'data' ] = $this->get_product_data( $item[ 'data' ], null, $key );
+                }
             }
 
             return $this->get_totals_data( $cart_data, $cart );
@@ -103,42 +125,82 @@ if ( !class_exists( 'WTARS_Shipped_Cart' ) ) {
             return $item;
         }
 
-        private function get_product_data( $product, $item_key ) {
+        private function get_product_data( $product, $variation, $item_key ) {
 
-            $item_data = array(
+            $data = $this->get_tax_data( array(), $product, $variation );
+
+            //TODO: update filter later
+            if ( has_filter( 'wtars_shipped/get-cart-product-data' ) ) {
+
+                return apply_filters( 'wtars_shipped/get-cart-product-data', $data, $product, $item_key );
+            }
+
+            return $data;
+        }
+
+        private function get_tax_data( $data, $product, $variation ) {
+
+            $tax_data = array(
                 'is_taxable' => $product->is_taxable(),
                 'tax_status' => $product->get_tax_status(),
                 'tax_class' => $product->get_tax_class(),
-                'shipping_class_id' => $product->get_shipping_class_id(),
-                'weight' => $product->get_weight(),
             );
+            
+            if ( $variation ) {
 
-            if ( $product->get_parent_id() > 0 ) {
+                $tax_data[ 'tax_class' ] = $variation->get_tax_class();
+            }
 
-                $v_product = $this->get_parent_product( $product->get_parent_id() );
+            return $this->get_shipping_class( $this->combine_el( $data, $tax_data ), $product, $variation );
+        }
 
-                $item_data[ 'category_ids' ] = $v_product->get_category_ids();
-                $item_data[ 'tag_ids' ] = $v_product->get_tag_ids();
-                
-                
-                $v_shipping_class_id = $v_product->get_shipping_class_id();
+        private function get_shipping_class( $data, $product, $variation ) {
+
+            $shipping_class_id = $product->get_shipping_class_id();
+
+
+            if ( $variation ) {
+
+                $v_shipping_class_id = $variation->get_shipping_class_id();
 
                 if ( $v_shipping_class_id ) {
 
-                    $item_data[ 'shipping_class_id' ] = $v_shipping_class_id;
+                    $shipping_class_id = $v_shipping_class_id;
                 }
-                
-            } else {
-
-                $item_data[ 'category_ids' ] = $product->get_category_ids();
-                $item_data[ 'tag_ids' ] = $product->get_tag_ids();
             }
 
-            if ( has_filter( 'wtars_shipped/get-cart-product-data' ) ) {
+            $data[ 'shipping_class_id' ] = $shipping_class_id;
 
-                $item_data = apply_filters( 'wtars_shipped/get-cart-product-data', $item_data, $product, $item_key );
+            return $this->get_weight( $data, $product, $variation );
+        }
+
+        private function get_weight( $data, $product, $variation ) {
+
+            $weight = $product->get_weight();
+
+            if ( $variation ) {
+
+                $v_weight = $variation->get_weight();
+
+                if ( !empty( $v_weight ) ) {
+
+                    $weight = $v_weight;
+                }
             }
-            return $item_data;
+
+            $data[ 'weight' ] = $weight;
+
+            return $this->get_terms( $data, $product, $variation );
+        }
+
+        private function get_terms( $data, $product, $variation ) {
+
+            $terms_data = array(
+                'category_ids' => $product->get_category_ids(),
+                'tag_ids' => $product->get_tag_ids(),
+            );
+
+            return $this->combine_el( $data, $terms_data );
         }
 
         private function get_totals_data( $cart_data, $cart ) {
@@ -184,6 +246,16 @@ if ( !class_exists( 'WTARS_Shipped_Cart' ) ) {
             $this->parent_products[ $parent_id ] = wc_get_product( $parent_id );
 
             return $this->parent_products[ $parent_id ];
+        }
+
+        private function combine_el( $data, $new_data ) {
+
+            foreach ( $new_data as $key => $new_item ) {
+
+                $data[ $key ] = $new_item;
+            }
+
+            return $data;
         }
 
         private function get_cart() {

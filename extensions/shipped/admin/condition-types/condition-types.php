@@ -19,6 +19,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Condition_Types' ) ) {
         }
 
         public static function get_conditions( $group_id, $args ) {
+            
+            $args[ 'group_id' ] = $group_id;
 
             $in_list = apply_filters( 'wtars_shipped_admin/get-' . $group_id . '-group-conditions', array(), $args );
 

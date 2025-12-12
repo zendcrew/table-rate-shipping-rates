@@ -1,3 +1,7 @@
+= 1.5.1 - 12/12/2025 =
+[Update] - Updated shipping rate id implementation
+[Fix] - Fixed Variation related issues
+
 = 1.5 - 11/11/2025 =
 [Fix] - Fixed AJAX related vulnerabilities
 [Update] - Updated Framework

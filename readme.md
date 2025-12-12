@@ -3,8 +3,8 @@ Contributors: zendcrew, sundayfanz
 Donate link: 
 Tags: table rate, table rate shipping, conditional shipping, free shipping, woocommerce shipping
 Requires at least: 5.8
-Tested up to: 6.8
-Stable tag: 1.5
+Tested up to: 6.9
+Stable tag: 1.5.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -269,6 +269,10 @@ With [Shipped - Table Rate Shipping Method](https://codecanyon.net/item/woocomme
 12. Shipped - Table Rate Shipping Method | for WooCommerce 12
 
 == Changelog ==
+
+= 1.5.1 - 12/12/2025 =
+[Update] - Updated Framework
+[Fix] - Fixed Variation related issues
 
 = 1.5 - 12/11/2025 =
 [Fix] - Fixed AJAX related vulnerabilities

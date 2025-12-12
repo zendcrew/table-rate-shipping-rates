@@ -194,15 +194,18 @@ if ( !class_exists( 'WTARS_Shipped_Shipping_Rates' ) ) {
             $keys = array_keys( $rates );
 
             foreach ( $keys as $key ) {
+        
                 $method_instance_id = $rates[ $key ]->get_instance_id();
-                if ( $method_instance_id != $instance_id && isset( $rates[ $key ] ) ) {
+                
+                if ( $method_instance_id != $instance_id ) {
+                
                     unset( $rates[ $key ] );
                 }
             }
 
             return $rates;
         }
-
+        
         private function get_package_data_for_hash( $package ) {
 
             $p_data = array();

@@ -5,7 +5,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 if ( !class_exists( 'WTARS_Shipped' ) ) {
-    
+
     require_once dirname( __FILE__ ) . '/shipped-locale.php';
     require_once dirname( __FILE__ ) . '/shipped-currency.php';
     require_once dirname( __FILE__ ) . '/utils/shipped-inc.php';
@@ -63,7 +63,6 @@ if ( !class_exists( 'WTARS_Shipped' ) ) {
         public function calculate_shipping( $package, $instance_id ) {
 
             ob_start(); // prevents any possible error
-            
             //process all data 
             $data = $this->process_data( $package, $instance_id );
 
@@ -202,10 +201,22 @@ if ( !class_exists( 'WTARS_Shipped' ) ) {
             return $default;
         }
 
-        public static function get_rate_client_id( $instance_id, $rate_id ) {
+        public static function get_rate_client_id( $instance_id, $suffix ) {
+
+            $rate_id = array( WTARS_SHIPPED_METHOD_ID );
+
+            if ( $instance_id ) {
+
+                $rate_id[] = $instance_id;
+            }
+
+            if ( $suffix ) {
+
+                $rate_id[] = $suffix;
+            }
 
             //get shipping rate id used on cart and checkout page
-            return WTARS_SHIPPED_METHOD_ID . ':' . $instance_id . '_' . $rate_id;
+            return implode( ':', $rate_id );
         }
 
         public static function process_data( $package, $instance_id ) {
@@ -227,7 +238,6 @@ if ( !class_exists( 'WTARS_Shipped' ) ) {
 
             // Process all data
             $data = apply_filters( 'wtars_shipped/process-data', $data );
-
 
 
             // Return processed data

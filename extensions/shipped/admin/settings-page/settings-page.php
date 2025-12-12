@@ -40,6 +40,9 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             add_action( 'reon/before-save-' . $option_name . '-options', array( $this, 'init_data_store' ), 1 );
             add_action( 'reon/before-import-' . $option_name . '-options', array( $this, 'init_data_store' ), 1 );
 
+            //Process rates data for framework
+            add_filter( 'reon/get-data-list-shipping-rates', array( $this, 'process_rates_data' ), 9999 );
+
             // Reon framework custom sanitizer for shipped
             add_filter( 'reon/sanitize-shipped_kses_post', array( $this, 'sanitize_shipped_kses_post_box' ), 1, 4 );
 
@@ -174,7 +177,6 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
         public function get_instance_id() {
 
             if ( isset( $_GET[ 'instance_id' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-
                 $instance_id = sanitize_key( $_GET[ 'instance_id' ] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
                 if ( is_numeric( $instance_id ) ) {
@@ -285,6 +287,82 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             global $wtars_shipped;
 
             $wtars_shipped = get_option( $this->get_option_name() . '_' . $instance_id, array() );
+        }
+
+        public function process_rates_data( $data ) {
+
+            if ( !$data ) {
+
+                return $data;
+            }
+
+            if ( !defined( 'WTARS_SHIPPED_METHOD_ID' ) ) {
+
+                return $data;
+            }
+
+            if ( !isset( $data[ 'id' ] ) ) {
+
+                return $data;
+            }
+
+
+            if ( WTARS_SHIPPED_METHOD_ID !== $data[ 'id' ] ) {
+
+                return $data;
+            }
+
+            if ( !isset( $data[ 'instance_id' ] ) ) {
+
+                return $data;
+            }
+
+            $instance_id = $data[ 'instance_id' ];
+
+            if ( empty( $instance_id ) ) {
+
+                return $data;
+            }
+
+            $method_title = '';
+
+            if ( isset( $data[ 'title' ] ) ) {
+
+                $method_title = $data[ 'title' ];
+            }
+
+            $options = get_option( $this->get_option_name() . '_' . $instance_id, array() );
+
+            if ( !isset( $options[ 'shipping_rates' ] ) ) {
+
+                return $data;
+            }
+
+            foreach ( $options[ 'shipping_rates' ] as $rate ) {
+
+                if ( !isset( $rate[ 'rate_id' ] ) ) {
+
+                    continue;
+                }
+
+                $rate_id = $rate[ 'rate_id' ];
+
+                $rate_title = '';
+
+                if ( isset( $rate[ 'title' ] ) ) {
+
+                    $rate_title = $rate[ 'title' ];
+                }
+
+                if ( empty( $rate_title ) ) {
+
+                    $rate_title = esc_html__( 'Shipping Rate', 'table-rate-shipping-rates' );
+                }
+
+                $data[ 'rates' ][ $rate_id ] = (!empty( $method_title )) ? $method_title . ' → ' . $rate_title : $rate_title;
+            }
+
+            return $data;
         }
 
         public function get_plugin_links( $links ) {
