@@ -8,6 +8,18 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( !class_exists( 'WTARS_Shipped_Validation_Util' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
     class WTARS_Shipped_Validation_Util {
+        
+        private static $instance;
+        
+        public static function get_instance(): self {
+
+            if ( is_null( self::$instance ) ) {
+
+                self::$instance = new self();
+            }
+
+            return self::$instance;
+        }
 
         public static function validate_yes_no( $value, $rule_yes_no ) {
             $yes_value = 'no';

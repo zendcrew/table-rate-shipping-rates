@@ -7,6 +7,18 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( !class_exists( 'WTARS_Shipped_Order_Util' ) && !defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
 
     class WTARS_Shipped_Order_Util {
+        
+        private static $instance;
+        
+        public static function get_instance(): self {
+
+            if ( is_null( self::$instance ) ) {
+
+                self::$instance = new self();
+            }
+
+            return self::$instance;
+        }
 
         public static function get_package_product_ids( $data ) {
 

@@ -9,6 +9,18 @@ if ( !class_exists( 'WTARS_Shipped_Util' ) && !defined( 'WTARS_SHIPPED_PREMIUM' 
     WTARS_Shipped_Inc::recursive_require( dirname( __FILE__ ), array( 'shipped-utils.php' ) );
 
     class WTARS_Shipped_Util {
+        
+        private static $instance;
+        
+        public static function get_instance(): self {
+
+            if ( is_null( self::$instance ) ) {
+
+                self::$instance = new self();
+            }
+
+            return self::$instance;
+        }
 
         public static function round_num( $val, int $precision = 0, int $mode = PHP_ROUND_HALF_UP ): float {
             if ( !is_numeric( $val ) ) {
