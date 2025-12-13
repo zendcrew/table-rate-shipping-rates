@@ -338,6 +338,8 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                 return $data;
             }
 
+            $rates = array();
+
             foreach ( $options[ 'shipping_rates' ] as $rate ) {
 
                 if ( !isset( $rate[ 'rate_id' ] ) ) {
@@ -359,8 +361,10 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
                     $rate_title = esc_html__( 'Shipping Rate', 'table-rate-shipping-rates' );
                 }
 
-                $data[ 'rates' ][ $rate_id ] = (!empty( $method_title )) ? $method_title . ' → ' . $rate_title : $rate_title;
+                $rates[ $rate_id ] = (!empty( $method_title )) ? $method_title . ' → ' . $rate_title : $rate_title;
             }
+
+            $data[ 'rates' ] = $rates;
 
             return $data;
         }
