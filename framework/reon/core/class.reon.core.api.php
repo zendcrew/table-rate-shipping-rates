@@ -446,14 +446,14 @@ if ( !class_exists( 'ReonApi' ) ) {
             foreach ( $users as $user ) {
 
                 $display_text = $user->user_login;
-                $opt_value = $user->id;
+                $opt_value = $user->ID;
 
                 if ( isset( $args[ 'value_col' ] ) ) {
 
                     if ( $args[ 'value_col' ] == 'displayname_id' || $args[ 'value_col' ] == 'displayname_login' || $args[ 'value_col' ] == 'displayname_email' ) {
 
                         $display_text = $user->display_name;
-                        $opt_value = $user->id;
+                        $opt_value = $user->ID;
                     }
 
                     if ( $args[ 'value_col' ] == 'login' || $args[ 'value_col' ] == 'displayname_login' ) {
