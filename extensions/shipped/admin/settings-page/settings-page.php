@@ -369,35 +369,17 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Page' ) ) {
             return $data;
         }
 
-        public function get_plugin_links( $links ) {
+        public function get_plugin_links( $actions ) {
 
-            if ( defined( 'WTARS_SHIPPED_PREMIUM' ) ) {
-
-                unset( $links[ 'deactivate' ] );
-
-                $add_on_text = esc_html__( 'Shipped Premium', 'table-rate-shipping-rates' );
-
-                /* translators: 1: plugin name */
-                $required_text = sprintf( esc_html__( 'Required by %s', 'table-rate-shipping-rates' ), $add_on_text );
-
-                $no_deactivate_tag = '<span style="color: #313639">' . $required_text . '</span>';
-
-                array_unshift( $links, $no_deactivate_tag );
-
-                return $links;
-            }
-
-            $doc_link = '<a href="' . esc_url( 'https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping' ) . '" target="_blank">' . esc_html__( 'Documentation', 'table-rate-shipping-rates' ) . '</a>';
-
-            array_unshift( $links, $doc_link );
+            $links = array();
 
             $settings_url = admin_url( 'admin.php?page=wc-settings&tab=shipping' );
 
-            $settings_link = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'table-rate-shipping-rates' ) . '</a>';
+            $links[ 'shipped_settings' ] = '<a href="' . esc_url( $settings_url ) . '">' . esc_html__( 'Settings', 'table-rate-shipping-rates' ) . '</a>';
 
-            array_unshift( $links, $settings_link );
+            $links[ 'shipped_doc' ] = '<a href="' . esc_url( 'https://support.zendcrew.cc/portal/en/kb/woocommerce-table-rate-shipping' ) . '" target="_blank">' . esc_html__( 'Documentation', 'table-rate-shipping-rates' ) . '</a>';
 
-            return $links;
+            return array_merge( $links, $actions );
         }
 
         private function get_page_links() {

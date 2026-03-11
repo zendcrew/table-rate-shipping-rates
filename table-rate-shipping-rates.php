@@ -4,7 +4,7 @@
  * Plugin Name: Shipped - WooCommerce Table Rate Shipping
  * Plugin URI: https://wordpress.org/plugins/table-rate-shipping-rates
  * Description: Create multiple shipping rates & handling fees based on product rules and cart conditions
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: zendcrew
  * Author URI: https://codecanyon.net/user/zendcrew/portfolio?ref=zendcrew
  * Text Domain: table-rate-shipping-rates
@@ -16,7 +16,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * 
  * Tested up to: 6.9
- * WC tested up to: 10.3
+ * WC tested up to: 10.5
  * 
  * Requires Plugins: woocommerce
  */
@@ -47,7 +47,7 @@ if ( !defined( 'WTARS_SHIPPED_OPTION_NAME' ) ) {
 
 if ( !defined( 'WTARS_SHIPPED_VERSION' ) ) {
 
-    define( 'WTARS_SHIPPED_VERSION', '1.5.1' );
+    define( 'WTARS_SHIPPED_VERSION', '1.5' );
 }
 
 if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
@@ -61,6 +61,8 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
             add_action( 'before_woocommerce_init', array( $this, 'before_woocommerce_init' ) );
 
             add_action( 'init', array( $this, 'load_textdomain' ) );
+            
+            add_filter( 'wp_plugin_dependencies_slug', array( $this, 'get_dependency_slug' ) );
         }
         
         public function load_textdomain() {
@@ -94,6 +96,18 @@ if ( !class_exists( 'WTARS_Shipped_Main' ) ) {
         public function missing_notice() {
 
             echo '<div class="error"><p><strong>' . esc_html__( 'WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated.', 'table-rate-shipping-rates' ) . '</strong></p></div>';
+        }
+        
+        public function get_dependency_slug( $slug ) {
+
+            $dep_slug = '{{shipped}}';
+
+            if ( $dep_slug != $slug ) {
+
+                return $slug;
+            }
+
+          return str_replace( $dep_slug, 'table-rate-shipping-rates', $slug );
         }
 
     }

@@ -1,15 +1,15 @@
-# Copyright (C) 2025 zendcrew
+# Copyright (C) 2026 zendcrew
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.4.1\n"
+"Project-Id-Version: Shipped - WooCommerce Table Rate Shipping 1.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/table-rate-shipping-rates\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-05T06:29:44+01:00\n"
+"POT-Creation-Date: 2026-03-11T14:12:46+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: table-rate-shipping-rates\n"
@@ -950,6 +950,7 @@ msgid "Do not apply any rate"
 msgstr ""
 
 #: extensions/shipped/admin/data-list/data-list-shipping-rates.php:29
+#: extensions/shipped/admin/settings-page/settings-page.php:361
 #: extensions/shipped/admin/settings-page/shipping-rates-section/shipping-rates-section.php:136
 #: extensions/shipped/public/modules/shipping-rates/shipping-rates-engine.php:101
 msgid "Shipping Rate"
@@ -1206,8 +1207,8 @@ msgid "Calculate fee inclusive of taxes"
 msgstr ""
 
 #: extensions/shipped/admin/settings-page/cart-fees-section/cart-fees-panel-options.php:87
-#: extensions/shipped/admin/settings-page/settings-page.php:145
-#: extensions/shipped/admin/settings-page/settings-page.php:146
+#: extensions/shipped/admin/settings-page/settings-page.php:149
+#: extensions/shipped/admin/settings-page/settings-page.php:150
 msgid "Shipping Rates"
 msgstr ""
 
@@ -1367,196 +1368,187 @@ msgid "Cart Notification"
 msgstr ""
 
 #. translators: 1: plugin version
-#: extensions/shipped/admin/settings-page/settings-page.php:51
+#: extensions/shipped/admin/settings-page/settings-page.php:54
 msgid "Lite v%s"
 msgstr ""
 
 #. translators: 1: plugin version
-#: extensions/shipped/admin/settings-page/settings-page.php:55
+#: extensions/shipped/admin/settings-page/settings-page.php:58
 msgid "Premium v%s"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:73
+#: extensions/shipped/admin/settings-page/settings-page.php:77
 msgid "Shipped"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:75
+#: extensions/shipped/admin/settings-page/settings-page.php:79
 #: extensions/shipped/admin/settings-page/settings-section/settings-shipping-rates.php:59
-#: extensions/shipped/shipping-method.php:106
+#: extensions/shipped/shipping-method.php:117
 msgid "Table Rate Shipping & Fees"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:83
-#: extensions/shipped/admin/settings-page/settings-page.php:85
+#: extensions/shipped/admin/settings-page/settings-page.php:87
+#: extensions/shipped/admin/settings-page/settings-page.php:89
 msgid "Done!!"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:84
+#: extensions/shipped/admin/settings-page/settings-page.php:88
 msgid "Unable to save your settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:86
+#: extensions/shipped/admin/settings-page/settings-page.php:90
 msgid "Unable to reset reset your settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:87
+#: extensions/shipped/admin/settings-page/settings-page.php:91
 msgid "invalid nonce"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:95
-#: extensions/shipped/admin/settings-page/settings-page.php:96
+#: extensions/shipped/admin/settings-page/settings-page.php:99
+#: extensions/shipped/admin/settings-page/settings-page.php:100
 msgid "Import / Export"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:98
+#: extensions/shipped/admin/settings-page/settings-page.php:102
 msgid "Import Settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:99
+#: extensions/shipped/admin/settings-page/settings-page.php:103
 msgid "Here you can import new settings. Simply paste the settings url or data on the field below."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:100
+#: extensions/shipped/admin/settings-page/settings-page.php:104
 msgid "Import from url"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:101
+#: extensions/shipped/admin/settings-page/settings-page.php:105
 msgid "Paste the url to another site's settings below and click the 'Import Now' button."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:102
+#: extensions/shipped/admin/settings-page/settings-page.php:106
 msgid "Paste the url to another site's settings here..."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:103
+#: extensions/shipped/admin/settings-page/settings-page.php:107
 msgid "Import Data"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:104
+#: extensions/shipped/admin/settings-page/settings-page.php:108
 msgid "Paste your backup settings below and click the 'Import Now' button."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:105
+#: extensions/shipped/admin/settings-page/settings-page.php:109
 msgid "Paste your backup settings here..."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:106
+#: extensions/shipped/admin/settings-page/settings-page.php:110
 msgid "Import Now"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:107
+#: extensions/shipped/admin/settings-page/settings-page.php:111
 msgid "Warning! This will override all existing settings. proceed with caution!"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:110
+#: extensions/shipped/admin/settings-page/settings-page.php:114
 msgid "Export Settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:111
+#: extensions/shipped/admin/settings-page/settings-page.php:115
 msgid "Here you can backup your current settings. You can later use it to restore your settings."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:112
+#: extensions/shipped/admin/settings-page/settings-page.php:116
 msgid "Download Data"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:113
+#: extensions/shipped/admin/settings-page/settings-page.php:117
 msgid "Export url"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:114
+#: extensions/shipped/admin/settings-page/settings-page.php:118
 msgid "Copy the url below, use it to transfer the settings from this site."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:115
+#: extensions/shipped/admin/settings-page/settings-page.php:119
 msgid "Export Data"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:116
+#: extensions/shipped/admin/settings-page/settings-page.php:120
 msgid "Copy the data below, use it as your backup."
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:120
-#: extensions/shipped/admin/settings-page/settings-page.php:125
+#: extensions/shipped/admin/settings-page/settings-page.php:124
+#: extensions/shipped/admin/settings-page/settings-page.php:129
 msgid "Reset All"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:121
-#: extensions/shipped/admin/settings-page/settings-page.php:126
+#: extensions/shipped/admin/settings-page/settings-page.php:125
+#: extensions/shipped/admin/settings-page/settings-page.php:130
 msgid "Reset Section"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:122
-#: extensions/shipped/admin/settings-page/settings-page.php:127
+#: extensions/shipped/admin/settings-page/settings-page.php:126
+#: extensions/shipped/admin/settings-page/settings-page.php:131
 msgid "Save Section"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:138
-#: extensions/shipped/admin/settings-page/settings-page.php:139
+#: extensions/shipped/admin/settings-page/settings-page.php:142
+#: extensions/shipped/admin/settings-page/settings-page.php:143
 msgid "Method Settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:152
-#: extensions/shipped/admin/settings-page/settings-page.php:153
+#: extensions/shipped/admin/settings-page/settings-page.php:156
+#: extensions/shipped/admin/settings-page/settings-page.php:157
 msgid "Handling Fees"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:159
-#: extensions/shipped/admin/settings-page/settings-page.php:160
+#: extensions/shipped/admin/settings-page/settings-page.php:163
+#: extensions/shipped/admin/settings-page/settings-page.php:164
 msgid "Cart Notifications"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:191
+#: extensions/shipped/admin/settings-page/settings-page.php:194
 msgid "This feature is available on premium version"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:192
+#: extensions/shipped/admin/settings-page/settings-page.php:195
 msgid "Premium Feature"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:196
+#: extensions/shipped/admin/settings-page/settings-page.php:199
 msgid "Available on premium version"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:295
-msgid "Shipped Premium"
-msgstr ""
-
-#. translators: 1: plugin name
-#: extensions/shipped/admin/settings-page/settings-page.php:298
-msgid "Required by %s"
-msgstr ""
-
-#: extensions/shipped/admin/settings-page/settings-page.php:307
-#: extensions/shipped/admin/settings-page/settings-page.php:325
-msgid "Documentation"
-msgstr ""
-
-#: extensions/shipped/admin/settings-page/settings-page.php:313
+#: extensions/shipped/admin/settings-page/settings-page.php:378
 msgid "Settings"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:337
+#: extensions/shipped/admin/settings-page/settings-page.php:380
+#: extensions/shipped/admin/settings-page/settings-page.php:390
+msgid "Documentation"
+msgstr ""
+
+#: extensions/shipped/admin/settings-page/settings-page.php:402
 msgid "Help"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:347
+#: extensions/shipped/admin/settings-page/settings-page.php:412
 msgid "Premium Version"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:363
+#: extensions/shipped/admin/settings-page/settings-page.php:428
 msgid "Facebook"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:370
+#: extensions/shipped/admin/settings-page/settings-page.php:435
 msgid "LinkedIn"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:377
+#: extensions/shipped/admin/settings-page/settings-page.php:442
 msgid "Stack Overflow"
 msgstr ""
 
-#: extensions/shipped/admin/settings-page/settings-page.php:384
+#: extensions/shipped/admin/settings-page/settings-page.php:449
 msgid "Instagram"
 msgstr ""
 
@@ -2020,6 +2012,6 @@ msgstr ""
 msgid "Table Rate Shipping & Handling Fees for WooCommerce"
 msgstr ""
 
-#: table-rate-shipping-rates.php:96
+#: table-rate-shipping-rates.php:98
 msgid "WooCommerce Table Rate Shipping requires WooCommerce to be installed and activated."
 msgstr ""

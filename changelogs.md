@@ -1,3 +1,7 @@
+= 1.5.2 - 12/03/2026 =
+[Update] - Updated Framework
+[Check] - WooCommerce 10.5 compatibility check
+
 = 1.5.1 - 12/12/2025 =
 [Update] - Updated shipping rate id implementation
 [Fix] - Fixed Variation related issues

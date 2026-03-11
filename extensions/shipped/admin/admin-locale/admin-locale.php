@@ -16,6 +16,7 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Locale' ) && !defined( 'WTARS_SHIPPED_P
         private static $instance;
         private $prev_translation_ids_key = 'wtars_shipped_locale_ids_';
         private $translator_obj;
+        private $string_locals;
 
         public static function get_instance(): self {
 
@@ -97,7 +98,12 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Locale' ) && !defined( 'WTARS_SHIPPED_P
             }
             //TODO: End of block
 
-            $strings = apply_filters( 'wtars_shipped/get-locale-strings', array(), $options, $instance_id );
+            $strings = array();
+            //TODO: Check the need for instance_id later
+            foreach ( $this->load_string_locals() as $string_locale ) {
+
+                $strings = $string_locale->get_strings( $strings, $options, $instance_id );
+            }
 
             if ( !is_array( $strings ) ) {
 
@@ -189,6 +195,42 @@ if ( !class_exists( 'WTARS_Shipped_Admin_Locale' ) && !defined( 'WTARS_SHIPPED_P
             return apply_filters( 'wtars_shipped/register-locale-translators', $translators );
         }
 
+        private function load_string_locals() {
+
+            if ( !is_null( $this->string_locals ) ) {
+
+                return $this->string_locals;
+            }
+
+            $this->string_locals = array();
+
+            foreach ( $this->register_string_locals() as $key => $string_locale ) {
+
+                if ( !class_exists( $string_locale ) ) {
+
+                    continue;
+                }
+
+                if ( method_exists( $string_locale, 'get_instance' ) ) {
+
+                    $this->string_locals[ $key ] = $string_locale::get_instance();
+                } else {
+
+                    $this->string_locals[ $key ] = new $string_locale();
+                }
+            }
+
+            return $this->string_locals;
+        }
+
+        private function register_string_locals() {
+
+            $string_locals = array(
+                
+            );
+
+            return apply_filters( 'wtars_shipped_admin/register-string-locale', $string_locals );
+        }
     }
 
 }

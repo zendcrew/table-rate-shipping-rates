@@ -10,6 +10,7 @@ if ( !class_exists( 'ReonApi' ) ) {
 
         private static $data_list = array();
         private static $user_can;
+        private static $data_sources;
 
         public static function map_data_list( $list_object, $data_args ) {
 
@@ -61,149 +62,152 @@ if ( !class_exists( 'ReonApi' ) ) {
 
             $result = array();
 
-            if ( isset( $data_args[ 'source' ] ) ) {
+            if ( !isset( $data_args[ 'source' ] ) ) {
+                
+                return $result;
+            }
 
-                $args = array();
+            $args = array();
 
-                if ( isset( $data_args[ 'search_term' ] ) ) {
+            if ( isset( $data_args[ 'search_term' ] ) ) {
 
-                    $args[ 'search_term' ] = $data_args[ 'search_term' ];
-                }
+                $args[ 'search_term' ] = $data_args[ 'search_term' ];
+            }
 
-                if ( isset( $data_args[ 'items' ] ) ) {
+            if ( isset( $data_args[ 'items' ] ) ) {
 
-                    $args[ 'items' ] = $data_args[ 'items' ];
-                }
+                $args[ 'items' ] = $data_args[ 'items' ];
+            }
 
-                if ( isset( $data_args[ 'value_col' ] ) ) {
+            if ( isset( $data_args[ 'value_col' ] ) ) {
 
-                    $args[ 'value_col' ] = $data_args[ 'value_col' ];
-                }
+                $args[ 'value_col' ] = $data_args[ 'value_col' ];
+            }
 
-                if ( isset( $data_args[ 'value_col_pre' ] ) ) {
+            if ( isset( $data_args[ 'value_col_pre' ] ) ) {
 
-                    $args[ 'value_col_pre' ] = $data_args[ 'value_col_pre' ];
-                }
+                $args[ 'value_col_pre' ] = $data_args[ 'value_col_pre' ];
+            }
 
-                if ( isset( $data_args[ 'show_value' ] ) ) {
+            if ( isset( $data_args[ 'show_value' ] ) ) {
 
-                    $args[ 'show_value' ] = $data_args[ 'show_value' ];
-                }
+                $args[ 'show_value' ] = $data_args[ 'show_value' ];
+            }
 
-                if ( isset( $data_args[ 'pagesize' ] ) ) {
+            if ( isset( $data_args[ 'pagesize' ] ) ) {
 
-                    $args[ 'pagesize' ] = $data_args[ 'pagesize' ];
-                }
+                $args[ 'pagesize' ] = $data_args[ 'pagesize' ];
+            }
 
+            $result = self::process_data( $result, $data_args );
 
-                if ( $data_args[ 'source' ] == 'posttypes' ) {
+            if ( $data_args[ 'source' ] == 'posttypes' ) {
 
-                    $result = self::get_post_types( $args );
-                } else if ( $data_args[ 'source' ] == 'taxonomies' ) {
+                $result = self::get_post_types( $args );
+            } else if ( $data_args[ 'source' ] == 'taxonomies' ) {
 
-                    $result = self::get_taxonomies( $args );
-                } else if ( $data_args[ 'source' ] == 'pages' ) {
+                $result = self::get_taxonomies( $args );
+            } else if ( $data_args[ 'source' ] == 'pages' ) {
 
-                    $args[ 'post_type' ] = 'page';
-                    $result = self::get_posts( $args );
-                } else if ( $data_args[ 'source' ] == 'posts' ) {
+                $args[ 'post_type' ] = 'page';
+                $result = self::get_posts( $args );
+            } else if ( $data_args[ 'source' ] == 'posts' ) {
 
-                    $args[ 'post_type' ] = 'post';
-                    $result = self::get_posts( $args );
-                } else if ( $data_args[ 'source' ] == 'categories' ) {
+                $args[ 'post_type' ] = 'post';
+                $result = self::get_posts( $args );
+            } else if ( $data_args[ 'source' ] == 'categories' ) {
 
-                    $args[ 'taxonomy' ] = 'category';
-                    $result = self::get_categories( $args );
-                } else if ( $data_args[ 'source' ] == 'tags' ) {
+                $args[ 'taxonomy' ] = 'category';
+                $result = self::get_categories( $args );
+            } else if ( $data_args[ 'source' ] == 'tags' ) {
 
-                    $args[ 'taxonomy' ] = 'post_tag';
-                    $result = self::get_tags( $args );
-                } else if ( $data_args[ 'source' ] == 'roles' || $data_args[ 'source' ] == 'wp_roles' ) {
+                $args[ 'taxonomy' ] = 'post_tag';
+                $result = self::get_tags( $args );
+            } else if ( $data_args[ 'source' ] == 'roles' || $data_args[ 'source' ] == 'wp_roles' ) {
 
-                    $result = self::get_roles( $args );
-                } else if ( $data_args[ 'source' ] == 'wp_caps' ) {
+                $result = self::get_roles( $args );
+            } else if ( $data_args[ 'source' ] == 'wp_caps' ) {
 
-                    $result = self::get_caps( $args );
-                } else if ( $data_args[ 'source' ] == 'users' ) {
+                $result = self::get_caps( $args );
+            } else if ( $data_args[ 'source' ] == 'users' ) {
 
-                    $result = self::get_users( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:product' || $data_args[ 'source' ] == 'wc:products' || $data_args[ 'source' ] == 'products' ) {
+                $result = self::get_users( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:product' || $data_args[ 'source' ] == 'wc:products' || $data_args[ 'source' ] == 'products' ) {
 
-                    $result = self::get_wc_products( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:product_type' || $data_args[ 'source' ] == 'wc:product_types' ) {
+                $result = self::get_wc_products( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:product_type' || $data_args[ 'source' ] == 'wc:product_types' ) {
 
-                    $result = self::get_wc_product_types( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:product_variation' || $data_args[ 'source' ] == 'wc:product_variations' || $data_args[ 'source' ] == 'product_variations' ) {
+                $result = self::get_wc_product_types( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:product_variation' || $data_args[ 'source' ] == 'wc:product_variations' || $data_args[ 'source' ] == 'product_variations' ) {
 
-                    $result = self::get_wc_product_variations( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:attributes' || $data_args[ 'source' ] == 'wc:attribute' ) {
+                $result = self::get_wc_product_variations( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:attributes' || $data_args[ 'source' ] == 'wc:attribute' ) {
 
-                    $result = self::get_wc_attributes( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:countries' || $data_args[ 'source' ] == 'wc:country' ) {
+                $result = self::get_wc_attributes( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:countries' || $data_args[ 'source' ] == 'wc:country' ) {
 
-                    $result = self::get_wc_countries( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:continents' || $data_args[ 'source' ] == 'wc:continents' ) {
+                $result = self::get_wc_countries( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:continents' || $data_args[ 'source' ] == 'wc:continents' ) {
 
-                    $result = self::get_wc_continents( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:states' || $data_args[ 'source' ] == 'wc:state' ) {
+                $result = self::get_wc_continents( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:states' || $data_args[ 'source' ] == 'wc:state' ) {
 
-                    $result = self::get_wc_states( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:payment_methods' ) {
+                $result = self::get_wc_states( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:payment_methods' ) {
 
-                    $result = self::get_wc_payment_methods( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:shipping_methods' ) {
+                $result = self::get_wc_payment_methods( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:shipping_methods' ) {
 
-                    $result = self::get_wc_shipping_methods( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:shipping_classes' ) {
+                $result = self::get_wc_shipping_methods( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:shipping_classes' ) {
 
-                    $result = self::get_wc_shipping_classes( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:shipping_zones' ) {
+                $result = self::get_wc_shipping_classes( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:shipping_zones' ) {
 
-                    $result = self::get_wc_shipping_zones( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:zones_shipping' ) { //TODO: this should be deprecated
-                    $result = self::get_wc_zones_shipping_methods( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:shipping-rates' ) {
+                $result = self::get_wc_shipping_zones( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:zones_shipping' ) { //TODO: this should be deprecated
+                $result = self::get_wc_zones_shipping_methods( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:shipping-rates' ) {
 
-                    $result = self::get_wc_zones_shipping_methods( $args );
-                } else if ( $data_args[ 'source' ] == 'wc:tax_classes' ) {
+                $result = self::get_wc_zones_shipping_methods( $args );
+            } else if ( $data_args[ 'source' ] == 'wc:tax_classes' ) {
 
-                    $result = self::get_wc_tax_classes( $args );
-                } else {
+                $result = self::get_wc_tax_classes( $args );
+            } else {
 
-                    $op = explode( ':', $data_args[ 'source' ] );
+                $op = explode( ':', $data_args[ 'source' ] );
 
-                    if ( is_array( $op ) && count( $op ) > 1 ) {
+                if ( is_array( $op ) && count( $op ) > 1 ) {
 
-                        if ( $op[ 0 ] == 'posts' || $op[ 0 ] == 'pages' ) {
+                    if ( $op[ 0 ] == 'posts' || $op[ 0 ] == 'pages' ) {
 
-                            $args[ 'post_type' ] = $op[ 1 ];
-                            $result = self::get_posts( $args );
-                        }
+                        $args[ 'post_type' ] = $op[ 1 ];
+                        $result = self::get_posts( $args );
+                    }
 
-                        if ( $op[ 0 ] == 'terms' ) {
+                    if ( $op[ 0 ] == 'terms' ) {
 
-                            $args[ 'taxonomy' ] = $op[ 1 ];
-                            $result = self::get_terms( $args );
-                        }
+                        $args[ 'taxonomy' ] = $op[ 1 ];
+                        $result = self::get_terms( $args );
+                    }
 
-                        if ( $op[ 0 ] == 'categories' ) {
+                    if ( $op[ 0 ] == 'categories' ) {
 
-                            $args[ 'taxonomy' ] = $op[ 1 ];
-                            $result = self::get_categories( $args );
-                        }
+                        $args[ 'taxonomy' ] = $op[ 1 ];
+                        $result = self::get_categories( $args );
+                    }
 
-                        if ( $op[ 0 ] == 'tags' ) {
+                    if ( $op[ 0 ] == 'tags' ) {
 
-                            $args[ 'taxonomy' ] = $op[ 1 ];
-                            $result = self::get_tags( $args );
-                        }
+                        $args[ 'taxonomy' ] = $op[ 1 ];
+                        $result = self::get_tags( $args );
+                    }
 
-                        if ( $op[ 0 ] == 'users' ) {
+                    if ( $op[ 0 ] == 'users' ) {
 
-                            $args[ 'role' ] = $op[ 1 ];
+                        $args[ 'role' ] = $op[ 1 ];
 
-                            $result = self::get_users( $args );
-                        }
+                        $result = self::get_users( $args );
                     }
                 }
             }
@@ -796,6 +800,64 @@ if ( !class_exists( 'ReonApi' ) ) {
             }
 
             return $result;
+        }
+
+        private static function process_data( $result, $data_args ) {
+
+            foreach ( self::load_data_sources() as $data_source ) {
+
+                if ( !method_exists( $data_source, 'can_get_data' ) ) {
+
+                    continue;
+                }
+
+                if ( !method_exists( $data_source, 'get_data' ) ) {
+
+                    continue;
+                }
+
+                if ( !$data_source->can_get_data( $data_args[ 'source' ] ) ) {
+
+                    continue;
+                }
+
+                $result = $data_source->get_data( $result, $data_args );
+            }
+
+            return $result;
+        }
+
+        private static function load_data_sources() {
+
+            if ( !is_null( self::$data_sources ) ) {
+
+                return self::$data_sources;
+            }
+
+            self::$data_sources = array();
+
+            foreach ( self::register_data_sources() as $key => $data_source ) {
+
+                if ( !class_exists( $data_source ) ) {
+
+                    continue;
+                }
+
+                if ( method_exists( $data_source, 'get_instance' ) ) {
+
+                    self::$data_sources[ $key ] = $data_source::get_instance();
+                } else {
+
+                    self::$data_sources[ $key ] = new $data_source();
+                }
+            }
+
+            return self::$data_sources;
+        }
+
+        private static function register_data_sources() {
+
+            return apply_filters( 'reon/register-data-sources', array() );
         }
 
         private static function process_wc_shipping_rates( $result, $shipping_method, $zone_title, $args ) {
