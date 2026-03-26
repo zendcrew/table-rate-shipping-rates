@@ -69,6 +69,14 @@ jQuery( document ).ready( function( $ ) {
     }
 
     function rn_ui( el ) {
+      
+//Purify Hotfix
+//=============  
+        if(!window.DOMPurify){
+            
+            window.DOMPurify = window.DOMPurify || { sanitize: function(s){ return s; } };
+        }
+
 
 //ColorPicker
 //===========

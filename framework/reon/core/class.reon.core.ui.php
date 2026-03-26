@@ -68,10 +68,6 @@ if (!class_exists('ReonUI')) {
                 wp_register_script('select2', $rn_scripts_path . 'select2/js/select2.min.js', array('jquery'), '4.0.3', true);
             }
 
-            if (!isset($GLOBALS['wp_scripts']->registered['jquery-tiptip'])) {
-                wp_register_script('jquery-tiptip', $rn_scripts_path . 'jquery.tiptip.min.js', array('jquery'), '1.3', true);
-            }
-
             wp_register_script('buttonset', $rn_scripts_path . 'buttonset.js', array('jquery'), '1.0', true);
             wp_register_script('repeater', $rn_scripts_path . 'repeater.js', array('jquery', 'jquery-ui-sortable'), '1.0', true);
             wp_register_script('foldjs', $rn_scripts_path . 'foldjs.js', array('jquery'), '1.0', true);
@@ -122,7 +118,7 @@ if (!class_exists('ReonUI')) {
                 'jquery-ui-datepicker',
                 'repeater',
                 'timepicker-addon',
-                'jquery-tiptip',
+                'wc-jquery-tiptip',
                 'rn-datetime',
                 'rn-autoid',
                 'foldjs',
@@ -130,8 +126,7 @@ if (!class_exists('ReonUI')) {
 
 
             $rn_scripts_path = REON_ASSETS . '/js/';
-            wp_enqueue_script('rn-ui', $rn_scripts_path . 'rn-ui.js', $deps, true, true);
-
+            wp_enqueue_script( 'rn-ui', $rn_scripts_path . 'rn-ui.js', $deps, '1.2', array( 'in_footer' => true ) );
 
             $client_variables = array(
                 'ajax_url' => admin_url( 'admin-ajax.php?rn-admin-options=1' ),
@@ -146,7 +141,7 @@ if (!class_exists('ReonUI')) {
 
             do_action('reon/enqueue-scripts');
         }
-
+        
     }
 
 }
