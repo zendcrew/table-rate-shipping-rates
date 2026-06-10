@@ -126,6 +126,7 @@
             outline: none;
             border:0;
             min-height: 30px;
+            height: 30px;
             @include border-radius($fields-border-radius);
 
             .select2-selection__rendered{
@@ -137,6 +138,7 @@
                 color: #33393b;
                 margin-bottom: -30px;
                 font-size:13px;
+                line-height: 26px;
                 .select2-selection__clear{
                     display:inline-block;
                     height: 30px;
@@ -211,6 +213,7 @@
                     display:inline-block;
                     background-color: transparent;
                     min-width: 30px;
+                    min-height: 30px;
                     line-height: 1px!important;
                 }
                 li{
